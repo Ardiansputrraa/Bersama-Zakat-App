@@ -10,6 +10,9 @@
 
     <color name="background_light_mode">#E7E7E7</color>
     <color name="primary_light_mode">#A67BFF</color>
+    <color name="hasil_perhitungan_light_mode">#118A33</color>
     <color name="background_dark_mode">#222222</color>
     <color name="primary_dark_mode">#5F1BEA</color>
+    <color name="gradient_bottom_sheet_dialog_light_mode">#CFC1EB</color>
+    <color name="hasil_perhitungan_dark_mode">#24FF00</color>
 </resources>
