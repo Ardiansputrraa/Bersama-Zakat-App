@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
+import com.example.bersamazakatapp.databinding.BottomSheetDialogBinding
 import com.example.bersamazakatapp.databinding.FragmentZakatEmasBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ZakatEmasFragment : Fragment() {
 
@@ -30,6 +32,12 @@ class ZakatEmasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _zakatEmasBinding = FragmentZakatEmasBinding.bind(view)
 
+        zakatEmasBinding.buttonHitungZakatEmas.setOnClickListener{
+            val view : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
+            val dialog = BottomSheetDialog(this.requireContext())
+            dialog.setContentView(view)
+            dialog.show()
+        }
 
         adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
         adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
@@ -38,12 +46,8 @@ class ZakatEmasFragment : Fragment() {
         adapterViewPager.addFragment(RefrensiPandanganFragment(), "Refrensi Pandangan")
 
 
-        zakatEmasBinding.viewpager.adapter = adapterViewPager
-        zakatEmasBinding.tablayout.setupWithViewPager(zakatEmasBinding.viewpager)
+        zakatEmasBinding.viewpagerZakatEmas.adapter = adapterViewPager
+        zakatEmasBinding.tablayoutZakagEmas.setupWithViewPager(zakatEmasBinding.viewpagerZakatEmas)
 
     }
-
-//    lifecycleScope.launchWhenResumed {
-//        findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
-//    }
 }

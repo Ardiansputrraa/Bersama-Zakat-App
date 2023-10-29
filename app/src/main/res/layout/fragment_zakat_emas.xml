@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewBackgroundKalkulator"
         android:layout_width="match_parent"
         android:layout_height="345dp"
         android:background="@drawable/rectangle_background_calculator"
@@ -17,12 +17,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewTitlePerhitunganZakatKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="18dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/dmserifdisplayregular"
         android:text="Hitung Zakat"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -30,20 +30,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewTitleZakatEmasKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/dmserifdisplayregular"
         android:text="Emas"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutBeratEmas"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -54,16 +54,17 @@
         app:boxStrokeColor="@color/black"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatEmasKalkulator">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputBeratEmas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/textInputLayoutHargaEmas"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -74,57 +75,61 @@
         app:boxStrokeColor="@color/black"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBeratEmas">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputHargaEmas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/buttonHitungZakatEmas"
         android:layout_width="160dp"
-        android:layout_height="45dp"
+        android:layout_height="35dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
         android:textSize="12dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/black"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaEmas" />
 
     <ImageButton
+        android:id="@+id/imageButtonBackToHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_back_home"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackgroundKalkulator"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackgroundKalkulator"
         app:layout_constraintVertical_bias="0.966" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tablayoutZakagEmas"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         app:tabMode="scrollable"
         android:background="@drawable/gradient_tablayout_light_mode"
         app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/purple_500"
         app:tabSelectedTextColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+        android:id="@+id/viewpagerZakatEmas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tablayout"
+        android:layout_below="@+id/tablayoutZakagEmas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakagEmas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

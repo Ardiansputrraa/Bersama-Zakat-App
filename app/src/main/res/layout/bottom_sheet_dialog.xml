@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bottom_sheet_dialog">
+
+
+    <TextView
+        android:id="@+id/textViewTitleHasilPerhitungan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif"
+        android:text="Hasil Perhitungan"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewJenisZakat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Zakat Emas"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleHasilPerhitungan" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCloseBottomSheetDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_close_hasil_calculator_light_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewTitleHasilPerhitungan"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDetailPerhitunganZakatEmasDenganUang"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:fontFamily="sans-serif"
+        android:text="Bila zakat dibayar dengan uang maka dibayarkan sebesar:"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHasilPerhitunganZakatEmasDenganUang"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Rp. 94.000.00"
+        android:textColor="@color/hasil_perhitungan_light_mode"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatEmasDenganUang" />
+
+    <TextView
+        android:id="@+id/textViewDetailPerhitunganZakatEmasDenganEmas"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Bila zakat dibayarkan dengan emas maka dibayarkan sebera"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHasilPerhitunganZakatEmasDenganUang" />
+
+    <TextView
+        android:id="@+id/textViewHasilPerhitunganZakatEmasDenganEmas"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="100 gram"
+        android:textColor="@color/hasil_perhitungan_light_mode"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatEmasDenganEmas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
