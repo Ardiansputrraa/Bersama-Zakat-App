@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import android.widget.Button
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
-import com.example.bersamazakatapp.databinding.BottomSheetDialogBinding
 import com.example.bersamazakatapp.databinding.FragmentZakatEmasBinding
+import com.example.bersamazakatapp.konten.PengertianFragment
+import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
+import com.example.bersamazakatapp.konten.SyaratFragment
+import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ZakatEmasFragment : Fragment() {
@@ -33,10 +36,15 @@ class ZakatEmasFragment : Fragment() {
         _zakatEmasBinding = FragmentZakatEmasBinding.bind(view)
 
         zakatEmasBinding.buttonHitungZakatEmas.setOnClickListener{
-            val view : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
-            val dialog = BottomSheetDialog(this.requireContext())
-            dialog.setContentView(view)
+            val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
+            val dialog = BottomSheetDialog(requireContext())
+            dialog.setContentView(viewDialog)
             dialog.show()
+
+//            val imageButtonCloseBottomSheetDialog = dialog.findViewById<Button>(R.id.imageButtonCloseBottomSheetDialog)
+//            imageButtonCloseBottomSheetDialog?.setOnClickListener {
+//                dialog.dismiss()
+//            }
         }
 
         adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)

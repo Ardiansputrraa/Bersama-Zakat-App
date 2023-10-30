@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_mode"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBackgroundZakatProfesiKalkulator"
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        android:background="@drawable/rectangle_background_calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitlePerhitunganZakatProfesiKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Hitung Zakat"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitleZakatProfesiKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Profesi"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatProfesiKalkulator" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPenghasilan"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Penghasilan (Rp)"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatProfesiKalkulator">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPenghasilan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPengeluaran"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Pengeluaran (Rp)"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPenghasilan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPengeluaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonHitungZakatProfesi"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:background="@drawable/shape_button_hasil"
+        android:backgroundTint="@color/white"
+        android:text="Hitung"
+        android:textSize="12dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_back_home"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundZakatProfesiKalkulator"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackgroundZakatProfesiKalkulator"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackgroundZakatProfesiKalkulator"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayoutZakatProfesi"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:tabMode="scrollable"
+        android:background="@drawable/gradient_tablayout_light_mode"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundZakatProfesiKalkulator" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagerZakatProfesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablayoutZakagProfesi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakagProfesi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
