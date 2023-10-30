@@ -3,11 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/zakatEmasFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/zakatEmasFragment"
         android:name="com.example.bersamazakatapp.ui.zakat_emas.ZakatEmasFragment"
         android:label="ZakatEmasFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.bersamazakatapp.splash_Screen.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_splashSecondFragment"
+            app:destination="@id/splashSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashSecondFragment"
+        android:name="com.example.bersamazakatapp.splash_Screen.SplashSecondFragment"
+        android:label="SplashSecondFragment" >
+        <action
+            android:id="@+id/action_splashSecondFragment_to_zakatEmasFragment"
+            app:destination="@id/zakatEmasFragment" />
+    </fragment>
 
 </navigation>
