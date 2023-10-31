@@ -23,7 +23,7 @@
             android:layout_width="350dp"
             android:layout_height="match_parent"
             android:layout_marginTop="15dp"
-            android:text="@string/pengertian_zakat_emas"
+            android:text="@string/lorem_ipsum"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

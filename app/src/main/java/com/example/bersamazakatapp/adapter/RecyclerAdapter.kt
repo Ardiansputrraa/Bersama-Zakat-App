@@ -1,9 +1,13 @@
 package com.example.bersamazakatapp.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bersamazakatapp.home_page.RecyclerZakat
+import com.example.bersamazakatapp.R
+import com.example.bersamazakatapp.data.RecyclerZakat
 import com.example.bersamazakatapp.databinding.CardModelBinding
 
 class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
@@ -21,6 +25,13 @@ class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
 
     override fun onBindViewHolder(holder: ZakatViewHolder, position: Int) {
         val zakat = recyclerZakatList[position]
-        holder.binding.imageView.setImageResource(zakat.zakatImage)
+        holder.binding.imageViewHomePage.setImageResource(zakat.zakatImage)
+        holder.binding.cardViewHomePage.setOnClickListener {
+            when(position) {
+                0 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment)
+                1 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatProfesiFragment)
+            }
+
+        }
     }
 }

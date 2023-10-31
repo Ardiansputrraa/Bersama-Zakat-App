@@ -1,4 +1,4 @@
-package com.example.bersamazakatapp.home_page
+package com.example.bersamazakatapp.ui.home_page
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.RecyclerAdapter
+import com.example.bersamazakatapp.data.RecyclerZakat
 import com.example.bersamazakatapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
