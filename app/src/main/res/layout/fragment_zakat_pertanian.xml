@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_mode"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBackgroundKalkulator"
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        android:background="@drawable/rectangle_background_calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitlePerhitunganZakatKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Hitung Zakat"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitleZakatPertanianKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Pertanian"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPilihHasilPanen"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPertanianKalkulator">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_hasil_panen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/item_label"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutKuantitas"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Kuantitas / kg"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPilihHasilPanen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputKuantitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/pilih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutKuantitas"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutKuantitas">
+
+        <RadioButton
+            android:id="@+id/radioBtnBerbayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berbayar"
+            app:layout_constraintEnd_toStartOf="@+id/radioBtnTadahHujan"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+        <RadioButton
+            android:id="@+id/radioBtnTadahHujan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Tadah Hujan"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonHitungZakatPertanian"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_button_hasil"
+        android:backgroundTint="@color/white"
+        android:text="Hitung"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pilih" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_back_home"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayoutZakatPertanian"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:tabMode="scrollable"
+        android:background="@drawable/gradient_tablayout_light_mode"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagerZakatPertanian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablayoutZakatPertanian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatPertanian" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
