@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDetailPerhitunganZakatEmasDenganUang"
+        android:id="@+id/textViewDetailPerhitunganZakatA"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewHasilPerhitunganZakatEmasDenganUang"
+        android:id="@+id/textViewHasilPerhitunganZakatA"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -71,10 +71,10 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatEmasDenganUang" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatA"/>
 
     <TextView
-        android:id="@+id/textViewDetailPerhitunganZakatEmasDenganEmas"
+        android:id="@+id/textViewDetailPerhitunganZakatB"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmserifdisplayregular"
@@ -85,10 +85,10 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHasilPerhitunganZakatEmasDenganUang" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewHasilPerhitunganZakatA" />
 
     <TextView
-        android:id="@+id/textViewHasilPerhitunganZakatEmasDenganEmas"
+        android:id="@+id/textViewHasilPerhitunganZakatB"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -99,15 +99,15 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatEmasDenganEmas" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatB" />
 
     <TextView
-        android:id="@+id/textViewHasilPerhitunganZakatEmas"
+        android:id="@+id/textViewHasilPerhitunganZakatC"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/dmserifdisplayregular"
-        android:text="@string/tidak_wajib_zakat_emas"
+        android:text="Belum wajib zakat!"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
