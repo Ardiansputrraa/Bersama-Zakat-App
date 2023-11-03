@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_mode"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBackgroundKalkulator"
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        android:background="@drawable/rectangle_background_calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitlePerhitunganZakatKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Hitung Zakat"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitleZakatFitrahKalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="Fitrah"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutJumlahOrang"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Jumlah Orang"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatFitrahKalkulator">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputJumlahOrang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHargaBeras"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Harga Beras (Rp)"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutJumlahOrang">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputHargaBeras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/pilih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutHargaBeras"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaBeras">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liter"
+            app:layout_constraintEnd_toStartOf="@+id/radioButton2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Kilogram"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonHitungZakatFitrah"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_button_hasil"
+        android:backgroundTint="@color/white"
+        android:text="Hitung"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pilih" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_back_home"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackgroundKalkulator"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayoutZakatFitrah"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:tabMode="scrollable"
+        android:background="@drawable/gradient_tablayout_light_mode"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagerZakatFitrah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablayoutZakatFitrah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatFitrah" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
