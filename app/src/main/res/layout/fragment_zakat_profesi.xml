@@ -73,6 +73,7 @@
         android:layout_marginRight="20dp"
         android:hint="Pengeluaran (Rp)"
         app:boxStrokeColor="@color/black"
+        app:endIconTint="@color/black"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPenghasilan">
@@ -127,9 +128,9 @@
         android:id="@+id/viewpagerZakatProfesi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tablayoutZakagProfesi"
+        android:layout_below="@+id/tablayoutZakatProfesi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakagProfesi" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatProfesi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

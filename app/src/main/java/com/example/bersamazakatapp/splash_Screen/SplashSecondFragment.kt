@@ -31,8 +31,8 @@ class SplashSecondFragment : Fragment() {
 
         Handler().postDelayed({
             val navController = Navigation.findNavController(view)
-            navController.navigate(R.id.action_splashSecondFragment_to_zakatEmasFragment)
-        }, 8000)
+            navController.navigate(R.id.action_splashSecondFragment_to_homeFragment)
+        }, 2000)
     }
 
 }

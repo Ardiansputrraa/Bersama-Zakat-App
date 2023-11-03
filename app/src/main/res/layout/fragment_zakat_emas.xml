@@ -71,7 +71,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Berat emas per gram"
+        android:hint="Harga emas per gram"
         app:boxStrokeColor="@color/black"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
