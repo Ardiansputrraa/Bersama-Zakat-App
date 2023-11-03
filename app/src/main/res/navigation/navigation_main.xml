@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/zakatEmasFragment"
         android:name="com.example.bersamazakatapp.ui.zakat_emas.ZakatEmasFragment"
-        android:label="ZakatEmasFragment" />
+        android:label="ZakatEmasFragment" >
+        <action
+            android:id="@+id/action_zakatEmasFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.bersamazakatapp.splash_Screen.SplashFragment"
@@ -22,8 +26,28 @@
         android:name="com.example.bersamazakatapp.splash_Screen.SplashSecondFragment"
         android:label="SplashSecondFragment" >
         <action
-            android:id="@+id/action_splashSecondFragment_to_zakatEmasFragment"
+            android:id="@+id/action_splashSecondFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bersamazakatapp.ui.home_page.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_zakatEmasFragment"
             app:destination="@id/zakatEmasFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zakatProfesiFragment"
+            app:destination="@id/zakatProfesiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zakatProfesiFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_penghasilan.ZakatProfesiFragment"
+        android:label="ZakatProfesiFragment" >
+
+        <action
+            android:id="@+id/action_zakatProfesiFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
 </navigation>
