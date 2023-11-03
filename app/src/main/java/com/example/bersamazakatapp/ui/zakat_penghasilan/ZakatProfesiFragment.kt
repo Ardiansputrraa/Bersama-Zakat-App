@@ -42,6 +42,12 @@ class ZakatProfesiFragment : Fragment() {
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
             val dialog = BottomSheetDialog(this.requireContext())
             dialog.setContentView(viewDialog)
+            dialog.show()
+
+            val imageButtonCloseBottomSheetDialog = view.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
+            imageButtonCloseBottomSheetDialog.setOnClickListener{
+                dialog.dismiss()
+            }
 
             val pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
             val pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()

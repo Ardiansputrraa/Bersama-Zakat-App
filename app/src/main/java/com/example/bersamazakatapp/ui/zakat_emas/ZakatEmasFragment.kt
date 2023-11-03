@@ -46,6 +46,43 @@ class ZakatEmasFragment : Fragment() {
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(viewDialog)
+
+            val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
+            val textViewDetailPerhitunganZakatEmasDenganUang = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatEmasDenganUang)
+            val textViewHasilPerhitunganZakatEmasDenganUang = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatEmasDenganUang)
+            val textViewDetailPerhitunganZakatEmasDenganEmas = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatEmasDenganEmas)
+            val textViewHasilPerhitunganZakatEmasDenganEmas = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatEmasDenganEmas)
+            val textViewHasilPerhitunganZakatEmas = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatEmas)
+            if (zakatEmasBinding.textInputBeratEmas.text.toString() != "" && zakatEmasBinding.textInputHargaEmas.text.toString() != "") {
+                var beratEmas : Int = zakatEmasBinding.textInputBeratEmas.text.toString().toInt()
+                val hargaEmas : Int = zakatEmasBinding.textInputHargaEmas.text.toString().toInt()
+                if (beratEmas >= 85) {
+                    textViewDetailPerhitunganZakatEmasDenganUang?.visibility = View.VISIBLE
+                    textViewHasilPerhitunganZakatEmasDenganUang?.visibility = View.VISIBLE
+                    textViewDetailPerhitunganZakatEmasDenganEmas?.visibility = View.VISIBLE
+                    textViewHasilPerhitunganZakatEmasDenganEmas?.visibility = View.VISIBLE
+                    textViewHasilPerhitunganZakatEmas?.visibility = View.GONE
+                    // hasil perhitungan zakat dengan uang
+                    textViewHasilPerhitunganZakatEmasDenganUang?.text = kalkulatorZakatEmasDenganUang(hargaEmas.toDouble(), beratEmas.toDouble()).toInt().toString()
+                    // hasil perhitungan zakat dengan emas
+                    textViewHasilPerhitunganZakatEmasDenganEmas?.text = kalkulatorZakatEmasDenganEmas(beratEmas.toDouble()).toString()
+                } else if (beratEmas < 85) {
+                    textViewDetailPerhitunganZakatEmasDenganUang?.visibility = View.GONE
+                    textViewHasilPerhitunganZakatEmasDenganUang?.visibility = View.GONE
+                    textViewDetailPerhitunganZakatEmasDenganEmas?.visibility = View.GONE
+                    textViewHasilPerhitunganZakatEmasDenganEmas?.visibility = View.GONE
+                    textViewHasilPerhitunganZakatEmas?.visibility = View.VISIBLE
+                }
+            } else {
+                textViewDetailPerhitunganZakatEmasDenganUang?.visibility = View.GONE
+                textViewHasilPerhitunganZakatEmasDenganUang?.visibility = View.GONE
+                textViewDetailPerhitunganZakatEmasDenganEmas?.visibility = View.GONE
+                textViewHasilPerhitunganZakatEmasDenganEmas?.visibility = View.GONE
+                textViewHasilPerhitunganZakatEmas?.visibility = View.VISIBLE
+            }
+
+            dialog.show()
+
             val beratEmas = zakatEmasBinding.textInputBeratEmas.text.toString()
             val hargaEmas = zakatEmasBinding.textInputHargaEmas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
@@ -117,6 +154,10 @@ class ZakatEmasFragment : Fragment() {
         return (hargaEmas * beratEmas) * zakatEmas
     }
 
+    fun kalkulatorZakatEmasDenganEmas(beratEmas : Double) : Double {
+        val zakatEmas = 0.025
+        return beratEmas * zakatEmas
+    }
     fun kalkulatorZakatEmasDenganEmas(beratEmas : Double) : Double {
         val zakatEmas = 0.025
         return beratEmas * zakatEmas

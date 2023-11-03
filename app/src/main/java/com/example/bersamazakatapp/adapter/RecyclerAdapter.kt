@@ -30,8 +30,10 @@ class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
             when(position) {
                 0 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment)
                 1 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatProfesiFragment)
-            }
 
+                2 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatFitrahFragment)
+                3 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPertanianFragment)
+            }
         }
     }
 }

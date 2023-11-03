@@ -39,6 +39,12 @@
         <action
             android:id="@+id/action_homeFragment_to_zakatProfesiFragment"
             app:destination="@id/zakatProfesiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zakatFitrahFragment"
+            app:destination="@id/zakatFitrahFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zakatPertanianFragment"
+            app:destination="@id/zakatPertanianFragment" />
     </fragment>
     <fragment
         android:id="@+id/zakatProfesiFragment"
@@ -49,5 +55,20 @@
             android:id="@+id/action_zakatProfesiFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/zakatFitrahFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_emas.ZakatFitrahFragment"
+        android:label="ZakatFitrahFragment" >
+        <action
+            android:id="@+id/action_zakatFitrahFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zakatPertanianFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_emas.ZakatPertanianFragment"
+        android:label="ZakatPertanianFragment" >
+        <action
+            android:id="@+id/action_zakatPertanianFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

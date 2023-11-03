@@ -113,4 +113,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewJenisZakat" />
 
+    <TextView
+        android:id="@+id/textViewHasilPerhitunganZakatEmas"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dmserifdisplayregular"
+        android:text="@string/tidak_wajib_zakat_emas"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewJenisZakat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
