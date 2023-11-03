@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
 import com.example.bersamazakatapp.databinding.FragmentZakatEmasBinding
@@ -42,21 +44,21 @@ class ZakatFitrahFragment : Fragment() {
             dialog.setContentView(viewDialog)
             dialog.show()
 
-//            val imageButtonCloseBottomSheetDialog = dialog.findViewById<Button>(R.id.imageButtonCloseBottomSheetDialog)
-//            imageButtonCloseBottomSheetDialog?.setOnClickListener {
-//                dialog.dismiss()
-//            }
+            val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
+            imageButtonCloseBottomSheetDialog?.setOnClickListener {
+                dialog.dismiss()
+            }
         }
-
+        zakatFitrahBinding.imageButtonBackToHome.setOnClickListener{
+            it.findNavController().navigate(R.id.action_zakatFitrahFragment_to_homeFragment)
+        }
         adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
         adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
         adapterViewPager.addFragment(SyaratFragment(), "Syarat")
         adapterViewPager.addFragment(TataCaraFragment(), "Tata Cara")
         adapterViewPager.addFragment(RefrensiPandanganFragment(), "Refrensi Pandangan")
 
-
-//        zakatFitrahBinding.viewpagerZakatFitrah.adapter = adapterViewPager
-//        zakatFitrahBinding.tablayoutZakatFitrah.setupWithViewPager(zakatFitrahBinding.viewpagerZakatFitrah)
-
+        zakatFitrahBinding.viewpagerZakatFitrah.adapter = adapterViewPager
+        zakatFitrahBinding.tablayoutZakatFitrah.setupWithViewPager(zakatFitrahBinding.viewpagerZakatFitrah)
     }
 }
