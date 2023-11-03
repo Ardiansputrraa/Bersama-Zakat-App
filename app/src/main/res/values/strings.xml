@@ -2,7 +2,7 @@
     <string name="app_name">Bersama Zakat App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="pengertian_zakat_emas">
+    <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa.
         Dignissim cras tincidunt lobortis feugiat. Sit amet volutpat consequat mauris nunc congue nisi.
@@ -23,4 +23,31 @@
         Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Sed sed risus pretium quam vulputate dignissim suspendisse in.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat. </string>
+        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
+    </string>
+
+    <string name="zakat_emas">Zakat Emas</string>
+    <string name="perhitungan_zakat_emas_dengan_uang">
+        Bila zakat dibayar dengan uang maka dibayarkan sebesar:
+    </string>
+    <string name="perhitungan_zakat_emas_dengan_emas">
+        Bila zakat dibayarkan dengan emas maka dibayarkan sebesar:
+    </string>
+    <string name="tidak_wajib_zakat_emas">Nisab Emas dalam haul 1 tahun 85 gram. Berdasarkan berat emas yang dikeluarkan zakat adalah 2,5%.\n\nKarena emas yang dimasukan belum memenuhi haul 1 tahun zakat emas, maka anda belum wajib membayar zakat emas.
+        \nTerimakasih.\n\n
+    </string>
+
+    <string name="zakat_profesi">Zakat Profesi</string>
+    <string name="perhitungan_zakat_profesi">
+        Wajib zakat penghasilan sebesar:
+    </string>
+    <string name="tidak_wajib_zakat_profesi">
+        Belum wajib zakat profesi!
+    </string>
+
+    <string name="zakat_fitrah">Zakat Fitrah</string>
+    <string name="zakat_pertanian">Zakat Pertanian</string>
+    <string name="zakat_peternakan">Zakat Peternakan</string>
+    <string name="zakat_perikanan">Zakat Perikanan</string>
+
 </resources>
