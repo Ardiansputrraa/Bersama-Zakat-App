@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.ImageButton
@@ -41,6 +43,15 @@ class ZakatPertanianFragment : Fragment() {
 
         _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
 
+        val items = listOf("Beras Putih", "Kacang Hijau")
+        val adapterListHasilPanen = ArrayAdapter(requireContext(),R.layout.list_item_hasil_panen,items)
+        zakatPertanianBinding.autoCompleteHasilPanen.apply {
+            setAdapter(adapterListHasilPanen)
+            onItemClickListener = AdapterView.OnItemClickListener {
+                    adapterView, view, i, l ->
+                val itemSelected = adapterView.getItemAtPosition(i)
+            }
+        }
 
         zakatPertanianBinding.buttonHitungZakatPertanian.setOnClickListener{
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
