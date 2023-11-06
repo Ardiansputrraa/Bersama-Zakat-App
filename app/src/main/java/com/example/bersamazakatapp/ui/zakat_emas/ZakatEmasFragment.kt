@@ -46,6 +46,7 @@ class ZakatEmasFragment : Fragment() {
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(viewDialog)
+
             val beratEmas = zakatEmasBinding.textInputBeratEmas.text.toString()
             val hargaEmas = zakatEmasBinding.textInputHargaEmas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
@@ -121,6 +122,7 @@ class ZakatEmasFragment : Fragment() {
         val zakatEmas = 0.025
         return beratEmas * zakatEmas
     }
+
 
     fun Double.formatRupiah(): String {
         val localeID = Locale("in", "ID")
