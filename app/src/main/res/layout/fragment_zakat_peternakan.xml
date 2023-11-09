@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitlePerhitunganZakatKalkulator"
+        android:id="@+id/textViewTitlePerternakanZakatKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -30,99 +30,74 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitleZakatPerikananKalkulator"
+        android:id="@+id/textViewTitleZakatPeternakanKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmserifdisplayregular"
-        android:text="Perikanan"
+        android:text="Pertanian"
         android:textColor="?attr/color"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerternakanZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutBeratHasilPanen"
+        android:id="@+id/textInputLayoutPilihHewan"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:boxStrokeColor="?attr/color"
+        app:hintTextColor="?attr/color"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPeternakanKalkulator">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_pilih_hewan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/item_label2"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutBanyakHewan"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Berat Hasil Panen"
+        android:hint="Banyak hewan per ekor"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPerikananKalkulator">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPilihHewan">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputBeratHasilPanen"
+            android:id="@+id/textInputBanyakHewan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutHargaIkan"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Harga Ikan Perkilo (Rp)"
-        app:boxStrokeColor="?attr/color"
-        app:hintTextColor="?attr/color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBeratHasilPanen">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputHargaIkan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RadioGroup
-        android:id="@+id/pilih"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutHargaIkan"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaIkan">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liter"
-            app:layout_constraintEnd_toStartOf="@+id/radioButton2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Kilogram"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
-
-    </RadioGroup>
 
     <Button
-        android:id="@+id/buttonHitungZakatPerikanan"
+        android:id="@+id/buttonHitungZakatPeternakan"
         android:layout_width="160dp"
         android:layout_height="35dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
         android:textColor="?attr/color"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pilih" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBanyakHewan" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToHome"
@@ -137,7 +112,7 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayoutZakatPerikanan"
+        android:id="@+id/tablayoutZakatPeternakan"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         app:tabMode="scrollable"
@@ -150,12 +125,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpagerZakatPerikanan"
+        android:id="@+id/viewpagerZakatPeternakan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tablayoutZakatPerikanan"
+        android:layout_below="@+id/tablayoutZakatPeternakan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatPerikanan" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatPeternakan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

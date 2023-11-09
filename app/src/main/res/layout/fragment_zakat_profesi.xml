@@ -117,7 +117,7 @@
         android:layout_height="65dp"
         app:tabMode="scrollable"
         android:background="@drawable/gradient_tablayout_light_mode"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="?attr/color"
         app:tabIndicatorColor="@color/purple_500"
         app:tabSelectedTextColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
