@@ -71,7 +71,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Harga Beras (Rp)"
+        android:hint="Harga Beras per litter (Rp)"
         app:boxStrokeColor="@color/black"
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +85,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:id="@+id/pilih"
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -93,19 +93,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaBeras">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButtonLiter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Liter"
+            android:checked="true"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="#000000"
             app:layout_constraintEnd_toStartOf="@+id/radioButton2"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonKilogram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="Kilogram"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
 
@@ -115,14 +120,15 @@
         android:id="@+id/buttonHitungZakatFitrah"
         android:layout_width="160dp"
         android:layout_height="35dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
         android:textColor="@color/black"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pilih" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToHome"

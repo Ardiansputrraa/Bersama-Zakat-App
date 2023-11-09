@@ -47,8 +47,8 @@ class ZakatEmasFragment : Fragment() {
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(viewDialog)
 
-            val beratEmas = zakatEmasBinding.textInputBeratEmas.text.toString()
-            val hargaEmas = zakatEmasBinding.textInputHargaEmas.text.toString()
+            var beratEmas = zakatEmasBinding.textInputBeratEmas.text.toString()
+            var hargaEmas = zakatEmasBinding.textInputHargaEmas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -113,12 +113,12 @@ class ZakatEmasFragment : Fragment() {
         zakatEmasBinding.viewpagerZakatEmas.adapter = adapterViewPager
         zakatEmasBinding.tablayoutZakagEmas.setupWithViewPager(zakatEmasBinding.viewpagerZakatEmas)
     }
-    fun kalkulatorZakatEmasDenganUang(hargaEmas: Double, beratEmas : Double) : Double {
+    fun kalkulatorZakatEmasDenganUang(hargaEmas: Double, beratEmas: Double): Double {
         val zakatEmas = 0.025
         return (hargaEmas * beratEmas) * zakatEmas
     }
 
-    fun kalkulatorZakatEmasDenganEmas(beratEmas : Double) : Double {
+    fun kalkulatorZakatEmasDenganEmas(beratEmas: Double): Double {
         val zakatEmas = 0.025
         return beratEmas * zakatEmas
     }
