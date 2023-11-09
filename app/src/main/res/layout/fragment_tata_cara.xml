@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    style="@style/ScreenBackground"
     tools:context=".konten.PengertianFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +17,7 @@
             android:layout_height="match_parent"
             android:text="Tata Cara"
             android:textSize="26dp"
+            android:textColor="?attr/color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -25,6 +27,7 @@
             android:layout_marginTop="15dp"
             android:text="@string/lorem_ipsum"
             android:textSize="18dp"
+            android:textColor="?attr/color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
