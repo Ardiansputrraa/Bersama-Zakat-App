@@ -35,6 +35,7 @@ class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
                 3 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPertanianFragment)
 
                 4 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPerikananFragment)
+                5 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPeternakanFragment)
             }
         }
     }

@@ -60,7 +60,7 @@ class ZakatPeternakanFragment : Fragment() {
             }
         }
         zakatPeternakanBinding.imageButtonBackToHome.setOnClickListener{
-            it.findNavController().navigate(R.id.action_zakatPertanianFragment_to_homeFragment)
+            it.findNavController().navigate(R.id.action_zakatPeternakanFragment_to_homeFragment)
         }
         adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
         adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
