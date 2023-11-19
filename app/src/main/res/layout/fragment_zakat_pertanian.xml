@@ -44,24 +44,23 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPilihHasilPanen"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
+        android:hint="Hasil Panen (kg)"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
-        android:focusableInTouchMode="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPertanianKalkulator">
 
-        <AutoCompleteTextView
-            android:id="@+id/auto_complete_hasil_panen"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputHasilPanen"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/item_label"
-            android:inputType="none"/>
-
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
