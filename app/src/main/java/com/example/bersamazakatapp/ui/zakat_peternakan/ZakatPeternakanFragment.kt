@@ -38,15 +38,6 @@ class ZakatPeternakanFragment : Fragment() {
 
         _zakatPeternakanBinding = FragmentZakatPeternakanBinding.bind(view)
 
-        val items = listOf("Kambing/Domba", "Sapi/Kerbau/Kuda", "Unta")
-        val adapterListPilihHewan = ArrayAdapter(requireContext(), R.layout.list_item_hasil_panen,items)
-        zakatPeternakanBinding.autoCompletePilihHewan.apply {
-            setAdapter(adapterListPilihHewan)
-            onItemClickListener = AdapterView.OnItemClickListener {
-                    adapterView, view, i, l ->
-                val itemSelected = adapterView.getItemAtPosition(i)
-            }
-        }
         zakatPeternakanBinding.buttonHitungZakatPeternakan.setOnClickListener {
             val viewDialog: View = layoutInflater.inflate(R.layout.bottom_sheet_dialog, null)
             val dialog = BottomSheetDialog(this.requireContext())

@@ -43,25 +43,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerternakanZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPilihHewan"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/textInputLayoutJumlahTernak"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
+        android:hint="Banyak Hewan (ekor)"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
-        android:focusableInTouchMode="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPeternakanKalkulator">
 
-        <AutoCompleteTextView
-            android:id="@+id/auto_complete_pilih_hewan"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputJumlahTernak"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/item_label2"
-            android:inputType="none"/>
-
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -72,11 +71,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Banyak hewan per ekor"
+        android:hint="Harga Hewan perekor"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPilihHewan">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutJumlahTernak">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputBanyakHewan"
