@@ -51,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
         android:fontFamily="@font/dmserifdisplayregular"
-        android:text="@string/perhitungan_zakat_emas_dengan_uang"
+        android:text="@string/perhitungan_zakat_fitrah_dengan_uang"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:visibility="invisible"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,7 +68,7 @@
         android:text="Rp. 94.000.00"
         android:textColor="@color/hasil_perhitungan_light_mode"
         android:textSize="20dp"
-        android:visibility="invisible"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatA"/>
@@ -78,10 +78,10 @@
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmserifdisplayregular"
-        android:text="@string/perhitungan_zakat_emas_dengan_emas"
+        android:text="@string/perhitungan_zakat_fitrah_dengan_beras"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:visibility="invisible"
+
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         android:text="100 gram\n\n"
         android:textColor="@color/hasil_perhitungan_light_mode"
         android:textSize="20dp"
-        android:visibility="invisible"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDetailPerhitunganZakatB" />
@@ -109,20 +109,11 @@
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="Belum wajib zakat!"
         android:textSize="20dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewJenisZakat" />
 
-    <TextView
-        android:id="@+id/textViewHasilPerhitunganZakatEmas"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/dmserifdisplayregular"
-        android:text="@string/tidak_wajib_zakat_emas"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewJenisZakat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,8 +49,8 @@ class ZakatProfesiFragment : Fragment() {
                 dialog.dismiss()
             }
 
-            val pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
-            val pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()
+            var pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
+            var pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
             val textViewHasilPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatA)
@@ -113,7 +113,7 @@ class ZakatProfesiFragment : Fragment() {
         zakatProfesiBinding.viewpagerZakatProfesi.adapter = adapterViewPager
         zakatProfesiBinding.tablayoutZakatProfesi.setupWithViewPager(zakatProfesiBinding.viewpagerZakatProfesi)
     }
-    fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan : Double) : Double {
+    fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double): Double {
         val zakatProfesi = 0.025
         return (pemasukanBulanan - pengeluaranBulanan) * zakatProfesi
     }
