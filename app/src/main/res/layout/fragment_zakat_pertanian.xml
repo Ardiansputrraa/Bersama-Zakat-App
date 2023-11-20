@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light_mode"
+    style="@style/ScreenBackground"
     tools:context=".MainActivity">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_marginTop="18dp"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="Hitung Zakat"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,31 +37,30 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="Pertanian"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPilihHasilPanen"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        android:focusableInTouchMode="true"
+        android:hint="Hasil Panen (kg)"
+        app:boxStrokeColor="?attr/color"
+        app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPertanianKalkulator">
 
-        <AutoCompleteTextView
-            android:id="@+id/auto_complete_hasil_panen"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputHasilPanen"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/item_label"
-            android:inputType="none"/>
-
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -72,9 +71,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Kuantitas / kg"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
+        android:hint="Harga Panen per kg"
+        app:boxStrokeColor="?attr/color"
+        app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPilihHasilPanen">
 
@@ -120,7 +119,7 @@
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pilih" />
@@ -143,7 +142,7 @@
         android:layout_height="65dp"
         app:tabMode="scrollable"
         android:background="@drawable/gradient_tablayout_light_mode"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="?attr/color"
         app:tabIndicatorColor="@color/purple_500"
         app:tabSelectedTextColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"

@@ -45,6 +45,12 @@
         <action
             android:id="@+id/action_homeFragment_to_zakatPertanianFragment"
             app:destination="@id/zakatPertanianFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zakatPerikananFragment"
+            app:destination="@id/zakatPerikananFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zakatPeternakanFragment"
+            app:destination="@id/zakatPeternakanFragment" />
     </fragment>
     <fragment
         android:id="@+id/zakatProfesiFragment"
@@ -69,6 +75,27 @@
         android:label="ZakatPertanianFragment" >
         <action
             android:id="@+id/action_zakatPertanianFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.bersamazakatapp.MainActivity"
+        android:label="fragment_zakat_perikanan"
+        tools:layout="@layout/fragment_zakat_perikanan" />
+    <fragment
+        android:id="@+id/zakatPerikananFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_perikanan.ZakatPerikananFragment"
+        android:label="ZakatPerikananFragment" >
+        <action
+            android:id="@+id/action_zakatPerikananFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zakatPeternakanFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_peternakan.ZakatPeternakanFragment"
+        android:label="ZakatPeternakanFragment" >
+        <action
+            android:id="@+id/action_zakatPeternakanFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

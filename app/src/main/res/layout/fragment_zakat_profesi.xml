@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light_mode"
+    style="@style/ScreenBackground"
     tools:context=".MainActivity">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_marginTop="18dp"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="Hitung Zakat"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="Profesi"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatProfesiKalkulator" />
@@ -51,8 +51,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:hint="Penghasilan (Rp)"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
+        app:boxStrokeColor="?attr/color"
+        app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatProfesiKalkulator">
 
@@ -72,9 +72,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:hint="Pengeluaran (Rp)"
-        app:boxStrokeColor="@color/black"
-        app:endIconTint="@color/black"
-        app:hintTextColor="@color/black"
+        app:boxStrokeColor="?attr/color"
+        app:endIconTint="?attr/color"
+        app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPenghasilan">
 
@@ -94,7 +94,7 @@
         android:text="Hitung"
         android:textSize="12dp"
         android:layout_marginTop="40dp"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
@@ -117,7 +117,7 @@
         android:layout_height="65dp"
         app:tabMode="scrollable"
         android:background="@drawable/gradient_tablayout_light_mode"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="?attr/color"
         app:tabIndicatorColor="@color/purple_500"
         app:tabSelectedTextColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitlePerhitunganZakatKalkulator"
+        android:id="@+id/textViewTitlePerternakanZakatKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -30,73 +30,73 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitleZakatEmasKalkulator"
+        android:id="@+id/textViewTitleZakatPeternakanKalkulator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmserifdisplayregular"
-        android:text="Emas"
+        android:text="Pertanian"
         android:textColor="?attr/color"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerternakanZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutBeratEmas"
+        android:id="@+id/textInputLayoutJumlahTernak"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Berat emas per gram"
+        android:hint="Banyak Hewan (ekor)"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatEmasKalkulator">
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPeternakanKalkulator">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputBeratEmas"
+            android:id="@+id/textInputJumlahTernak"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutHargaEmas"
+        android:id="@+id/textInputLayoutBanyakHewan"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Harga emas per gram"
+        android:hint="Harga Hewan perekor"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBeratEmas">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutJumlahTernak">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputHargaEmas"
+            android:id="@+id/textInputBanyakHewan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonHitungZakatEmas"
+        android:id="@+id/buttonHitungZakatPeternakan"
         android:layout_width="160dp"
         android:layout_height="35dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
-        android:textSize="12dp"
-        android:layout_marginTop="40dp"
         android:textColor="?attr/color"
-        android:layout_marginRight="20dp"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaEmas" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBanyakHewan" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToHome"
@@ -111,12 +111,12 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayoutZakagEmas"
+        android:id="@+id/tablayoutZakatPeternakan"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         app:tabMode="scrollable"
         android:background="@drawable/gradient_tablayout_light_mode"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="?attr/color"
         app:tabIndicatorColor="@color/purple_500"
         app:tabSelectedTextColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,12 +124,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpagerZakatEmas"
+        android:id="@+id/viewpagerZakatPeternakan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tablayoutZakagEmas"
+        android:layout_below="@+id/tablayoutZakatPeternakan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakagEmas" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatPeternakan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
