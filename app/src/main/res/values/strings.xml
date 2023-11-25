@@ -48,7 +48,6 @@
     <string name="zakat_pertanian">Zakat Pertanian</string>
     <string name="zakat_peternakan">Zakat Peternakan</string>
     <string name="zakat_perikanan">Zakat Perikanan</string>
-    <string name="item_label">Pilihan Hasil Panen</string>
-    <string name="item_label2">Kambing/Domba</string>
+    <string name="item_label">Hitung Zakat Ternak</string>
 
 </resources>

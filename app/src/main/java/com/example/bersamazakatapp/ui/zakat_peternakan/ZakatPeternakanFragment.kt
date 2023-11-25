@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
@@ -35,6 +36,16 @@ class ZakatPeternakanFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val items = listOf("Unta", "Sapi/Kerbau/Kuda", "Kambing/Domba")
+        val autoComplete : AutoCompleteTextView = view.findViewById(R.id.autoCompletePeternakan)
+        val adapter = ArrayAdapter(this.requireContext(),R.layout.list_item_hasil_panen, items)
+        autoComplete.setAdapter(adapter)
+        autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
+                adapterView, view, i, l ->
+            val itemSelected = adapterView.getItemAtPosition(i)
+
+        }
 
         _zakatPeternakanBinding = FragmentZakatPeternakanBinding.bind(view)
 
