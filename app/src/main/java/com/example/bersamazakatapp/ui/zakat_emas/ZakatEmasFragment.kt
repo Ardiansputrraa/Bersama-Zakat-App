@@ -121,14 +121,14 @@ class ZakatEmasFragment : Fragment() {
         zakatEmasBinding.tablayoutZakagEmas.setupWithViewPager(zakatEmasBinding.viewpagerZakatEmas)
 
         // untuk menerima data dari ViewPagerAdapter
-//        if (arguments != null) {
-//            val positionZakat = arguments?.getString("PositionZakat")
-//            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
-//        }
-//        if (savedInstanceState != null) {
-//            val positionZakat = savedInstanceState.getString("PositionZakat")
-//            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
-//        }
+        if (arguments != null) {
+            val positionZakat = arguments?.getString("PositionZakat")
+            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
+        }
+        if (savedInstanceState != null) {
+            val positionZakat = savedInstanceState.getString("PositionZakat")
+            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
+        }
     }
     fun kalkulatorZakatEmasDenganUang(hargaEmas: Double, beratEmas: Double): Double {
         val zakatEmas = 0.025

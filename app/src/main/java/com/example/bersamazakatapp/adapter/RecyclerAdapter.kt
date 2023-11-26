@@ -29,18 +29,18 @@ class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
         val zakat = recyclerZakatList[position]
         holder.binding.imageViewHomePage.setImageResource(zakat.zakatImage)
         holder.binding.cardViewHomePage.setOnClickListener {
-//            val bundle = Bundle()
-//            when(position) {
-//                1 -> bundle.putString("PositionZakat", "1")
-//                2 -> bundle.putString("PositionZakat", "2")
-//                3 -> bundle.putString("PositionZakat", "3")
-//                4 -> bundle.putString("PositionZakat", "4")
-//                5 -> bundle.putString("PositionZakat", "5")
-//                6 -> bundle.putString("PositionZakat", "6")
-//            }
+            val bundle = Bundle()
+            when(position) {
+                0 -> bundle.putString("PositionZakat", "0")
+                1 -> bundle.putString("PositionZakat", "1")
+                2 -> bundle.putString("PositionZakat", "2")
+                3 -> bundle.putString("PositionZakat", "3")
+                4 -> bundle.putString("PositionZakat", "4")
+                5 -> bundle.putString("PositionZakat", "5")
+            }
 
             when(position) {
-                0 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment)
+                0 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment,bundle)
                 1 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatProfesiFragment)
 
                 2 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatFitrahFragment)

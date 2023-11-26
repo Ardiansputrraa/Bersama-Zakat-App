@@ -6,19 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.bersamazakatapp.R
+import com.example.bersamazakatapp.databinding.FragmentPengertianBinding
+import com.example.bersamazakatapp.databinding.FragmentZakatEmasBinding
 
 class PengertianFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
+    private var _pengertianBinding : FragmentPengertianBinding? = null
+    private val pengertianBinding get() = _pengertianBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pengertian, container, false)
+        _pengertianBinding = FragmentPengertianBinding.inflate(inflater,container,false)
+        val view = pengertianBinding.root
+        return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _pengertianBinding = FragmentPengertianBinding.bind(view)
+
+    }
 }
