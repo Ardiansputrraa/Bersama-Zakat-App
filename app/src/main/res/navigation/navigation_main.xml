@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/zakatProfesiFragment"
-        android:name="com.example.bersamazakatapp.ui.zakat_penghasilan.ZakatProfesiFragment"
+        android:name="com.example.bersamazakatapp.ui.zakat_profesi.ZakatProfesiFragment"
         android:label="ZakatProfesiFragment" >
 
         <action
@@ -80,8 +80,8 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.bersamazakatapp.MainActivity"
-        android:label="fragment_zakat_perikanan"
-        tools:layout="@layout/fragment_zakat_perikanan" />
+        android:label="ActivityMain"
+        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/zakatPerikananFragment"
         android:name="com.example.bersamazakatapp.ui.zakat_perikanan.ZakatPerikananFragment"
@@ -98,4 +98,14 @@
             android:id="@+id/action_zakatPeternakanFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.bersamazakatapp.ui.about_page.AboutFragment"
+        android:label="aboutFragment"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/panduanAplikasiFragment"
+        android:name="com.example.bersamazakatapp.ui.panduan_aplikasi_page.PanduanAplikasiFragment"
+        android:label="panduanAplikasiFragment"
+        tools:layout="@layout/fragment_panduan_aplikasi" />
 </navigation>

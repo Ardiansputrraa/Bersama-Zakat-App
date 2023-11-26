@@ -88,6 +88,7 @@ class ZakatFitrahFragment : Fragment() {
                 zakatFitrahBinding.textInputHargaBeras.requestFocus();
                 return@setOnClickListener
             } else {
+                dialog.show()
                 if (tipePembayaranRadioButton != null) {
                     textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
@@ -107,7 +108,6 @@ class ZakatFitrahFragment : Fragment() {
                     textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
                 }
             }
-            dialog.show()
             imageButtonCloseBottomSheetDialog?.setOnClickListener {
                 dialog.dismiss()
             }

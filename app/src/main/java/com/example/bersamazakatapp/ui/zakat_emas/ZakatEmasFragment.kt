@@ -28,6 +28,13 @@ class ZakatEmasFragment : Fragment() {
     private val zakatEmasBinding get() = _zakatEmasBinding!!
     private lateinit var adapterViewPager : ViewPagerAdapter
     private var totalZakatEmasDenganEmas by Delegates.notNull<Int>()
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {bundle ->
+//            val positionZakat = bundle.getParcelable("PostionZakat")!!
+//        }
+//    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -77,6 +84,7 @@ class ZakatEmasFragment : Fragment() {
                 zakatEmasBinding.textInputHargaEmas.requestFocus();
                 return@setOnClickListener
             } else {
+                dialog.show()
                 if (beratEmas.toInt() >= 85) {
                     textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
@@ -96,7 +104,6 @@ class ZakatEmasFragment : Fragment() {
                     textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
                 }
             }
-            dialog.show()
             imageButtonCloseBottomSheetDialog?.setOnClickListener {
                 dialog.dismiss()
             }
@@ -112,6 +119,16 @@ class ZakatEmasFragment : Fragment() {
 
         zakatEmasBinding.viewpagerZakatEmas.adapter = adapterViewPager
         zakatEmasBinding.tablayoutZakagEmas.setupWithViewPager(zakatEmasBinding.viewpagerZakatEmas)
+
+        // untuk menerima data dari ViewPagerAdapter
+//        if (arguments != null) {
+//            val positionZakat = arguments?.getString("PositionZakat")
+//            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
+//        }
+//        if (savedInstanceState != null) {
+//            val positionZakat = savedInstanceState.getString("PositionZakat")
+//            zakatEmasBinding.textViewTitleZakatEmasKalkulator.text = positionZakat
+//        }
     }
     fun kalkulatorZakatEmasDenganUang(hargaEmas: Double, beratEmas: Double): Double {
         val zakatEmas = 0.025
@@ -122,7 +139,6 @@ class ZakatEmasFragment : Fragment() {
         val zakatEmas = 0.025
         return beratEmas * zakatEmas
     }
-
 
     fun Double.formatRupiah(): String {
         val localeID = Locale("in", "ID")

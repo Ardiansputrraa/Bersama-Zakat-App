@@ -1,4 +1,4 @@
-package com.example.bersamazakatapp.ui.zakat_penghasilan
+package com.example.bersamazakatapp.ui.zakat_profesi
 
 import android.icu.text.DecimalFormat
 import android.os.Bundle

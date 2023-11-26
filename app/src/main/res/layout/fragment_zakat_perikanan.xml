@@ -43,28 +43,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitlePerhitunganZakatKalkulator" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutBeratHasilPanen"
+        android:id="@+id/textInputLayoutHasilPanen"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Berat Hasil Panen"
+        android:hint="Hasil Panen (Rp)"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitleZakatPerikananKalkulator">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputBeratHasilPanen"
+            android:id="@+id/textInputHasilPanen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutHargaIkan"
+        android:id="@+id/textInputLayoutHargaEmas"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -75,54 +75,28 @@
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBeratHasilPanen">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHasilPanen">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputHargaIkan"
+            android:id="@+id/textInputHargaEmas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:id="@+id/pilih"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutHargaIkan"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaIkan">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liter"
-            app:layout_constraintEnd_toStartOf="@+id/radioButton2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Kilogram"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
-
-    </RadioGroup>
-
     <Button
         android:id="@+id/buttonHitungZakatPerikanan"
         android:layout_width="160dp"
         android:layout_height="35dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
         android:textColor="?attr/color"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pilih" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaEmas" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToHome"
