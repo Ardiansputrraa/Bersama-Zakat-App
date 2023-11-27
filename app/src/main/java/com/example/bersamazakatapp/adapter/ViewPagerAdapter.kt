@@ -1,27 +1,33 @@
 package com.example.bersamazakatapp.adapter
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.bersamazakatapp.konten.PengertianFragment
+import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
 import com.example.bersamazakatapp.konten.SyaratFragment
+import com.example.bersamazakatapp.konten.TataCaraFragment
 
-class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
-    private val fragmentList: MutableList<Fragment> = ArrayList()
-    private val titleList: MutableList<String> = ArrayList()
+class ViewPagerAdapter(manager: Fragment, bundle : Bundle) : FragmentStateAdapter(manager) {
 
-    override fun getItem(position: Int): Fragment {
-        return fragmentList[position]
+    private var bundle = bundle
+    init {
+        this.bundle = bundle
+    }
+    override fun getItemCount(): Int {
+        return 4
     }
 
-    override fun getCount(): Int {
-        return fragmentList.size
-    }
-
-    fun addFragment(fragment: Fragment, title: String) {
-        fragmentList.add(fragment)
-        titleList.add(title)
-    }
-
-    override fun getPageTitle(position: Int): CharSequence? {
-        return titleList[position]
+    override fun createFragment(position: Int): Fragment {
+        var fragment: Fragment? = null
+        when(position) {
+                0 -> fragment = PengertianFragment()
+                1 -> fragment = SyaratFragment()
+                2 -> fragment = TataCaraFragment()
+                3 -> fragment = RefrensiPandanganFragment()
+        }
+        fragment?.arguments = this.bundle
+        return fragment as Fragment
     }
 }

@@ -12,25 +12,16 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewKontenSyarat"
             android:layout_width="350dp"
             android:layout_height="match_parent"
             android:text="Syarat"
-            android:textSize="26dp"
             android:textColor="?attr/color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:text="@string/lorem_ipsum"
             android:textSize="18dp"
-            android:textColor="?attr/color"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            tools:layout_editor_absoluteY="20dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
