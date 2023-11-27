@@ -13,59 +13,117 @@
         Artinya: Dan orang-orang yang menyimpan emas dan perak dan tidak menafkahkannya pada jalan Allah, maka beritahukanlah kepada mereka, (bahwa mereka akan mendapat) siksa yang pedih. (QS. At-Taubah: 34)\n\n
         Dalil zakat emas dari hadis adalah sebagai berikut:\n\n
         عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو رَضِيَ اللهُ عَنْهُمَا قَالَ قَالَ رَسُوْلُ اللهِ صَلَّى الله عليه وسلم لَيْسَ عَلَى الذَّهَبِ إِلَّا الْخُمُسُ وَلَيْسَ عَلَى الْفِضَّةِ إِلَّا الْعُشْرُ\n\n
-        Dari Abdullah bin Amr radhiyallahu anhuma, ia berkata: Rasulullah shallallahu alaihi wa sallam bersabda: Tidak ada kewajiban zakat atas emas kecuali seperlima dan tidak ada kewajiban zakat atas perak kecuali sepersepuluh. (HR. Abu Dawud no. 1564)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        Dari Abdullah bin Amr radhiyallahu anhuma, ia berkata: Rasulullah shallallahu alaihi wa sallam bersabda: Tidak ada kewajiban zakat atas emas kecuali seperlima dan tidak ada kewajiban zakat atas perak kecuali sepersepuluh. (HR. Abu Dawud no. 1564)
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
+    <string name="pengertian_zakat_fitah">
 
+    </string>
+    <string name="pengertian_zakat_profesi">
+
+    </string>
+    <string name="pengertian_zakat_pertanian">
+
+    </string>
+    <string name="pengertian_zakat_peternakan">
+
+    </string>
+    <string name="pengertian_zakat_perikanan">
+
+    </string>
 
     <string name="syarat">Syarat</string>
     <string name="syarat_zakat_emas">
         Syarat wajib zakat emas adalah sebagai berikut:\n\n
-        - Beragama Islam\n
-        - Merdeka (bukan budak)\n
-        - Memiliki emas yang mencapai nisab, yaitu sebesar 85 gram atau 20 dinar\n
-        - Memiliki emas yang mencapai haul, yaitu satu tahun penuh sejak pertama kali memiliki emas tersebut\n
-        - Memiliki emas yang berupa milik sendiri, bukan pinjaman atau milik orang lain\n\n
+        • Beragama Islam\n\n
+        • Merdeka (bukan budak)\n\n
+        • Memiliki emas yang mencapai nisab, yaitu sebesar 85 gram atau 20 dinar\n\n
+        • Memiliki emas yang mencapai haul, yaitu satu tahun penuh sejak pertama kali memiliki emas tersebut\n\n
+        • Memiliki emas yang berupa milik sendiri, bukan pinjaman atau milik orang lain\n\n
         Syarat sah zakat emas adalah sebagai berikut:\n\n
-        - Dikeluarkan dengan niat karena Allah\n
-        - Dikeluarkan pada waktu yang ditentukan, yaitu setiap tahunnya setelah mencapai haul\n
-        - Dikeluarkan dalam bentuk emas atau uang yang setara dengan nilai emas tersebut\n
-        - Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n
-        \t\t- Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n
-        \t\t- Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n
-        \t\t- Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n
-        \t\t- Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n
-        \t\t- Riqab: budak yang ingin memerdekakan diri\n
-        \t\t- Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n
-        \t\t- Fisabilillah: orang yang berjuang di jalan Allah\n
-        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        • Dikeluarkan dengan niat karena Allah\n\n
+        • Dikeluarkan pada waktu yang ditentukan, yaitu setiap tahunnya setelah mencapai haul\n\n
+        • Dikeluarkan dalam bentuk emas atau uang yang setara dengan nilai emas tersebut\n\n
+        • Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n\n
+        \t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
+        \t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
+        \t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
+        \t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
+        \t\t• Riqab: budak yang ingin memerdekakan diri\n\n
+        \t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
+        \t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="syarat_zakat_fitrah">
+
+    </string>
+    <string name="syarat_zakat_profesi">
+
+    </string>
+    <string name="syarat_zakat_pertanian">
+
+    </string>
+    <string name="syarat_zakat_peternakan">
+
+    </string>
+    <string name="syarat_zakat_perikanan">
+
     </string>
 
-
     <string name="tata_cara">Tata Cara</string>
+    <string name="tata_cara_zakat_emas">
+        Tata cara zakat emas adalah sebagai berikut:\n\n
+        • Menghitung jumlah zakat emas yang harus dikeluarkan, yaitu sebesar 2,5% dari jumlah emas yang dimiliki. Jika ingin membayar zakat emas dengan uang, maka harus menghitung nilai emas tersebut dengan harga pasar saat akan membayar zakat.\n\n
+        • Membayar zakat emas dengan niat karena Allah, yaitu dengan mengucapkan:\n\n
+
+        نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْمَالِ مِنَ الذَّهَبِ فَرْضًا لِلَّهِ تَعَالَى\n\n
+        Nawaitu an ukhrija zakatal mali minal dzahabi fardhan lillahi taala\n\n
+        Artinya: Saya berniat mengeluarkan zakat harta dari emas sebagai kewajiban karena Allah Ta’ala\n\n
+        • Menyerahkan zakat emas kepada orang-orang yang berhak menerima zakat, atau kepada lembaga amil zakat yang terpercaya dan profesional, yang akan mendistribusikan zakat emas kepada yang berhak.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="tata_cara_zakat_fitrah">
+
+    </string>
+    <string name="tata_cara_zakat_profesi">
+
+    </string>
+    <string name="tata_cara_zakat_pertanian">
+
+    </string>
+    <string name="tata_cara_zakat_peternakan">
+
+    </string>
+    <string name="tata_cara_zakat_perikanan">
+
+    </string>
+
     <string name="refrensi_pandangan">Refrensi Pandangan</string>
-    
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa.
-        Dignissim cras tincidunt lobortis feugiat. Sit amet volutpat consequat mauris nunc congue nisi.
-        Diam donec adipiscing tristique risus nec feugiat in fermentum. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices.
-        Sed sed risus pretium quam vulputate dignissim suspendisse in. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Sed sed risus pretium quam vulputate dignissim suspendisse in.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
+    <string name="refrensi_pandangan_zakat_emas">
+        Mazhab Syafi\'i:\n\n
+        \t\t\t\Menurut mazhab Syafi\'i, nisab zakat emas adalah 20 dinar, setara dengan 85 gram emas1. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian1. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah1. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan1. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati1.\n\n\n
+        Mazhab Hambali:\n\n
+        \t\t\t\Menurut mazhab Hambali, nisab zakat emas adalah 20 mitsqal, setara dengan 77,5 gram emas2. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian2. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah2. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan2. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati2.\n\n\n
+        Mazhab Maliki:\n\n
+        \t\t\t\Menurut mazhab Maliki, nisab zakat emas adalah 20 mitsqal, setara dengan 77,5 gram emas3. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian3. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah3. Zakat emas tidak berlaku untuk perhiasan emas yang dipakai sehari-hari, kecuali dalam beberapa keadaan, seperti rusak, tidak ada niat memperbaiki, disimpan sebagai cadangan, atau ada niat menjualnya3. Jadi, perhiasan emas yang dipakai sehari-hari tidak wajib dizakati, kecuali dalam keadaan tertentu3.\n\n\n
+        Mazhab Hanafi: \n\n
+        \t\t\t\Menurut mazhab Hanafi, nisab zakat emas adalah 7,5 tola, setara dengan 87,48 gram emas. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="refrensi_pandangan_zakat_fitrah">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_profesi">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_petanian">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_peternakan">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_perikanan">
+
     </string>
 
     <string name="zakat_emas">Zakat Emas</string>
