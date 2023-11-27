@@ -25,7 +25,7 @@
         Khudz min amwalihim shadaqatan tuthahhiruhum wa tuzakkihim biha wa shalli \'alaihim, inna shalataka sakanun lahum, wallahu sami\’un \'alim\n\n
         Artinya: Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka dan mendoalah untuk mereka. Sesungguhnya doa kamu itu (menjadi) ketenteraman jiwa bagi mereka. Dan Allah Maha Mendengar lagi Maha Mengetahui. (QS. At-Taubah: 103)\n\n
         Dalil zakat fitrah dari hadis adalah sebagai berikut:\n\n
-        عَنْ ابْنِ عُمَرَ رَضِيَ اللهُ عَنْهُمَا أَنَّ رَسُوْلَ اللهِ صَلَّى الله عليه وسلم فَرَضَ زَكَاةَ الْفِطْرِ صَاعًا مِنْ تَمْرٍ أَوْ صَاعًا مِنْ شَعِيْرٍ عَلَى الْعَبْدِ وَالْحُرِّ وَالذَّكَرِ وَالْأُنْثَى وَالصَّغِيْرِ وَالْكَبِيْرِ مِنَ الْمُسْلِمِيْنَ وَأَمَرَ بِهَا أَنْ تُؤَدَّى قَبْلَ خُرُوْجِ النَّاسِ إِلَى الصَّلاَةِ/n/n
+        عَنْ ابْنِ عُمَرَ رَضِيَ اللهُ عَنْهُمَا أَنَّ رَسُوْلَ اللهِ صَلَّى الله عليه وسلم فَرَضَ زَكَاةَ الْفِطْرِ صَاعًا مِنْ تَمْرٍ أَوْ صَاعًا مِنْ شَعِيْرٍ عَلَى الْعَبْدِ وَالْحُرِّ وَالذَّكَرِ وَالْأُنْثَى وَالصَّغِيْرِ وَالْكَبِيْرِ مِنَ الْمُسْلِمِيْنَ وَأَمَرَ بِهَا أَنْ تُؤَدَّى قَبْلَ خُرُوْجِ النَّاسِ إِلَى الصَّلاَةِ\n\n
         Dari Ibnu Umar radhiyallahu ‘anhuma, bahwa Rasulullah shallallahu \‘alaihi wa sallam mewajibkan zakat fitrah, satu sha’ kurma atau satu sha\’ gandum, atas budak dan orang merdeka, laki-laki dan perempuan, anak kecil dan orang dewasa dari kalangan muslimin. Dan beliau memerintahkan agar zakat itu dikeluarkan sebelum orang-orang keluar untuk shalat (Idul Fitri). (HR. Al-Bukhari no. 1503 dan Muslim no. 984)
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
@@ -55,17 +55,35 @@
         • Dikeluarkan pada waktu yang ditentukan, yaitu setiap tahunnya setelah mencapai haul\n\n
         • Dikeluarkan dalam bentuk emas atau uang yang setara dengan nilai emas tersebut\n\n
         • Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n\n
-        \t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
-        \t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
-        \t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
-        \t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
-        \t\t• Riqab: budak yang ingin memerdekakan diri\n\n
-        \t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
-        \t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
+        \t\t\t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
+        \t\t\t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
+        \t\t\t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
+        \t\t\t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
+        \t\t\t\t• Riqab: budak yang ingin memerdekakan diri\n\n
+        \t\t\t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
+        \t\t\t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="syarat_zakat_fitrah">
-
+        Syarat wajib zakat fitrah adalah sebagai berikut:\n\n
+        • Beragama Islam\n\n
+        • Merdeka (bukan budak)\n\n
+        • Memiliki kelebihan rezeki untuk kebutuhan pokok diri sendiri dan keluarganya pada malam dan hari raya Idul Fitri\n\n
+        • Hidup pada saat bulan Ramadhan\n\n
+        Syarat sah zakat fitrah adalah sebagai berikut:\n\n
+        • Dikeluarkan dengan niat karena Allah\n\n
+        • Dikeluarkan pada waktu yang ditentukan, yaitu antara terbenamnya matahari pada hari terakhir Ramadhan hingga sebelum shalat Idul Fitri\n\n
+        • Dikeluarkan dalam bentuk makanan pokok yang umum dikonsumsi di daerah masing-masing, seperti beras, gandum, kurma, dll.\n\n
+        • Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n\n
+        \t\t\t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
+        \t\t\t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
+        \t\t\t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
+        \t\t\t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
+        \t\t\t\t• Riqab: budak yang ingin memerdekakan diri\n\n
+        \t\t\t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
+        \t\t\t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
+        \t\t\t\t• Ibnu sabil: orang yang sedang dalam perjalanan dan kehabisan bekal\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="syarat_zakat_profesi">
 
@@ -93,7 +111,14 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="tata_cara_zakat_fitrah">
-
+        Tata cara zakat fitrah adalah sebagai berikut:\n\n
+        • Menghitung jumlah zakat fitrah yang harus dikeluarkan, yaitu sebesar 2,5 kg atau 3,5 liter makanan pokok per orang. Jika ada tanggungan keluarga, seperti istri, anak, orang tua, atau pembantu, maka harus dikeluarkan zakat fitrah untuk mereka juga, kecuali jika mereka sudah mengeluarkan zakat fitrah sendiri.\n\n
+        • zakat fitrah dengan niat karena Allah, yaitu dengan mengucapkan:\n\n
+        نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ نَفْسِيْ وَعَنْ مَنْ تَحْتَ مَسْؤُوْلِيَّتِيْ فَرْضًا لِلَّهِ تَعَالَى\n\n
+        Nawaitu an ukhrija zakatal fitri \'an nafsi wa \'an man tahta mas’uliyyati fardhan lillahi ta\’ala\n\n
+        Artinya: Saya berniat mengeluarkan zakat fitrah untuk diri saya sendiri dan orang-orang yang menjadi tanggungan saya, sebagai kewajiban karena Allah Ta\’ala\n\n
+        • Menyerahkan zakat fitrah kepada orang-orang yang berhak menerima zakat, atau kepada lembaga amil zakat yang terpercaya dan profesional, yang akan mendistribusikan zakat fitrah kepada yang berhak.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="tata_cara_zakat_profesi">
 
@@ -121,7 +146,10 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="refrensi_pandangan_zakat_fitrah">
-
+        \t\t\t\tBesaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, besaran zakat fitrah adalah satu sha\’ atau sekitar 2,7 kg dari makanan pokok yang dimaksud. Menurut mazhab Hanafi, besaran zakat fitrah adalah satu sha\’ atau sekitar 3,8 kg dari makanan pokok yang dimaksud12.\n\n
+        \t\t\t\tWaktu pembayaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, waktu pembayaran zakat fitrah adalah sejak awal Ramadhan hingga sebelum shalat Idul Fitri. Menurut mazhab Hanafi, waktu pembayaran zakat fitrah adalah sejak terbenamnya matahari pada malam Idul Fitri hingga sebelum shalat Idul Fitri12.\n\n
+        \t\t\t\tCara pembayaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, cara pembayaran zakat fitrah adalah dengan menyerahkan makanan pokok secara langsung kepada orang-orang yang berhak menerimanya, dan tidak boleh dengan uang atau harga makanan pokok tersebut. Menurut mazhab Hanafi, cara pembayaran zakat fitrah adalah dengan menyerahkan makanan pokok atau uang atau harga makanan pokok tersebut kepada orang-orang yang berhak menerimanya\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="refrensi_pandangan_zakat_profesi">
 

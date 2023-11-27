@@ -36,7 +36,7 @@ class TataCaraFragment : Fragment() {
 
             }
             2 -> {
-
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_fitrah)
             }
             3 -> {
 
