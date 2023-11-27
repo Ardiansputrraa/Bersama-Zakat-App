@@ -30,7 +30,7 @@ class RefrensiPandanganFragment : Fragment() {
         val positionZakat = arguments?.getString("PositionZakat")
         when(positionZakat?.toInt()) {
             0 -> {
-                refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.pengertian_zakat_emas)
+                refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.refrensi_pandangan_zakat_emas)
             }
             1 -> {
 

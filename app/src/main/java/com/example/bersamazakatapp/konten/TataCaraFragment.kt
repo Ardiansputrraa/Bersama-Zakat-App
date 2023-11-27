@@ -30,7 +30,7 @@ class TataCaraFragment : Fragment() {
         val positionZakat = arguments?.getString("PositionZakat")
         when(positionZakat?.toInt()) {
             0 -> {
-                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.syarat_zakat_emas)
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_emas)
             }
             1 -> {
 
