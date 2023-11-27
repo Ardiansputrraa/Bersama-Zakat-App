@@ -12,25 +12,15 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewKontenTataCara"
             android:layout_width="350dp"
             android:layout_height="match_parent"
             android:text="Tata Cara"
-            android:textSize="26dp"
+            android:textSize="18dp"
+            tools:layout_editor_absoluteY="20dp"
             android:textColor="?attr/color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:text="@string/lorem_ipsum"
-            android:textSize="18dp"
-            android:textColor="?attr/color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

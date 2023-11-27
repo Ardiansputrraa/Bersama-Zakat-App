@@ -6,19 +6,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.bersamazakatapp.R
+import com.example.bersamazakatapp.databinding.FragmentSyaratBinding
+import com.example.bersamazakatapp.databinding.FragmentTataCaraBinding
 
 class TataCaraFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private var _tataCaraBinding : FragmentTataCaraBinding? = null
+    private val tataCaraBinding get() = _tataCaraBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tata_cara, container, false)
+        _tataCaraBinding = FragmentTataCaraBinding.inflate(inflater,container,false)
+        val view = tataCaraBinding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _tataCaraBinding = FragmentTataCaraBinding.bind(view)
+
+        val positionZakat = arguments?.getString("PositionZakat")
+        when(positionZakat?.toInt()) {
+            0 -> {
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.syarat_zakat_emas)
+            }
+            1 -> {
+
+            }
+            2 -> {
+
+            }
+            3 -> {
+
+            }
+            4 -> {
+
+            }
+            5 -> {
+
+            }
+            6 -> {
+
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
@@ -17,6 +18,7 @@ import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
 import com.example.bersamazakatapp.konten.SyaratFragment
 import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.tabs.TabLayoutMediator
 import java.util.*
 
 class ZakatProfesiFragment : Fragment() {
@@ -98,15 +100,12 @@ class ZakatProfesiFragment : Fragment() {
         zakatProfesiBinding.imageButtonBackToHome.setOnClickListener{
             it.findNavController().navigate(R.id.action_zakatProfesiFragment_to_homeFragment)
         }
-        adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
-        adapterViewPager.addFragment(SyaratFragment(), "Syarat")
-        adapterViewPager.addFragment(TataCaraFragment(), "Tata Cara")
-        adapterViewPager.addFragment(RefrensiPandanganFragment(), "Refrensi Pandangan")
-
-
+        val args = arguments?.getString("PositionZakat")
+        val adapterViewPager = ViewPagerAdapter(this, Bundle().apply { putString("PositionZakat", args) })
         zakatProfesiBinding.viewpagerZakatProfesi.adapter = adapterViewPager
-        zakatProfesiBinding.tablayoutZakatProfesi.setupWithViewPager(zakatProfesiBinding.viewpagerZakatProfesi)
+        TabLayoutMediator(zakatProfesiBinding.tablayoutZakatProfesi,zakatProfesiBinding.viewpagerZakatProfesi){tab, position->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
     }
     fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double): Double {
         val zakatProfesi = 0.025
@@ -119,5 +118,14 @@ class ZakatProfesiFragment : Fragment() {
         symbol.currencySymbol = "Rp "
         decimalFormat.decimalFormatSymbols = symbol
         return decimalFormat.format(this)
+    }
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.pengertian,
+            R.string.syarat,
+            R.string.tata_cara,
+            R.string.refrensi_pandangan
+        )
     }
 }

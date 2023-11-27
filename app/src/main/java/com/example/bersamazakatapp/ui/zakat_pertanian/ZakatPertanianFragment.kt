@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
@@ -21,6 +22,7 @@ import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
 import com.example.bersamazakatapp.konten.SyaratFragment
 import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.tabs.TabLayoutMediator
 
 class ZakatPertanianFragment : Fragment() {
 
@@ -58,14 +60,20 @@ class ZakatPertanianFragment : Fragment() {
         zakatPertanianBinding.imageButtonBackToHome.setOnClickListener{
             it.findNavController().navigate(R.id.action_zakatPertanianFragment_to_homeFragment)
         }
-        adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
-        adapterViewPager.addFragment(SyaratFragment(), "Syarat")
-        adapterViewPager.addFragment(TataCaraFragment(), "Tata Cara")
-        adapterViewPager.addFragment(RefrensiPandanganFragment(), "Refrensi Pandangan")
-
+        val args = arguments?.getString("PositionZakat")
+        val adapterViewPager = ViewPagerAdapter(this, Bundle().apply { putString("PositionZakat", args) })
         zakatPertanianBinding.viewpagerZakatPertanian.adapter = adapterViewPager
-        zakatPertanianBinding.tablayoutZakatPertanian.setupWithViewPager(zakatPertanianBinding.viewpagerZakatPertanian)
-
+        TabLayoutMediator(zakatPertanianBinding.tablayoutZakatPertanian,zakatPertanianBinding.viewpagerZakatPertanian){tab, position->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
+    }
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.pengertian,
+            R.string.syarat,
+            R.string.tata_cara,
+            R.string.refrensi_pandangan
+        )
     }
 }

@@ -2,6 +2,48 @@
     <string name="app_name">Bersama Zakat App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pengertian">Pengertian</string>
+    <string name="pengertian_zakat_emas">
+        \t\t\t\tMenurut bahasa, zakat berarti bersih, suci, tumbuh, dan berkembang. Sedangkan emas adalah logam mulia yang berwarna kuning dan memiliki nilai yang tinggi. Jadi, zakat emas berarti membersihkan harta emas dengan mengeluarkan sebagian darinya sebagai kewajiban karena Allah.\n\n
+        \t\t\t\tMenurut istilah syariat, zakat emas adalah sejumlah harta emas tertentu yang wajib dikeluarkan oleh setiap muslim yang mampu pada setiap tahunnya, untuk diserahkan kepada orang-orang yang berhak menerimanya.\n\n
+        \t\t\t\tZakat emas adalah zakat yang dikenakan atas emas yang dimiliki oleh seorang muslim yang telah mencapai nisab dan haul. Zakat emas merupakan salah satu bentuk ibadah yang bertujuan untuk membersihkan harta dari kotoran dan hak-hak orang lain, serta untuk menolong kaum fakir miskin dan golongan yang berhak menerima zakat.\n\n
+        Dalil zakat emas dari Al-Quran adalah sebagai berikut:\n\n
+        وَالَّذِينَ يَكْنِزُونَ الذَّهَبَ وَالْفِضَّةَ وَلَا يُنْفِقُونَهَا فِي سَبِيلِ اللَّهِ فَبَشِّرْهُمْ بِعَذَابٍ أَلِيمٍ\n\n
+        Walladzina yaknizunal dzahaba wal fidda wa la yunfiqunaha fi sabilillahi fabasyirhum bi adzabin alim\n\n
+        Artinya: Dan orang-orang yang menyimpan emas dan perak dan tidak menafkahkannya pada jalan Allah, maka beritahukanlah kepada mereka, (bahwa mereka akan mendapat) siksa yang pedih. (QS. At-Taubah: 34)\n\n
+        Dalil zakat emas dari hadis adalah sebagai berikut:\n\n
+        عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو رَضِيَ اللهُ عَنْهُمَا قَالَ قَالَ رَسُوْلُ اللهِ صَلَّى الله عليه وسلم لَيْسَ عَلَى الذَّهَبِ إِلَّا الْخُمُسُ وَلَيْسَ عَلَى الْفِضَّةِ إِلَّا الْعُشْرُ\n\n
+        Dari Abdullah bin Amr radhiyallahu anhuma, ia berkata: Rasulullah shallallahu alaihi wa sallam bersabda: Tidak ada kewajiban zakat atas emas kecuali seperlima dan tidak ada kewajiban zakat atas perak kecuali sepersepuluh. (HR. Abu Dawud no. 1564)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+
+
+    <string name="syarat">Syarat</string>
+    <string name="syarat_zakat_emas">
+        Syarat wajib zakat emas adalah sebagai berikut:\n\n
+        - Beragama Islam\n
+        - Merdeka (bukan budak)\n
+        - Memiliki emas yang mencapai nisab, yaitu sebesar 85 gram atau 20 dinar\n
+        - Memiliki emas yang mencapai haul, yaitu satu tahun penuh sejak pertama kali memiliki emas tersebut\n
+        - Memiliki emas yang berupa milik sendiri, bukan pinjaman atau milik orang lain\n\n
+        Syarat sah zakat emas adalah sebagai berikut:\n\n
+        - Dikeluarkan dengan niat karena Allah\n
+        - Dikeluarkan pada waktu yang ditentukan, yaitu setiap tahunnya setelah mencapai haul\n
+        - Dikeluarkan dalam bentuk emas atau uang yang setara dengan nilai emas tersebut\n
+        - Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n
+        \t\t- Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n
+        \t\t- Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n
+        \t\t- Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n
+        \t\t- Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n
+        \t\t- Riqab: budak yang ingin memerdekakan diri\n
+        \t\t- Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n
+        \t\t- Fisabilillah: orang yang berjuang di jalan Allah\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+
+
+    <string name="tata_cara">Tata Cara</string>
+    <string name="refrensi_pandangan">Refrensi Pandangan</string>
+    
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa.

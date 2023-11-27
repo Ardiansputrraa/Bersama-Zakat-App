@@ -29,25 +29,34 @@ class RecyclerAdapter(private val recyclerZakatList : List<RecyclerZakat>) :
         val zakat = recyclerZakatList[position]
         holder.binding.imageViewHomePage.setImageResource(zakat.zakatImage)
         holder.binding.cardViewHomePage.setOnClickListener {
-            val bundle = Bundle()
-            when(position) {
-                0 -> bundle.putString("PositionZakat", "0")
-                1 -> bundle.putString("PositionZakat", "1")
-                2 -> bundle.putString("PositionZakat", "2")
-                3 -> bundle.putString("PositionZakat", "3")
-                4 -> bundle.putString("PositionZakat", "4")
-                5 -> bundle.putString("PositionZakat", "5")
-            }
 
-            when(position) {
-                0 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment,bundle)
-                1 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatProfesiFragment)
-
-                2 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatFitrahFragment)
-                3 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPertanianFragment)
-
-                4 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPerikananFragment)
-                5 -> it.findNavController().navigate(R.id.action_homeFragment_to_zakatPeternakanFragment)
+            Bundle().apply {
+                when(position) {
+                    0 -> {
+                        putString("PositionZakat", "0")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatEmasFragment,this)
+                    }
+                    1 -> {
+                        putString("PositionZakat", "1")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatProfesiFragment, this)
+                    }
+                    2 -> {
+                        putString("PositionZakat", "2")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatFitrahFragment, this)
+                    }
+                    3 -> {
+                        putString("PositionZakat", "3")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatPertanianFragment, this)
+                    }
+                    4 -> {
+                        putString("PositionZakat", "4")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatPerikananFragment, this)
+                    }
+                    5 -> {
+                        putString("PositionZakat", "5")
+                        it.findNavController().navigate(R.id.action_homeFragment_to_zakatPeternakanFragment, this)
+                    }
+                }
             }
         }
     }

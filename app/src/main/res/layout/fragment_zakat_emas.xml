@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayoutZakagEmas"
+        android:id="@+id/tablayoutZakatEmas"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         app:tabMode="scrollable"
@@ -123,13 +123,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewBackgroundKalkulator" />
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpagerZakatEmas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tablayoutZakagEmas"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tablayoutZakatEmas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakagEmas" />
+        app:layout_constraintTop_toBottomOf="@+id/tablayoutZakatEmas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
