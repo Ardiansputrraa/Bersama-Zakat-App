@@ -34,9 +34,9 @@ class PengertianFragment : Fragment() {
             }
             1 -> {
 
-                }
+            }
             2 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_fitrah)
             }
             3 -> {
 
