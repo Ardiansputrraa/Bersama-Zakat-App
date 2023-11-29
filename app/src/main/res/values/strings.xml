@@ -33,6 +33,10 @@
 
     </string>
     <string name="pengertian_zakat_pertanian">
+        \t\t\t\Menurut bahasa, zakat berarti tumbuh, berkembang, subur, atau bertambah. Hal ini menunjukkan bahwa zakat dapat meningkatkan keberkahan dan kemuliaan harta yang dizakati, serta memberikan manfaat bagi yang memberi dan menerima zakat.\n\n
+        \t\t\t\Menurut istilah, zakat pertanian adalah zakat yang dikeluarkan setelah panen dari hasil pertanian jika telah mencapai nishab. Zakat pertanian merupakan zakat yang dikenakan atas hasil pertanian yang mengenyangkan atau mendatangkan penghasilan pada waktu panen. Zakat pertanian adalah bentuk rasa syukur atas nikmat Allah atas hasil yang tumbuh dan keluar dari bumi.\n\n
+        \t\t\t\Zakat Pertanian adalah zakat yang wajib dikeluarkan atas hasil pertanian tertentu yang telah memenuhi nisab (batas minimum) dalam mengeluarkan zakat. Berbeda dengan zakat fitrah, zakat pertanian melibatkan objek hasil pertanian seperti biji-bijian, sayur-mayur, buah-buahan, umbi-umbian, dan tanaman lain yang memiliki nilai ekonomis.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="pengertian_zakat_peternakan">
@@ -89,6 +93,11 @@
 
     </string>
     <string name="syarat_zakat_pertanian">
+        Berikut adalah beberapa syarat dan ketentuan yang harus dipenuhi untuk membayar zakat pertanian:\n\n
+        \t\t\t\t•Harta Milik Sendiri: Zakat pertanian hanya wajib bagi pemilik lahan pertanian, bukan pekerja yang menggarapnya. Pastikan bahwa hasil pertanian tersebut benar-benar milik Anda sendiri.\n\n
+        \t\t\t\t•Mencapai Nisab: Zakat pertanian dibayarkan setiap kali panen, tanpa harus menunggu haul (masa kepemilikan harta selama 1 tahun). Jumlah zakat harus mencapai nisab, yaitu batas minimal dari harta. Nisab hasil pertanian adalah 5 wasq atau setara dengan 750 kg (beberapa sumber menyebut 653 kg) untuk bahan makanan pokok seperti beras, jagung, gandum, dan kurma. Jika hasil pertanian berupa sayur, bunga, atau buah-buahan, nilai harus disesuaikan dengan harga kebutuhan pokok masyarakat setempat.\n\n
+        \t\t\t\t•Biaya Operasional: Sumber pengairan (irigasi) yang digunakan selama bertani juga memengaruhi jumlah zakat yang harus dikeluarkan. Untuk hasil pertanian yang diairi dengan air hujan, air sungai, atau mata air, zakat yang dibayarkan adalah 10%. Sedangkan untuk sawah yang irigasinya menggunakan cara penyiraman manual atau alat bantu berbiaya tambahan, zakat yang harus dibayar adalah 5%.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="syarat_zakat_peternakan">
@@ -124,6 +133,9 @@
 
     </string>
     <string name="tata_cara_zakat_pertanian">
+        Nisab: Zakat pertanian dibayarkan setiap kali panen dengan syarat jumlahnya sudah mencapai nisab. Nisab hasil pertanian adalah 5 wasq atau setara dengan 750 kg (sebagian menyebut 653 kg) untuk bahan makanan pokok seperti beras, jagung, gandum, kurma, dsb. Jika hasil pertaniannya berupa sayur, bunga, atau buah-buahan, pemilik harus mengubah nilainya sesuai dengan harga kebutuhan pokok masyarakat setempat.\n\n
+        Biaya Operasional: Sumber pengairan (irigasi) yang digunakan selama bertani juga menentukan jumlah zakat yang harus dikeluarkan. Untuk zakat dari hasil pertanian yang diairi dengan air hujan, air sungai, atau mata air, jumlah yang dikeluarkan adalah 10%. Untuk sawah yang irigasinya dilakukan dengan cara penyiraman manual atau menggunakan alat bantu berbiaya tambahan, jumlah zakat yang harus dibayar sebesar 5%.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="tata_cara_zakat_peternakan">
@@ -154,7 +166,25 @@
     <string name="refrensi_pandangan_zakat_profesi">
 
     </string>
-    <string name="refrensi_pandangan_zakat_petanian">
+    <string name="refrensi_pandangan_zakat_pertanian">
+        Mazhab Hanafi:\n\n
+        •Zakat pertanian wajib, tetapi tidak sampai fardhu (kewajiban yang paling tinggi).\n
+        •Syarat wajib menjalankan zakat pertanian adalah beragama Islam.\n
+        •Harta anak kecil dan orang gila tidak wajib membayar zakat pertanian, kecuali atas hasil pertanian dan zakat fitrah.\n
+        •Orang yang mempunyai tanggungan hutang, para ulama berbeda pendapat. Menurut pendapat yang kuat dalam mazhab Syafi’i, tanggungan hutang tidak dapat mencegah atau mengurangi kewajiban zakat pertanian.\n
+        •Syarat-syarat dalam mengeluarkan zakat pertanian: niat dan tamlik (harta harus diberikan kepada mustahiq dengan cara yang dapat memindah kepemilikan).\n\n\n
+        Mazhab Hambali:\n\n
+        •Zakat pertanian adalah hak yang wajib dikeluarkan dari harta tertentu untuk diberikan kepada kelompok tertentu pada waktu tertentu.\n\n\n
+        Mazhab Maliki:\n\n
+        •Mengeluarkan sebagian tertentu dari harta yang telah mencapai nishab kepada mustahiq, bila sempurna kepemilikannya dan haulnya, selain barang tambang dan sawah.\n\n\n
+        Mazhab Syafi’i\n
+        Orang yang wajib membayar zakat pertanian menurut mazhab Syafi’i:\n\n
+        •Muslim.\n
+        •Merdeka.\n
+        •Harta anak yang belum baligh atau orang gila, wajib dikeluarkan zakatnya yang ditunaikan oleh wali atau orang yang mengurusnya.\n
+        •Tanggungan hutang tidak dapat mencegah atau mengurangi kewajiban zakat pertanian.\n
+        •Syarat-syarat dalam mengeluarkan zakat pertanian: niat dan tamlik.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="refrensi_pandangan_zakat_peternakan">
