@@ -184,9 +184,13 @@
     <string name="perhitungan_zakat_fitrah_dengan_beras">Bila zakat fitrah dibayarkan dengan beras maka dibayarkan sebanyak:</string>
 
     <string name="zakat_pertanian">Zakat Pertanian</string>
+perhitungan_zakat_peternakan
+
     <string name="perhitungan_zakat_pertanian">Wajib membayar zakat hasil pertanian sebesar </string>
 
     <string name="zakat_peternakan">Zakat Peternakan</string>
+    <string name="perhitungan_zakat_peternakan_dengan_kambing">Wajib membayar zakat peternakan sebanyak:\n
+    </string>
 
     <string name="zakat_perikanan">Zakat Perikanan</string>
     <string name="perhitungan_zakat_perikanan">Bila zakat perikanan dibayarkan dengan emas maka dibayarkan sebesar:</string>
