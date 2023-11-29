@@ -2,6 +2,7 @@ package com.example.bersamazakatapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -35,13 +36,24 @@ class MainActivity : AppCompatActivity() {
         bottomNav.add(MeowBottomNavigation.Model(1, R.drawable.icon_home))
         bottomNav.add(MeowBottomNavigation.Model(2, R.drawable.icon_panduan_aplikasi))
         bottomNav.add(MeowBottomNavigation.Model(3, R.drawable.icon_about))
-        val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.homeFragment,
-            R.id.panduanAplikasiFragment,
-            R.id.aboutFragment,
-        ).build()
-        setupActionBarWithNavController(navController, appBarConfiguration)
+
         //bottomNav.setupWithNavController(navController)
+        bottomNav.setOnShowListener {
+            Log.i("TAG", "onCreate: ${it.id}")
+            when(it.id) {
+                1 -> R.id.homeFragment
+                2 -> R.id.panduanAplikasiFragment
+                3 -> R.id.aboutFragment
+            }
+        }
+        bottomNav.setOnClickMenuListener {
+            Log.i("TAG", "onCreate2: ${it.id}")
+            when(it.id) {
+                1 -> bottomNav.show(R.id.homeFragment)
+                2 -> bottomNav.show(R.id.panduanAplikasiFragment)
+                3 -> bottomNav.show(R.id.aboutFragment)
+            }
+        }
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment -> hideBottomNav(true)

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
@@ -18,6 +19,7 @@ import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
 import com.example.bersamazakatapp.konten.SyaratFragment
 import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.tabs.TabLayoutMediator
 import java.util.*
 
 
@@ -101,14 +103,12 @@ class ZakatPerikananFragment : Fragment() {
         zakatPerikananBinding.imageButtonBackToHome.setOnClickListener{
             it.findNavController().navigate(R.id.action_zakatPerikananFragment_to_homeFragment)
         }
-        adapterViewPager = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapterViewPager.addFragment(PengertianFragment(), "Pengertian")
-        adapterViewPager.addFragment(SyaratFragment(), "Syarat")
-        adapterViewPager.addFragment(TataCaraFragment(), "Tata Cara")
-        adapterViewPager.addFragment(RefrensiPandanganFragment(), "Refrensi Pandangan")
-
+        val args = arguments?.getString("PositionZakat")
+        val adapterViewPager = ViewPagerAdapter(this, Bundle().apply { putString("PositionZakat", args) })
         zakatPerikananBinding.viewpagerZakatPerikanan.adapter = adapterViewPager
-        zakatPerikananBinding.tablayoutZakatPerikanan.setupWithViewPager(zakatPerikananBinding.viewpagerZakatPerikanan)
+        TabLayoutMediator(zakatPerikananBinding.tablayoutZakatPerikanan,zakatPerikananBinding.viewpagerZakatPerikanan){tab, position->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
     }
     fun kalkulatorZakatPerikanan(hasilPanen : Double, hargaEmas : Double): Double {
         val nisab = hargaEmas * 85
@@ -126,5 +126,15 @@ class ZakatPerikananFragment : Fragment() {
         symbol.currencySymbol = "Rp "
         decimalFormat.decimalFormatSymbols = symbol
         return decimalFormat.format(this)
+    }
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.pengertian,
+            R.string.syarat,
+            R.string.tata_cara,
+            R.string.refrensi_pandangan
+        )
     }
 }

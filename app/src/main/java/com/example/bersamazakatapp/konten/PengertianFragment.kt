@@ -27,5 +27,29 @@ class PengertianFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _pengertianBinding = FragmentPengertianBinding.bind(view)
 
+        val positionZakat = arguments?.getString("PositionZakat")
+        when(positionZakat?.toInt()) {
+            0 -> {
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_emas)
+            }
+            1 -> {
+
+            }
+            2 -> {
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_fitrah)
+            }
+            3 -> {
+
+            }
+            4 -> {
+
+            }
+            5 -> {
+
+            }
+            6 -> {
+
+            }
+        }
     }
 }

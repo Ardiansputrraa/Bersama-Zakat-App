@@ -2,28 +2,166 @@
     <string name="app_name">Bersama Zakat App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa.
-        Dignissim cras tincidunt lobortis feugiat. Sit amet volutpat consequat mauris nunc congue nisi.
-        Diam donec adipiscing tristique risus nec feugiat in fermentum. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices.
-        Sed sed risus pretium quam vulputate dignissim suspendisse in. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum a arcu cursus vitae congue mauris.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Sit amet volutpat consequat mauris nunc congue nisi. Diam donec adipiscing tristique risus nec feugiat in fermentum.
-        Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Sed sed risus pretium quam vulputate dignissim suspendisse in.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
-        Ipsum a arcu cursus vitae congue mauris. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Dignissim cras tincidunt lobortis feugiat.
+    <string name="pengertian">Pengertian</string>
+    <string name="pengertian_zakat_emas">
+        \t\t\t\tMenurut bahasa, zakat berarti bersih, suci, tumbuh, dan berkembang. Sedangkan emas adalah logam mulia yang berwarna kuning dan memiliki nilai yang tinggi. Jadi, zakat emas berarti membersihkan harta emas dengan mengeluarkan sebagian darinya sebagai kewajiban karena Allah.\n\n
+        \t\t\t\tMenurut istilah syariat, zakat emas adalah sejumlah harta emas tertentu yang wajib dikeluarkan oleh setiap muslim yang mampu pada setiap tahunnya, untuk diserahkan kepada orang-orang yang berhak menerimanya.\n\n
+        \t\t\t\tZakat emas adalah zakat yang dikenakan atas emas yang dimiliki oleh seorang muslim yang telah mencapai nisab dan haul. Zakat emas merupakan salah satu bentuk ibadah yang bertujuan untuk membersihkan harta dari kotoran dan hak-hak orang lain, serta untuk menolong kaum fakir miskin dan golongan yang berhak menerima zakat.\n\n
+        Dalil zakat emas dari Al-Quran adalah sebagai berikut:\n\n
+        وَالَّذِينَ يَكْنِزُونَ الذَّهَبَ وَالْفِضَّةَ وَلَا يُنْفِقُونَهَا فِي سَبِيلِ اللَّهِ فَبَشِّرْهُمْ بِعَذَابٍ أَلِيمٍ\n\n
+        Walladzina yaknizunal dzahaba wal fidda wa la yunfiqunaha fi sabilillahi fabasyirhum bi adzabin alim\n\n
+        Artinya: Dan orang-orang yang menyimpan emas dan perak dan tidak menafkahkannya pada jalan Allah, maka beritahukanlah kepada mereka, (bahwa mereka akan mendapat) siksa yang pedih. (QS. At-Taubah: 34)\n\n
+        Dalil zakat emas dari hadis adalah sebagai berikut:\n\n
+        عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو رَضِيَ اللهُ عَنْهُمَا قَالَ قَالَ رَسُوْلُ اللهِ صَلَّى الله عليه وسلم لَيْسَ عَلَى الذَّهَبِ إِلَّا الْخُمُسُ وَلَيْسَ عَلَى الْفِضَّةِ إِلَّا الْعُشْرُ\n\n
+        Dari Abdullah bin Amr radhiyallahu anhuma, ia berkata: Rasulullah shallallahu alaihi wa sallam bersabda: Tidak ada kewajiban zakat atas emas kecuali seperlima dan tidak ada kewajiban zakat atas perak kecuali sepersepuluh. (HR. Abu Dawud no. 1564)
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="pengertian_zakat_fitrah">
+        \t\t\t\Menurut bahasa, zakat berarti bersih, suci, tumbuh, dan berkembang. Sedangkan fitrah berarti asal, dasar, atau kodrat. Jadi, zakat fitrah berarti membersihkan diri sesuai dengan kodrat manusia sebagai hamba Allah yang beriman dan bertaqwa.\n\n
+        \t\t\t\Menurut istilah syariat, zakat fitrah adalah sejumlah harta tertentu yang wajib dikeluarkan oleh setiap muslim yang mampu pada akhir bulan Ramadhan, sebelum shalat Idul Fitri, untuk diserahkan kepada orang-orang yang berhak menerimanya.\n\n
+        \t\t\t\Zakat fitrah adalah salah satu jenis zakat yang wajib dikeluarkan oleh setiap muslim yang mampu pada bulan Ramadhan, khususnya menjelang hari raya Idul Fitri. Zakat fitrah merupakan salah satu bentuk ibadah yang bertujuan untuk menyucikan diri dari segala dosa dan kesalahan yang dilakukan selama berpuasa, serta untuk membantu kaum fakir miskin dan golongan yang berhak menerima zakat.\n\n
+        Dalil zakat fitrah dari Al-Quran adalah sebagai berikut:\n\n
+        خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِمْ بِهَا وَصَلِّ عَلَيْهِمْ ۖ إِنَّ صَلَاتَكَ سَكَنٌ لَهُمْ ۗ وَاللَّهُ سَمِيعٌ عَلِيمٌ\n\n
+        Khudz min amwalihim shadaqatan tuthahhiruhum wa tuzakkihim biha wa shalli \'alaihim, inna shalataka sakanun lahum, wallahu sami\’un \'alim\n\n
+        Artinya: Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka dan mendoalah untuk mereka. Sesungguhnya doa kamu itu (menjadi) ketenteraman jiwa bagi mereka. Dan Allah Maha Mendengar lagi Maha Mengetahui. (QS. At-Taubah: 103)\n\n
+        Dalil zakat fitrah dari hadis adalah sebagai berikut:\n\n
+        عَنْ ابْنِ عُمَرَ رَضِيَ اللهُ عَنْهُمَا أَنَّ رَسُوْلَ اللهِ صَلَّى الله عليه وسلم فَرَضَ زَكَاةَ الْفِطْرِ صَاعًا مِنْ تَمْرٍ أَوْ صَاعًا مِنْ شَعِيْرٍ عَلَى الْعَبْدِ وَالْحُرِّ وَالذَّكَرِ وَالْأُنْثَى وَالصَّغِيْرِ وَالْكَبِيْرِ مِنَ الْمُسْلِمِيْنَ وَأَمَرَ بِهَا أَنْ تُؤَدَّى قَبْلَ خُرُوْجِ النَّاسِ إِلَى الصَّلاَةِ\n\n
+        Dari Ibnu Umar radhiyallahu ‘anhuma, bahwa Rasulullah shallallahu \‘alaihi wa sallam mewajibkan zakat fitrah, satu sha’ kurma atau satu sha\’ gandum, atas budak dan orang merdeka, laki-laki dan perempuan, anak kecil dan orang dewasa dari kalangan muslimin. Dan beliau memerintahkan agar zakat itu dikeluarkan sebelum orang-orang keluar untuk shalat (Idul Fitri). (HR. Al-Bukhari no. 1503 dan Muslim no. 984)
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="pengertian_zakat_profesi">
+
+    </string>
+    <string name="pengertian_zakat_pertanian">
+
+    </string>
+    <string name="pengertian_zakat_peternakan">
+
+    </string>
+    <string name="pengertian_zakat_perikanan">
+
+    </string>
+
+    <string name="syarat">Syarat</string>
+    <string name="syarat_zakat_emas">
+        Syarat wajib zakat emas adalah sebagai berikut:\n\n
+        • Beragama Islam\n\n
+        • Merdeka (bukan budak)\n\n
+        • Memiliki emas yang mencapai nisab, yaitu sebesar 85 gram atau 20 dinar\n\n
+        • Memiliki emas yang mencapai haul, yaitu satu tahun penuh sejak pertama kali memiliki emas tersebut\n\n
+        • Memiliki emas yang berupa milik sendiri, bukan pinjaman atau milik orang lain\n\n
+        Syarat sah zakat emas adalah sebagai berikut:\n\n
+        • Dikeluarkan dengan niat karena Allah\n\n
+        • Dikeluarkan pada waktu yang ditentukan, yaitu setiap tahunnya setelah mencapai haul\n\n
+        • Dikeluarkan dalam bentuk emas atau uang yang setara dengan nilai emas tersebut\n\n
+        • Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n\n
+        \t\t\t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
+        \t\t\t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
+        \t\t\t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
+        \t\t\t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
+        \t\t\t\t• Riqab: budak yang ingin memerdekakan diri\n\n
+        \t\t\t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
+        \t\t\t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="syarat_zakat_fitrah">
+        Syarat wajib zakat fitrah adalah sebagai berikut:\n\n
+        • Beragama Islam\n\n
+        • Merdeka (bukan budak)\n\n
+        • Memiliki kelebihan rezeki untuk kebutuhan pokok diri sendiri dan keluarganya pada malam dan hari raya Idul Fitri\n\n
+        • Hidup pada saat bulan Ramadhan\n\n
+        Syarat sah zakat fitrah adalah sebagai berikut:\n\n
+        • Dikeluarkan dengan niat karena Allah\n\n
+        • Dikeluarkan pada waktu yang ditentukan, yaitu antara terbenamnya matahari pada hari terakhir Ramadhan hingga sebelum shalat Idul Fitri\n\n
+        • Dikeluarkan dalam bentuk makanan pokok yang umum dikonsumsi di daerah masing-masing, seperti beras, gandum, kurma, dll.\n\n
+        • Diserahkan kepada orang-orang yang berhak menerima zakat, yaitu delapan asnaf yang disebutkan dalam Al-Quran, yaitu:\n\n
+        \t\t\t\t• Fakir: orang yang tidak memiliki harta sama sekali atau sangat sedikit\n\n
+        \t\t\t\t• Miskin: orang yang memiliki harta tetapi tidak mencukupi kebutuhan pokoknya\n\n
+        \t\t\t\t• Amil: orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat\n\n
+        \t\t\t\t• Muallaf: orang yang baru masuk Islam atau yang hatinya condong kepada Islam\n\n
+        \t\t\t\t• Riqab: budak yang ingin memerdekakan diri\n\n
+        \t\t\t\t• Gharim: orang yang berhutang untuk kepentingan umum atau membela agama\n\n
+        \t\t\t\t• Fisabilillah: orang yang berjuang di jalan Allah\n\n
+        \t\t\t\t• Ibnu sabil: orang yang sedang dalam perjalanan dan kehabisan bekal\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="syarat_zakat_profesi">
+
+    </string>
+    <string name="syarat_zakat_pertanian">
+
+    </string>
+    <string name="syarat_zakat_peternakan">
+
+    </string>
+    <string name="syarat_zakat_perikanan">
+
+    </string>
+
+    <string name="tata_cara">Tata Cara</string>
+    <string name="tata_cara_zakat_emas">
+        Tata cara zakat emas adalah sebagai berikut:\n\n
+        • Menghitung jumlah zakat emas yang harus dikeluarkan, yaitu sebesar 2,5% dari jumlah emas yang dimiliki. Jika ingin membayar zakat emas dengan uang, maka harus menghitung nilai emas tersebut dengan harga pasar saat akan membayar zakat.\n\n
+        • Membayar zakat emas dengan niat karena Allah, yaitu dengan mengucapkan:\n\n
+
+        نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْمَالِ مِنَ الذَّهَبِ فَرْضًا لِلَّهِ تَعَالَى\n\n
+        Nawaitu an ukhrija zakatal mali minal dzahabi fardhan lillahi taala\n\n
+        Artinya: Saya berniat mengeluarkan zakat harta dari emas sebagai kewajiban karena Allah Ta’ala\n\n
+        • Menyerahkan zakat emas kepada orang-orang yang berhak menerima zakat, atau kepada lembaga amil zakat yang terpercaya dan profesional, yang akan mendistribusikan zakat emas kepada yang berhak.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="tata_cara_zakat_fitrah">
+        Tata cara zakat fitrah adalah sebagai berikut:\n\n
+        • Menghitung jumlah zakat fitrah yang harus dikeluarkan, yaitu sebesar 2,5 kg atau 3,5 liter makanan pokok per orang. Jika ada tanggungan keluarga, seperti istri, anak, orang tua, atau pembantu, maka harus dikeluarkan zakat fitrah untuk mereka juga, kecuali jika mereka sudah mengeluarkan zakat fitrah sendiri.\n\n
+        • zakat fitrah dengan niat karena Allah, yaitu dengan mengucapkan:\n\n
+        نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ نَفْسِيْ وَعَنْ مَنْ تَحْتَ مَسْؤُوْلِيَّتِيْ فَرْضًا لِلَّهِ تَعَالَى\n\n
+        Nawaitu an ukhrija zakatal fitri \'an nafsi wa \'an man tahta mas’uliyyati fardhan lillahi ta\’ala\n\n
+        Artinya: Saya berniat mengeluarkan zakat fitrah untuk diri saya sendiri dan orang-orang yang menjadi tanggungan saya, sebagai kewajiban karena Allah Ta\’ala\n\n
+        • Menyerahkan zakat fitrah kepada orang-orang yang berhak menerima zakat, atau kepada lembaga amil zakat yang terpercaya dan profesional, yang akan mendistribusikan zakat fitrah kepada yang berhak.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="tata_cara_zakat_profesi">
+
+    </string>
+    <string name="tata_cara_zakat_pertanian">
+
+    </string>
+    <string name="tata_cara_zakat_peternakan">
+
+    </string>
+    <string name="tata_cara_zakat_perikanan">
+
+    </string>
+
+    <string name="refrensi_pandangan">Refrensi Pandangan</string>
+    <string name="refrensi_pandangan_zakat_emas">
+        Mazhab Syafi\'i:\n\n
+        \t\t\t\Menurut mazhab Syafi\'i, nisab zakat emas adalah 20 dinar, setara dengan 85 gram emas1. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian1. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah1. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan1. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati1.\n\n\n
+        Mazhab Hambali:\n\n
+        \t\t\t\Menurut mazhab Hambali, nisab zakat emas adalah 20 mitsqal, setara dengan 77,5 gram emas2. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian2. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah2. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan2. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati2.\n\n\n
+        Mazhab Maliki:\n\n
+        \t\t\t\Menurut mazhab Maliki, nisab zakat emas adalah 20 mitsqal, setara dengan 77,5 gram emas3. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian3. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah3. Zakat emas tidak berlaku untuk perhiasan emas yang dipakai sehari-hari, kecuali dalam beberapa keadaan, seperti rusak, tidak ada niat memperbaiki, disimpan sebagai cadangan, atau ada niat menjualnya3. Jadi, perhiasan emas yang dipakai sehari-hari tidak wajib dizakati, kecuali dalam keadaan tertentu3.\n\n\n
+        Mazhab Hanafi: \n\n
+        \t\t\t\Menurut mazhab Hanafi, nisab zakat emas adalah 7,5 tola, setara dengan 87,48 gram emas. Kadar zakat emas adalah 2,5%, yaitu seperempat dari sepuluh bagian. Zakat emas harus dikeluarkan setelah mencapai haul, yaitu satu tahun hijriah. Zakat emas berlaku untuk semua jenis emas, baik yang digunakan sebagai perhiasan maupun yang disimpan sebagai tabungan. Jadi, perhiasan emas yang dipakai sehari-hari juga wajib dizakati.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="refrensi_pandangan_zakat_fitrah">
+        \t\t\t\tBesaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, besaran zakat fitrah adalah satu sha\’ atau sekitar 2,7 kg dari makanan pokok yang dimaksud. Menurut mazhab Hanafi, besaran zakat fitrah adalah satu sha\’ atau sekitar 3,8 kg dari makanan pokok yang dimaksud12.\n\n
+        \t\t\t\tWaktu pembayaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, waktu pembayaran zakat fitrah adalah sejak awal Ramadhan hingga sebelum shalat Idul Fitri. Menurut mazhab Hanafi, waktu pembayaran zakat fitrah adalah sejak terbenamnya matahari pada malam Idul Fitri hingga sebelum shalat Idul Fitri12.\n\n
+        \t\t\t\tCara pembayaran zakat fitrah. Menurut mazhab Syafii, Hambali, dan Maliki, cara pembayaran zakat fitrah adalah dengan menyerahkan makanan pokok secara langsung kepada orang-orang yang berhak menerimanya, dan tidak boleh dengan uang atau harga makanan pokok tersebut. Menurut mazhab Hanafi, cara pembayaran zakat fitrah adalah dengan menyerahkan makanan pokok atau uang atau harga makanan pokok tersebut kepada orang-orang yang berhak menerimanya\n\n
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    </string>
+    <string name="refrensi_pandangan_zakat_profesi">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_petanian">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_peternakan">
+
+    </string>
+    <string name="refrensi_pandangan_zakat_perikanan">
+
     </string>
 
     <string name="zakat_emas">Zakat Emas</string>
@@ -46,6 +184,9 @@
     <string name="perhitungan_zakat_fitrah_dengan_beras">Bila zakat fitrah dibayarkan dengan beras maka dibayarkan sebanyak:</string>
 
     <string name="zakat_pertanian">Zakat Pertanian</string>
+perhitungan_zakat_peternakan
+
+    <string name="perhitungan_zakat_pertanian">Wajib membayar zakat hasil pertanian sebesar </string>
 
     <string name="zakat_peternakan">Zakat Peternakan</string>
     <string name="perhitungan_zakat_peternakan_dengan_kambing">Wajib membayar zakat peternakan sebanyak:\n
