@@ -1,5 +1,4 @@
 package com.example.bersamazakatapp.ui.zakat_peternakan
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
-perhitungan_zakat_peternakan
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.navigation.findNavController

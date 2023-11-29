@@ -39,7 +39,7 @@ class TataCaraFragment : Fragment() {
                 tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_fitrah)
             }
             3 -> {
-
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_pertanian)
             }
             4 -> {
 

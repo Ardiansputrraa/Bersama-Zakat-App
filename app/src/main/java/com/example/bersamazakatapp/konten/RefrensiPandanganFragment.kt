@@ -39,7 +39,7 @@ class RefrensiPandanganFragment : Fragment() {
                 refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.refrensi_pandangan_zakat_fitrah)
             }
             3 -> {
-
+                refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.refrensi_pandangan_zakat_pertanian)
             }
             4 -> {
 
