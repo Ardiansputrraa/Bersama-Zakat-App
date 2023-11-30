@@ -70,7 +70,7 @@ class ZakatPeternakanFragment : Fragment() {
             val textViewHasilPerhitunganZakatC = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatC)
 
             textViewJenisZakat?.text = context?.getString(R.string.zakat_peternakan)
-
+            textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_peternakan)
             if (jenisHewanTernak.isEmpty() && banyakHewanTernak.isEmpty()) {
                 zakatPeternakanBinding.textInputJenisHewan.error = "Silahkan masukan jenis hewan ternak!"
                 zakatPeternakanBinding.textInputJenisHewan.requestFocus();
@@ -88,8 +88,8 @@ class ZakatPeternakanFragment : Fragment() {
             } else {
                 dialog.show()
                 if (indexPositionItems == 0) {
+                    textViewHasilPerhitunganZakatA?.text = kalkulatorZakatHewanUnta(banyakHewanTernak.toInt()).toString() + "\n\n"
                     textViewHasilPerhitunganZakatC?.text = kalkulatorZakatHewanUnta(banyakHewanTernak.toInt()).toString()
-                    textViewHasilPerhitunganZakatA?.text = kalkulatorZakatHewanUnta(banyakHewanTernak.toInt()).toString() + "\nTerimakasih.\n\n"
                     if (banyakHewanTernak.toInt() >= 5) {
                         textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                         textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
@@ -97,6 +97,38 @@ class ZakatPeternakanFragment : Fragment() {
                         textViewHasilPerhitunganZakatB?.visibility = View.GONE
                         textViewHasilPerhitunganZakatC?.visibility = View.GONE
                     } else if (banyakHewanTernak.toInt() < 5) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatA?.visibility = View.GONE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                    }
+                } else if (indexPositionItems == 1) {
+                    textViewHasilPerhitunganZakatA?.text = kalkulatorZakatHewanSapi(banyakHewanTernak.toInt()).toString() + "\n\n"
+                    textViewHasilPerhitunganZakatC?.text = kalkulatorZakatHewanSapi(banyakHewanTernak.toInt()).toString()
+                    if (banyakHewanTernak.toInt() >= 30) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.GONE
+                    } else if (banyakHewanTernak.toInt() < 30) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatA?.visibility = View.GONE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                    }
+                } else if (indexPositionItems == 2) {
+                    textViewHasilPerhitunganZakatA?.text = kalkulatorZakatHewanKambing(banyakHewanTernak.toInt()).toString() + "\n\n"
+                    textViewHasilPerhitunganZakatC?.text = kalkulatorZakatHewanKambing(banyakHewanTernak.toInt()).toString()
+                    if (banyakHewanTernak.toInt() >= 40) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.GONE
+                    } else if (banyakHewanTernak.toInt() < 40) {
                         textViewDetailPerhitunganZakatA?.visibility = View.GONE
                         textViewHasilPerhitunganZakatA?.visibility = View.GONE
                         textViewDetailPerhitunganZakatB?.visibility = View.GONE
@@ -130,7 +162,7 @@ class ZakatPeternakanFragment : Fragment() {
         )
     }
     fun kalkulatorZakatHewanUnta(banyakHewanTernak : Int) : Any {
-        if (banyakHewanTernak < 25) {
+        if (banyakHewanTernak >= 5 && banyakHewanTernak < 25) {
             return "Zakat dibayarkan dengan ${(banyakHewanTernak / 5)} kambing."
         } else {
             return when {
@@ -142,18 +174,19 @@ class ZakatPeternakanFragment : Fragment() {
                 banyakHewanTernak in 91..120 -> "2 unta berumur 3 tahun."
                 banyakHewanTernak in 121..129 -> "3 unta berumur 2 tahun."
                 banyakHewanTernak in 130..139 -> "1 unta berumur 3 tahun dan 2 ekor unta berumur 2 tahun."
-                else -> {
+                banyakHewanTernak > 139 -> {
                     if (banyakHewanTernak % 40 == 0) {
-                         "${(banyakHewanTernak / 40)} unta berumur 2 tahun"
-                    } else if (banyakHewanTernak % 50 == 0){
+                        "${(banyakHewanTernak / 40)} unta berumur 2 tahun"
+                    } else if (banyakHewanTernak % 50 == 0) {
                         "${(banyakHewanTernak / 50)} unta berumur 2 tahun"
                     } else {
-                        "Unta belum mencapai nisab. Tidak dikenakan kwajiban pajak\nTerimakasih.\n\n\n"
+                        "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
                     }
                 }
+                else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
             }
         }
-        return "Unta belum mencapai nisab. Tidak dikenakan kwajiban pajak\nTerimakasih.\n\n"
+        return "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n"
     }
     fun kalkulatorZakatHewanSapi(banyakHewanTernak: Int):Any {
         return when {
@@ -165,15 +198,15 @@ class ZakatPeternakanFragment : Fragment() {
             banyakHewanTernak in 90..99 -> "3 ekor umur 1 tahun memasuki tahun ke-2."
             banyakHewanTernak in 100..109 -> "3 ekor sapi, 1 ekor umur 1 tahun memasuki tahun ke-2 dan 2 ekor umur 2 tahun memasuki tahun ke-3."
             banyakHewanTernak in 110..120 -> "3 ekor sapi, 2 ekor umur 2 tahun memasuki tahun ke-3 dan 1 ekor umur 1 tahun memasuki tahun ke-2."
-            else -> {
-                if (banyakHewanTernak % 40 == 0) {
-                    "${(banyakHewanTernak / 40)} unta berumur 2 tahun"
-                } else if (banyakHewanTernak % 50 == 0){
-                    "${(banyakHewanTernak / 50)} unta berumur 2 tahun"
-                } else {
-                    "Unta belum mencapai nisab. Tidak dikenakan kwajiban pajak\nTerimakasih.\n\n\n"
-                }
-            }
+            banyakHewanTernak > 120 -> "3 ekor anak sapi betina atau 3 ekor anak sampi jantan. Setiap 30 ekor: 1 tabi' atau tabi'ah, setiap 40 ekor: 1 musinnah."
+            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
+        }
+    }
+    fun kalkulatorZakatHewanKambing(banyakHewanTernak: Int):Any {
+        return when {
+            banyakHewanTernak in 40..120 -> "1 kambing dari jenis domba yang berumur 1 tahun atau 1 kambing dari jenis ma\'iz yang berumur 2 tahun."
+            banyakHewanTernak > 120 -> "${(banyakHewanTernak / 100)} ekor kambing."
+            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
         }
     }
 }
