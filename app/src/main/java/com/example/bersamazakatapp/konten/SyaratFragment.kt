@@ -42,10 +42,10 @@ class SyaratFragment : Fragment() {
 
             }
             4 -> {
-
+                syaratBinding.textViewKontenSyarat.text = context?.getString(R.string.syarat_zakat_perikanan)
             }
             5 -> {
-
+                syaratBinding.textViewKontenSyarat.text = context?.getString(R.string.syarat_zakat_peternakan)
             }
             6 -> {
 

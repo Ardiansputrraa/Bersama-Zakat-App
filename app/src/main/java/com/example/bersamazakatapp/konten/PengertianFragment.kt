@@ -42,10 +42,10 @@ class PengertianFragment : Fragment() {
 
             }
             4 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_perikanan)
             }
             5 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_peternakan)
             }
             6 -> {
 

@@ -42,10 +42,10 @@ class TataCaraFragment : Fragment() {
 
             }
             4 -> {
-
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_perikanan)
             }
             5 -> {
-
+                tataCaraBinding.textViewKontenTataCara.text = context?.getString(R.string.tata_cara_zakat_peternakan)
             }
             6 -> {
 

@@ -42,10 +42,10 @@ class RefrensiPandanganFragment : Fragment() {
 
             }
             4 -> {
-
+                refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.refrensi_pandangan_zakat_perikanan)
             }
             5 -> {
-
+                refrensiPandanganBinding.textViewKontenRefrensiPandangan.text = context?.getString(R.string.refrensi_pandangan_zakat_peternakan)
             }
             6 -> {
 
