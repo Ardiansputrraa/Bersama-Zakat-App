@@ -30,6 +30,16 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="pengertian_zakat_profesi">
+        \t\t\t\Menurut bahasa, zakat berarti pembersihan atau penyucian. Hal ini menunjukkan bahwa zakat dapat membersihkan harta individu dari sifat serakah dan egois, serta menciptakan rasa kepedulian terhadap sesama.\n\n
+        \t\t\t\Menurut istilah, zakat penghasilan adalah zakat yang wajib dikeluarkan oleh setiap Muslim yang mampu atas harta yang berasal dari pendapatan atau penghasilan rutin dari pekerjaan yang tidak melanggar syariah. Nishab zakat penghasilan sebesar 85 gram emas per tahun. Kadar zakat penghasilan senilai 2,5%.\n\n
+        \t\t\t\Zakat Penghasilan adalah bagian dari zakat mal yang wajib dikeluarkan atas harta yang berasal dari pendapatan/penghasilan rutin dari pekerjaan yang tidak melanggar syariah. Zakat penghasilan dikenal juga dengan istilah zakat profesi maupun zakat pendapatan.\n\n
+        Zakat penghasilan memiliki beberapa tujuan, di antaranya:\n
+        •Menyucikan hati dari sifat serakah dan menciptakan rasa kepedulian terhadap sesama.\n
+        •Memberantas kemiskinan dengan memberikan bantuan finansial kepada yang membutuhkan.\n
+        •Mengurangi ketidaksetaraan ekonomi dan sosial dengan mengumpulkan dan mendistribusikan zakat dengan benar.\n
+        •Mendorong solidaritas sosial dengan mendukung rasa persaudaraan dan solidaritas sosial dalam komunitas Muslim dan di seluruh dunia.\n
+        •Mendukung pertumbuhan ekonomi berkelanjutan dengan memberikan peluang kepada yang kurang beruntung untuk membangun usaha mereka sendiri.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="pengertian_zakat_pertanian">
@@ -120,6 +130,9 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="syarat_zakat_profesi">
+        \t\t\t\Beragama Islam: Hanya orang Islam yang wajib membayar zakat penghasilan. Jika seseorang memiliki penghasilan melebihi nisab namun tidak memeluk agama Islam, maka ia tidak wajib membayar zakat.\n\n
+        \t\t\t\Orang Merdeka: Orang yang telah mencapai nisab dan memiliki penghasilan yang memenuhi syarat.
+         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="syarat_zakat_pertanian">
@@ -172,6 +185,9 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="tata_cara_zakat_profesi">
+        \t\t\t\tNishab zakat penghasilan sebesar 85 gram emas per tahun. Kadar zakat penghasilan senilai 2,5%1. Penghasilan yang dimaksud mencakup gaji, honorarium, upah, jasa, dan pendapatan lain yang diperoleh secara halal. Ini berlaku baik untuk pejabat negara, pegawai, karyawan, maupun pekerja bebas seperti dokter, pengacara, dan konsultan1.\n\n
+        \t\t\t\tJika penghasilan seseorang telah mencapai nishab zakat pendapatan (85 gram emas per tahun), maka ia wajib menunaikan zakat penghasilan. Dalam praktiknya, zakat penghasilan dapat dibayarkan setiap bulan dengan nilai nishab per bulan setara dengan seperduabelas dari 85 gram emas, dengan kadar 2,5%1. Jadi, jika penghasilan bulanan melebihi nilai nishab, wajib dikeluarkan zakat sebesar 2,5% dari penghasilan tersebut.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="tata_cara_zakat_pertanian">
@@ -232,6 +248,18 @@
         \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     </string>
     <string name="refrensi_pandangan_zakat_profesi">
+        Dalil Al-Quran:\n
+        “Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan menyucikan mereka.” (QS. At-Taubah: 103) 1.\n
+        Ayat ini menegaskan pentingnya mengeluarkan zakat dari penghasilan untuk membersihkan dan menyucikan jiwa.\n\n
+        Hadis:\n
+        Rasulullah Shallallahu alaihi wa sallam bersabda: “Barang siapa yang Allah berikan harta namun tidak mengeluarkan zakatnya, maka pada hari qiyamat hartanya itu akan berubah wujud menjadi seekor ular jantan yang bertanduk dan memiliki dua taring lalu melilit orang itu pada hari qiyamat lalu ular itu memakannya.” (HR. Bukhari)\n\n
+        Pandangan Mazhab:\n
+        Imam Abu Hanifah: Zakat penghasilan dikeluarkan bila mencapai masa setahun penuh pada pemiliknya, kecuali jika pemiliknya mempunyai harta sejenis yang harus dikeluarkan zakatnya. Zakat penghasilan dikeluarkan pada permulaan tahun dengan syarat sudah mencapai nisab.\n
+        Imam Malik: Harta penghasilan tidak dikeluarkan zakatnya sampai penuh waktu setahun, baik harta tersebut sejenis dengan jenis harta pemiliknya atau tidak sejenis, kecuali jenis binatang piaraan.\n
+        Imam Syafi’i: Zakat penghasilan dikeluarkan bila mencapai waktu setahun, meskipun memiliki harta sejenis yang sudah cukup nisab. Zakat anak-anak binatang piaraan dikeluarkan bersamaan dengan zakat induknya yang sudah mencapai nisab.\n\n
+        Syaikh Yusuf al-Qardhawi:\n
+        Menyebut bahwa pendapat-pendapat di atas adalah dugaan-dugaan belaka dan saling bertentangan. Ia menganggap ketentuan setahun berlaku bagi seluruh harta benda, termasuk penghasilan, dan besaran zakatnya adalah 2,5%.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
     </string>
     <string name="refrensi_pandangan_zakat_pertanian">
