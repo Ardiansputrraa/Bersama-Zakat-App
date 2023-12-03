@@ -33,7 +33,7 @@ class SyaratFragment : Fragment() {
                 syaratBinding.textViewKontenSyarat.text = context?.getString(R.string.syarat_zakat_emas)
             }
             1 -> {
-
+                syaratBinding.textViewKontenSyarat.text = context?.getString(R.string.syarat_zakat_profesi)
             }
             2 -> {
                 syaratBinding.textViewKontenSyarat.text = context?.getString(R.string.syarat_zakat_fitrah)
