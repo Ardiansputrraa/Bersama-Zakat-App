@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background_light_mode">
+        style="@style/ScreenBackground">
 
         <ImageView
             android:id="@+id/imageViewHomePage"
