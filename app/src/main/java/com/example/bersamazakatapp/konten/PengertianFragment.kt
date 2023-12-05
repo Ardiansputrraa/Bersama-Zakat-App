@@ -33,7 +33,7 @@ class PengertianFragment : Fragment() {
                 pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_emas)
             }
             1 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_profesi)
             }
             2 -> {
                 pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_fitrah)
@@ -42,10 +42,10 @@ class PengertianFragment : Fragment() {
                 pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_pertanian)
             }
             4 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_perikanan)
             }
             5 -> {
-
+                pengertianBinding.textViewKontenPengertian.text = context?.getString(R.string.pengertian_zakat_peternakan)
             }
             6 -> {
 

@@ -6,8 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
@@ -22,6 +21,7 @@ class ZakatPertanianFragment : Fragment() {
     private var _zakatPertanianBinding : FragmentZakatPertanianBinding? = null
     private val zakatPertanianBinding get() = _zakatPertanianBinding!!
     private lateinit var adapterViewPager : ViewPagerAdapter
+    private  var indexPositionItems : Int? = null
     private var tipePembayaranRadioButton : String = "berbayar"
 
     override fun onCreateView(
@@ -37,17 +37,27 @@ class ZakatPertanianFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
+        val items = listOf("Beras Putih", "Padi Gabah")
+        val autoComplete : AutoCompleteTextView = view.findViewById(R.id.textInputHasilPanen)
+        val adapter = ArrayAdapter(this.requireContext(),R.layout.list_item_hasil_panen, items)
+        autoComplete.setAdapter(adapter)
+        autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
+                adapterView, view, i, l ->
+            val itemSelected = adapterView.getItemAtPosition(i)
+            indexPositionItems = i
+        }
+
         _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
 
         zakatPertanianBinding.pilih.setOnCheckedChangeListener { group, checkedId ->
             if (checkedId == R.id.radioBtnBerbayar){
                 zakatPertanianBinding.textInputLayoutKuantitas.apply {
-                    hint = "Harga Panen adalah (Rp)"
+                    hint = "Hasil Panen adalah (Rp)"
                 }
                 tipePembayaranRadioButton = "berbayar"
             } else if (checkedId == R.id.radioBtnTadahHujan){
                 zakatPertanianBinding.textInputKuantitas.apply {
-                    hint = "Harga Panen adalah (Rp)"
+                    hint = "Hasil Panen adalah (Rp)"
                 }
                 tipePembayaranRadioButton = "tadah hujan"
             }
@@ -60,7 +70,7 @@ class ZakatPertanianFragment : Fragment() {
             dialog.show()
 
             var hasilPanen = zakatPertanianBinding.textInputHasilPanen.text.toString()
-            var hargaPanen = zakatPertanianBinding.textInputKuantitas.text.toString()
+            var beratPanen = zakatPertanianBinding.textInputKuantitas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -72,26 +82,26 @@ class ZakatPertanianFragment : Fragment() {
             textViewJenisZakat?.text = context?.getString(R.string.zakat_pertanian)
             textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_pertanian)
 
-            if(hasilPanen.isEmpty() && hargaPanen.isEmpty()){
-                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan masukan hasil panen!"
+            if(hasilPanen.isEmpty() && beratPanen.isEmpty()){
+                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis hasil panen!"
                 zakatPertanianBinding.textInputHasilPanen.requestFocus();
-                zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan harga panen!"
+                zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan hasil panen!"
                 zakatPertanianBinding.textInputKuantitas.requestFocus();
                 return@setOnClickListener
             } else if (hasilPanen.isEmpty()){
-                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan masukan hasil panen!"
+                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis hasil panen!"
                 zakatPertanianBinding.textInputHasilPanen.requestFocus();
                 return@setOnClickListener
-            } else if (hargaPanen.isEmpty()){
-                zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan harga panen!"
+            } else if (beratPanen.isEmpty()){
+                zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan hasil panen!"
                 zakatPertanianBinding.textInputKuantitas.requestFocus();
                 return@setOnClickListener
             } else {
                 if (hasilPanen.toInt() >= 653) {
                     textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
-                    textViewDetailPerhitunganZakatB?.visibility = View.VISIBLE
-                    textViewHasilPerhitunganZakatB?.visibility = View.VISIBLE
+                    textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                    textViewHasilPerhitunganZakatB?.visibility = View.GONE
                     textViewHasilPerhitunganZakatC?.visibility = View.GONE
                     //hasil perhitungan zakat pertanian
                 } else if (hasilPanen.toInt() < 653){
@@ -123,14 +133,14 @@ class ZakatPertanianFragment : Fragment() {
     fun besaranZakatPertanianAlami(): Double{
         return 0.1
     }
-    fun kalkulatorZakatPertanian(hasilPanen: Int, hargaPanen: Double): Double {
+    fun kalkulatorZakatPertanian(hasilPanen: Int, beratPanen: Double): Double {
         var besaranZakatPertanian: Double = 0.0
         if(tipePembayaranRadioButton == "berbayar"){
             besaranZakatPertanian = besaranZakatPertanianBerbayar()
         } else if (tipePembayaranRadioButton == "tadah hujan"){
             besaranZakatPertanian = besaranZakatPertanianAlami()
         }
-        return (besaranZakatPertanian * hasilPanen) * hargaPanen
+        return (besaranZakatPertanian * hasilPanen) * beratPanen
     }
     fun Double.formatRupiah(): String {
         val localeID = Locale("in", "ID")

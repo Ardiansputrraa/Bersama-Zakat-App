@@ -52,7 +52,7 @@
         android:layout_marginTop="130dp"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="@string/perhitungan_zakat_fitrah_dengan_uang"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="20dp"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmserifdisplayregular"
         android:text="@string/perhitungan_zakat_fitrah_dengan_beras"
-        android:textColor="@color/black"
+        android:textColor="?attr/color"
         android:textSize="20dp"
 
         android:layout_marginTop="20dp"
