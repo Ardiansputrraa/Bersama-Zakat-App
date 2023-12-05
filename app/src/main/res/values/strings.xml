@@ -201,12 +201,23 @@
         \nTerimakasih.\n\n
     </string>
 
-    <string name="zakat_profesi">Zakat Profesi</string>
-    <string name="perhitungan_zakat_profesi">
-        Wajib zakat penghasilan sebesar:
+    <string name="zakat_profesi_mui">Zakat Profesi (MUI)</string>
+    <string name="zakat_profesi_baznas">Zakat Profesi (BAZNAS)</string>
+    <string name="perhitungan_zakat_profesi_perbulan">
+        Wajib zakat penghasilan yang dikeluarkan dalam sebulan sebesar:
     </string>
-    <string name="tidak_wajib_zakat_profesi">
-        Belum wajib zakat profesi!\nTerimakasih.\n\n
+    <string name="perhitungan_zakat_profesi_pertahun">
+        Wajib zakat penghasilan yang dikeluarkan dalam setahun sebesar:
+    </string>
+    <string name="tidak_wajib_zakat_profesi_mui">
+        Belum wajib zakat profesi!\n
+        Nisab zakat profesi terdapat pada SK Ketua BAZNAS No. 1 tahun 2023 nisab per bulan sebesar Rp 6.828.806
+        \nTerimakasih.\n\n
+    </string>
+    <string name="tidak_wajib_zakat_profesi_baznas">
+        Belum wajib zakat profesi!\n
+        Nisab zakat profesi terdapat pada ketetapan MUI dalam fatwa nomor 7 tahun 2003 yang berbunyi, “Semua bentuk penghasilan halal wajib dikeluarkan zakatnya dengan syarat telah mencapai nisab dalam satu tahun, yakni senilai emas 85 gram”
+        \nTerimakasih.\n\n
     </string>
 
     <string name="zakat_fitrah">Zakat Fitrah</string>

@@ -25,6 +25,7 @@ class ZakatProfesiFragment : Fragment() {
     private var _zakatProfesiBinding : FragmentZakatProfesiBinding? = null
     private val zakatProfesiBinding get() = _zakatProfesiBinding!!
     private lateinit var adapterViewPager : ViewPagerAdapter
+    private lateinit var jenisZakatProfesi : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +40,16 @@ class ZakatProfesiFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
         _zakatProfesiBinding = FragmentZakatProfesiBinding.bind(view)
+
+        zakatProfesiBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
+            if (checkedId == R.id.radioButtonMUI) {
+                zakatProfesiBinding.textInputLayoutPengeluaran.hint = "Harga Emas (gram)"
+                jenisZakatProfesi = zakatProfesiBinding.radioButtonMUI.text.toString()
+            } else if (checkedId == R.id.radioButtonBaznas) {
+                zakatProfesiBinding.textInputLayoutPengeluaran.hint = "Pengeluaran"
+                jenisZakatProfesi = zakatProfesiBinding.radioButtonBaznas.text.toString()
+            }
+        }
 
         zakatProfesiBinding.buttonHitungZakatProfesi.setOnClickListener{
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
@@ -55,9 +66,8 @@ class ZakatProfesiFragment : Fragment() {
             val textViewHasilPerhitunganZakatB = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatB)
             val textViewHasilPerhitunganZakatC = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatC)
 
-            textViewJenisZakat?.text = context?.getString(R.string.zakat_profesi)
-            textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_profesi)
-            textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_profesi)
+            textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_profesi_perbulan)
+            textViewDetailPerhitunganZakatB?.text = context?.getString(R.string.perhitungan_zakat_profesi_pertahun)
 
             if (pemasukanBulanan.isEmpty() && pengeluaranBulanan.isEmpty()) {
                 zakatProfesiBinding.textInputPenghasilan.error = "Silahkan masukan pemasukan bulanan!"
@@ -74,15 +84,23 @@ class ZakatProfesiFragment : Fragment() {
                 zakatProfesiBinding.textInputPengeluaran.requestFocus();
                 return@setOnClickListener
             } else {
-                if (pemasukanBulanan.toInt() > 0) {
+                // hasil perhitungan zakat profesi
+                val hasilZakatProfesi = kalkulatorZakatProfesi(pemasukanBulanan.toDouble(), pengeluaranBulanan.toDouble(), jenisZakatProfesi)
+                if (jenisZakatProfesi == "MUI") {
+                    textViewJenisZakat?.text = context?.getString(R.string.zakat_profesi_mui)
+                    textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_profesi_mui)
+                } else if (jenisZakatProfesi == "Baznas") {
+                    textViewJenisZakat?.text = context?.getString(R.string.zakat_profesi_baznas)
+                    textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_profesi_baznas)
+                }
+                if (hasilZakatProfesi > 0) {
                     textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
-                    textViewDetailPerhitunganZakatB?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                    textViewDetailPerhitunganZakatB?.visibility = View.VISIBLE
+                    textViewHasilPerhitunganZakatB?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatC?.visibility = View.GONE
-                    // hasil perhitungan zakat profesi
-                    val zakatEmasDenganUang = kalkulatorZakatProfesi(pemasukanBulanan.toDouble(), pengeluaranBulanan.toDouble())
-                    textViewHasilPerhitunganZakatA?.text = zakatEmasDenganUang.formatRupiah().toString() + "\n\n\n"
+                    textViewHasilPerhitunganZakatA?.text = hasilZakatProfesi.formatRupiah().toString() + "\n"
+                    textViewHasilPerhitunganZakatB?.text = (hasilZakatProfesi * 12).formatRupiah().toString() + "\n\n\n"
                 } else {
                     textViewDetailPerhitunganZakatA?.visibility = View.GONE
                     textViewHasilPerhitunganZakatA?.visibility = View.GONE
@@ -90,6 +108,7 @@ class ZakatProfesiFragment : Fragment() {
                     textViewHasilPerhitunganZakatB?.visibility = View.GONE
                     textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
                 }
+
             }
             dialog.show()
             imageButtonCloseBottomSheetDialog?.setOnClickListener{
@@ -107,9 +126,20 @@ class ZakatProfesiFragment : Fragment() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
     }
-    fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double): Double {
+    fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double, jenisZakatProfesi: String): Double {
         val zakatProfesi = 0.025
-        return (pemasukanBulanan - pengeluaranBulanan) * zakatProfesi
+        val nisabZakatProfesi = 85
+        var hasilZakatProfesi = 0.0
+        if (jenisZakatProfesi.equals("MUI")) {
+            if ((pemasukanBulanan * 12) > (pengeluaranBulanan * nisabZakatProfesi)) {
+                hasilZakatProfesi = pemasukanBulanan * zakatProfesi
+            }
+        } else if (jenisZakatProfesi.equals("Baznas")) {
+            if ((pemasukanBulanan - pengeluaranBulanan) > 6_828_806) {
+                return (pemasukanBulanan - pengeluaranBulanan) * zakatProfesi
+            }
+        }
+        return hasilZakatProfesi
     }
     fun Double.formatRupiah(): String {
         val localeID = Locale("in", "ID")

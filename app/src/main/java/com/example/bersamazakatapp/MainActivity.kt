@@ -20,7 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
-    private lateinit var bottomNav : MeowBottomNavigation
+    private lateinit var bottomNav : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,28 +32,30 @@ class MainActivity : AppCompatActivity() {
 
         navController = navHostFragment.navController
 
-        bottomNav = findViewById(R.id.meowBottomNavigation)
-        bottomNav.add(MeowBottomNavigation.Model(1, R.drawable.icon_home))
-        bottomNav.add(MeowBottomNavigation.Model(2, R.drawable.icon_panduan_aplikasi))
-        bottomNav.add(MeowBottomNavigation.Model(3, R.drawable.icon_about))
+        bottomNav = findViewById(R.id.bottomNavigation)
 
-        //bottomNav.setupWithNavController(navController)
-        bottomNav.setOnShowListener {
-            Log.i("TAG", "onCreate: ${it.id}")
-            when(it.id) {
-                1 -> R.id.homeFragment
-                2 -> R.id.panduanAplikasiFragment
-                3 -> R.id.aboutFragment
-            }
-        }
-        bottomNav.setOnClickMenuListener {
-            Log.i("TAG", "onCreate2: ${it.id}")
-            when(it.id) {
-                1 -> bottomNav.show(R.id.homeFragment)
-                2 -> bottomNav.show(R.id.panduanAplikasiFragment)
-                3 -> bottomNav.show(R.id.aboutFragment)
-            }
-        }
+        bottomNav.setupWithNavController(navController)
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.homeFragment,
+            R.id.panduanAplikasiFragment,
+            R.id.aboutFragment
+        ).build()
+//        bottomNav.setOnShowListener {
+//            Log.i("TAG", "onCreate: ${it.id}")
+//            when(it.id) {
+//                1 -> R.id.homeFragment
+//                2 -> R.id.panduanAplikasiFragment
+//                3 -> R.id.aboutFragment
+//            }
+//        }
+//        bottomNav.setOnClickMenuListener {
+//            Log.i("TAG", "onCreate2: ${it.id}")
+//            when(it.id) {
+//                1 -> bottomNav.show(R.id.homeFragment)
+//                2 -> bottomNav.show(R.id.panduanAplikasiFragment)
+//                3 -> bottomNav.show(R.id.aboutFragment)
+//            }
+//        }
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment -> hideBottomNav(true)

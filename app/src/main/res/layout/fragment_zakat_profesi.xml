@@ -85,6 +85,38 @@
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran">
+
+        <RadioButton
+            android:id="@+id/radioButtonMUI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MUI"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="#000000"
+            app:layout_constraintEnd_toStartOf="@+id/radioButton2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBaznas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="BAZNAS"
+            android:checked="true"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/buttonHitungZakatProfesi"
         android:layout_width="160dp"
@@ -93,11 +125,11 @@
         android:backgroundTint="@color/white"
         android:text="Hitung"
         android:textSize="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:textColor="?attr/color"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <ImageButton
         android:id="@+id/imageButtonBackToHome"

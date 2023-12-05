@@ -31,12 +31,6 @@ class ZakatEmasFragment : Fragment() {
     private lateinit var adapterViewPager : ViewPagerAdapter
     private var totalZakatEmasDenganEmas by Delegates.notNull<Int>()
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        arguments?.let {bundle ->
-//            val positionZakat = bundle.getParcelable("PostionZakat")!!
-//        }
-//    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
