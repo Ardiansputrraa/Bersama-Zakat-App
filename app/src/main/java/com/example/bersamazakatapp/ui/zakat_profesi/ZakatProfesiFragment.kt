@@ -84,6 +84,7 @@ class ZakatProfesiFragment : Fragment() {
                 zakatProfesiBinding.textInputPengeluaran.requestFocus();
                 return@setOnClickListener
             } else {
+                dialog.show()
                 // hasil perhitungan zakat profesi
                 val hasilZakatProfesi = kalkulatorZakatProfesi(pemasukanBulanan.toDouble(), pengeluaranBulanan.toDouble(), jenisZakatProfesi)
                 if (jenisZakatProfesi == "MUI") {
@@ -110,7 +111,6 @@ class ZakatProfesiFragment : Fragment() {
                 }
 
             }
-            dialog.show()
             imageButtonCloseBottomSheetDialog?.setOnClickListener{
                 dialog.dismiss()
             }

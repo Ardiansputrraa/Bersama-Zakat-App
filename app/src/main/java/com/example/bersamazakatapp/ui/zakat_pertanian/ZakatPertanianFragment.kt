@@ -21,8 +21,8 @@ class ZakatPertanianFragment : Fragment() {
     private var _zakatPertanianBinding : FragmentZakatPertanianBinding? = null
     private val zakatPertanianBinding get() = _zakatPertanianBinding!!
     private lateinit var adapterViewPager : ViewPagerAdapter
-    private  var indexPositionItems : Int? = null
-    private var tipePembayaranRadioButton : String = "berbayar"
+    private lateinit var jenisPertanian : String
+    private lateinit var tipePengairan : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,32 +34,27 @@ class ZakatPertanianFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
-
-        val items = listOf("Beras Putih", "Padi Gabah")
+        _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
+        val items = listOf("Beras Putih", "Padi Gabah", "Kacang Hijau")
         val autoComplete : AutoCompleteTextView = view.findViewById(R.id.textInputHasilPanen)
         val adapter = ArrayAdapter(this.requireContext(),R.layout.list_item_hasil_panen, items)
         autoComplete.setAdapter(adapter)
         autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
             val itemSelected = adapterView.getItemAtPosition(i)
-            indexPositionItems = i
+            jenisPertanian = itemSelected.toString()
+            zakatPertanianBinding.textInputLayoutKuantitas.apply {
+                hint = "Hasil Panen ${jenisPertanian} (Kg)"
+            }
         }
 
-        _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
-
         zakatPertanianBinding.pilih.setOnCheckedChangeListener { group, checkedId ->
+
             if (checkedId == R.id.radioBtnBerbayar){
-                zakatPertanianBinding.textInputLayoutKuantitas.apply {
-                    hint = "Hasil Panen adalah (Rp)"
-                }
-                tipePembayaranRadioButton = "berbayar"
+                tipePengairan = "Berbayar"
             } else if (checkedId == R.id.radioBtnTadahHujan){
-                zakatPertanianBinding.textInputKuantitas.apply {
-                    hint = "Hasil Panen adalah (Rp)"
-                }
-                tipePembayaranRadioButton = "tadah hujan"
+                tipePengairan = "Tadah Hujan"
             }
         }
 
@@ -69,8 +64,8 @@ class ZakatPertanianFragment : Fragment() {
             dialog.setContentView(viewDialog)
             dialog.show()
 
-            var hasilPanen = zakatPertanianBinding.textInputHasilPanen.text.toString()
-            var beratPanen = zakatPertanianBinding.textInputKuantitas.text.toString()
+            var jenisHasilPanen = zakatPertanianBinding.textInputHasilPanen.text.toString()
+            var beratHasilPanen = zakatPertanianBinding.textInputKuantitas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -80,39 +75,76 @@ class ZakatPertanianFragment : Fragment() {
             val textViewHasilPerhitunganZakatC = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatC)
 
             textViewJenisZakat?.text = context?.getString(R.string.zakat_pertanian)
-            textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_pertanian)
+            textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_pertanian)
 
-            if(hasilPanen.isEmpty() && beratPanen.isEmpty()){
-                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis hasil panen!"
+            if(jenisHasilPanen.isEmpty() && beratHasilPanen.isEmpty()){
+                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis panen!"
                 zakatPertanianBinding.textInputHasilPanen.requestFocus();
                 zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan hasil panen!"
                 zakatPertanianBinding.textInputKuantitas.requestFocus();
                 return@setOnClickListener
-            } else if (hasilPanen.isEmpty()){
-                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis hasil panen!"
+            } else if (jenisHasilPanen.isEmpty()){
+                zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis panen!"
                 zakatPertanianBinding.textInputHasilPanen.requestFocus();
                 return@setOnClickListener
-            } else if (beratPanen.isEmpty()){
+            } else if (beratHasilPanen.isEmpty()){
                 zakatPertanianBinding.textInputKuantitas.error = "Silahkan masukan hasil panen!"
                 zakatPertanianBinding.textInputKuantitas.requestFocus();
                 return@setOnClickListener
             } else {
-                if (hasilPanen.toInt() >= 653) {
-                    textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
-                    textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
-                    textViewDetailPerhitunganZakatB?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatB?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatC?.visibility = View.GONE
-                    //hasil perhitungan zakat pertanian
-                } else if (hasilPanen.toInt() < 653){
-                    textViewDetailPerhitunganZakatA?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatA?.visibility = View.GONE
-                    textViewDetailPerhitunganZakatB?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatB?.visibility = View.GONE
-                    textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                dialog.show()
+                textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_pertanian)
+                if (jenisHasilPanen.equals("Beras Putih")) {
+                    val hasilZakatBerasPutih = kalkulatorZakaktPertanianBerasPutih(beratHasilPanen.toDouble(), tipePengairan)
+                    textViewHasilPerhitunganZakatA?.text = hasilZakatBerasPutih.toString() + " kg\n\n"
+                    if (hasilZakatBerasPutih > 0) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.GONE
+                    } else {
+                        textViewDetailPerhitunganZakatA?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatA?.visibility = View.GONE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                    }
+                } else if (jenisHasilPanen.equals("Padi Gabah")) {
+                    val hasilZakatPadiGabah = kalkulatorZakaktPertanianPadiGabah(beratHasilPanen.toDouble(), tipePengairan)
+                    textViewHasilPerhitunganZakatA?.text = hasilZakatPadiGabah.toString() + " kg\n\n"
+                    if (hasilZakatPadiGabah > 0) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.GONE
+                    } else {
+                        textViewDetailPerhitunganZakatA?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatA?.visibility = View.GONE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                    }
+                } else if (jenisHasilPanen.equals("Kacang Hijau")) {
+                    val hasilZakatKacangHijau = kalkulatorZakaktPertanianKacangHijau(beratHasilPanen.toDouble(), tipePengairan)
+                    textViewHasilPerhitunganZakatA?.text = hasilZakatKacangHijau.toString() + " kg\n\n"
+                    if (hasilZakatKacangHijau > 0) {
+                        textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.GONE
+                    } else {
+                        textViewDetailPerhitunganZakatA?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatA?.visibility = View.GONE
+                        textViewDetailPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatB?.visibility = View.GONE
+                        textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
+                    }
                 }
             }
-            dialog.show()
+
             imageButtonCloseBottomSheetDialog?.setOnClickListener {
                 dialog.dismiss()
             }
@@ -127,29 +159,34 @@ class ZakatPertanianFragment : Fragment() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
     }
-    fun besaranZakatPertanianBerbayar(): Double{
-        return 0.5
-    }
-    fun besaranZakatPertanianAlami(): Double{
-        return 0.1
-    }
-    fun kalkulatorZakatPertanian(hasilPanen: Int, beratPanen: Double): Double {
-        var besaranZakatPertanian: Double = 0.0
-        if(tipePembayaranRadioButton == "berbayar"){
-            besaranZakatPertanian = besaranZakatPertanianBerbayar()
-        } else if (tipePembayaranRadioButton == "tadah hujan"){
-            besaranZakatPertanian = besaranZakatPertanianAlami()
+    fun kalkulatorZakaktPertanianBerasPutih(beratHasilPanen: Double, tipePengairan: String): Double {
+        val nisabBerasPutih = 815.758
+        val kadar = if (tipePengairan.equals("Berbayar")) 5 else 10
+        if (beratHasilPanen > nisabBerasPutih) {
+            return beratHasilPanen * kadar / 100
+        } else {
+            return 0.0
         }
-        return (besaranZakatPertanian * hasilPanen) * beratPanen
     }
-    fun Double.formatRupiah(): String {
-        val localeID = Locale("in", "ID")
-        val decimalFormat = DecimalFormat.getCurrencyInstance(localeID) as DecimalFormat
-        val symbol = decimalFormat.decimalFormatSymbols
-        symbol.currencySymbol = "Rp "
-        decimalFormat.decimalFormatSymbols = symbol
-        return decimalFormat.format(this)
+    fun kalkulatorZakaktPertanianPadiGabah(beratHasilPanen: Double, tipePengairan: String): Double {
+        val nisabPadiGabah = 1631.516
+        val kadar = if (tipePengairan.equals("Berbayar")) 5 else 10
+        if (beratHasilPanen > nisabPadiGabah) {
+            return beratHasilPanen * kadar / 100
+        } else {
+            return 0.0
+        }
     }
+    fun kalkulatorZakaktPertanianKacangHijau(beratHasilPanen: Double, tipePengairan: String): Double {
+        val nisabKacangHijau = 780.036
+        val kadar = if (tipePengairan.equals("Berbayar")) 5 else 10
+        if (beratHasilPanen > nisabKacangHijau) {
+            return beratHasilPanen * kadar / 100
+        } else {
+            return 0.0
+        }
+    }
+
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(

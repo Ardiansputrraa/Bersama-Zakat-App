@@ -23,10 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         setContentView(R.layout.activity_main)
-
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
@@ -40,22 +39,8 @@ class MainActivity : AppCompatActivity() {
             R.id.panduanAplikasiFragment,
             R.id.aboutFragment
         ).build()
-//        bottomNav.setOnShowListener {
-//            Log.i("TAG", "onCreate: ${it.id}")
-//            when(it.id) {
-//                1 -> R.id.homeFragment
-//                2 -> R.id.panduanAplikasiFragment
-//                3 -> R.id.aboutFragment
-//            }
-//        }
-//        bottomNav.setOnClickMenuListener {
-//            Log.i("TAG", "onCreate2: ${it.id}")
-//            when(it.id) {
-//                1 -> bottomNav.show(R.id.homeFragment)
-//                2 -> bottomNav.show(R.id.panduanAplikasiFragment)
-//                3 -> bottomNav.show(R.id.aboutFragment)
-//            }
-//        }
+        //Log.i("TAG", "onCreate: ${appBarConfiguration}")
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment -> hideBottomNav(true)
