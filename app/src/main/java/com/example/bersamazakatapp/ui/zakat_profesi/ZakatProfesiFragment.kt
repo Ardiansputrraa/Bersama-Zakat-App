@@ -25,7 +25,7 @@ class ZakatProfesiFragment : Fragment() {
     private var _zakatProfesiBinding : FragmentZakatProfesiBinding? = null
     private val zakatProfesiBinding get() = _zakatProfesiBinding!!
     private lateinit var adapterViewPager : ViewPagerAdapter
-    private lateinit var jenisZakatProfesi : String
+    private var jenisZakatProfesi : String = "Baznas"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,7 +59,7 @@ class ZakatProfesiFragment : Fragment() {
             var pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
             var pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
-            val imageButtonCloseBottomSheetDialog = view.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
+            val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
             val textViewHasilPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatA)
             val textViewDetailPerhitunganZakatB = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatB)
@@ -127,16 +127,16 @@ class ZakatProfesiFragment : Fragment() {
         }.attach()
     }
     fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double, jenisZakatProfesi: String): Double {
-        val zakatProfesi = 0.025
+        val besaranZakat = 0.025
         val nisabZakatProfesi = 85
         var hasilZakatProfesi = 0.0
         if (jenisZakatProfesi.equals("MUI")) {
             if ((pemasukanBulanan * 12) > (pengeluaranBulanan * nisabZakatProfesi)) {
-                hasilZakatProfesi = pemasukanBulanan * zakatProfesi
+                hasilZakatProfesi = pemasukanBulanan * besaranZakat
             }
         } else if (jenisZakatProfesi.equals("Baznas")) {
             if ((pemasukanBulanan - pengeluaranBulanan) > 6_828_806) {
-                return (pemasukanBulanan - pengeluaranBulanan) * zakatProfesi
+                hasilZakatProfesi = (pemasukanBulanan - pengeluaranBulanan) * besaranZakat
             }
         }
         return hasilZakatProfesi
