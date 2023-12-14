@@ -57,7 +57,7 @@
             android:id="@+id/textInputJenisHewan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_label"
+            android:hint="@string/item_label2"
             android:inputType="none"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -70,7 +70,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:hint="Banyak Hewan Ternak (ekor)"
+        android:hint="Banyak Hewan Ternak (Ekor)"
         app:boxStrokeColor="?attr/color"
         app:hintTextColor="?attr/color"
         app:layout_constraintEnd_toEndOf="parent"

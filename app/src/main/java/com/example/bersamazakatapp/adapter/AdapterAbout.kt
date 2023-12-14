@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.data.ProfilPengembang
 import com.google.android.material.imageview.ShapeableImageView
+import de.hdodenhof.circleimageview.CircleImageView
 
 class AdapterAbout(private val pengembangList : ArrayList<ProfilPengembang>) :
     RecyclerView.Adapter<AdapterAbout.MyViewHolder>() {
@@ -31,7 +32,7 @@ class AdapterAbout(private val pengembangList : ArrayList<ProfilPengembang>) :
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     {
-        val ivPengembang : ShapeableImageView = itemView.findViewById(R.id.ivPengembang)
+        val ivPengembang : CircleImageView = itemView.findViewById(R.id.ivPengembang)
         val tvPosition : TextView =  itemView.findViewById(R.id.tvPosition)
         val namaPengembang : TextView = itemView.findViewById(R.id.namaPengembang)
 

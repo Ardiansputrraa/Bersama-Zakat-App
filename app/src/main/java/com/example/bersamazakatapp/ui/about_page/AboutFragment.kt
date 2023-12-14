@@ -62,11 +62,11 @@ class AboutFragment : Fragment() {
         pengembangArrayList = arrayListOf<ProfilPengembang>()
 
         ivPengembang = arrayOf(
-            R.drawable.zakat_emas,
-            R.drawable.zakat_emas,
-            R.drawable.zakat_emas,
-            R.drawable.zakat_emas,
-            R.drawable.zakat_emas
+            R.drawable.fani_muh_ardian_saputra,
+            R.drawable.enrio_hernanda,
+            R.drawable.anugrah_lanpambudi,
+            R.drawable.herika_hayurani,
+            R.drawable.toto_heriyanto
         )
 
         tvPosition = arrayOf(

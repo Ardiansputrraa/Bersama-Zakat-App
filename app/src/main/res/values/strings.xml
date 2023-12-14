@@ -370,7 +370,7 @@
     </string>
 
     <string name="item_label">Pilihan Hasil Panen</string>
-    <string name="item_label2">Kambing/Domba</string>
+    <string name="item_label2">Pilihan Hasil Ternak</string>
 
     <string name="link_assets">
         <ul><li><a href = "https://icons8.com"> https://icons8.com </a></li></ul>
@@ -390,7 +390,7 @@
         \n<ul><li><a href = "https://kseiprogres.com"> https://kseiprogres.com</a></li></ul>
         \n<ul><li><a href = "https://money.kompas.com"> https://money.kompas.com</a></li></ul>
         \n<ul><li><a href = "https://kumparan.com"> https://kumparan.com</a></li></ul>
-        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        \n\n\n
     </string>
 
 </resources>

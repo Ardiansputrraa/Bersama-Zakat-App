@@ -48,7 +48,7 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="-10dp"
         android:layout_marginRight="20dp"
         android:hint="Penghasilan (Rp)"
         app:boxStrokeColor="?attr/color"
@@ -69,7 +69,6 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:hint="Pengeluaran (Rp)"
         app:boxStrokeColor="?attr/color"
@@ -85,19 +84,40 @@
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHargaEmas"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="20dp"
+        android:hint="Harga Emas Per Gram (Rp)"
+        app:boxStrokeColor="?attr/color"
+        app:hintTextColor="?attr/color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputHargaEmas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPengeluaran">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHargaEmas">
 
         <RadioButton
             android:id="@+id/radioButtonMUI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MUI"
+            android:text="Perhitungan MUI"
+            android:checked="true"
             android:textColorHighlight="@color/black"
             android:textColorLink="#000000"
             app:layout_constraintEnd_toStartOf="@+id/radioButton2"
@@ -108,8 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="BAZNAS"
-            android:checked="true"
+            android:text="Perhitungan Baznas"
             android:textColorHighlight="@color/black"
             android:textColorLink="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPengeluaran"
@@ -121,13 +140,13 @@
         android:id="@+id/buttonHitungZakatProfesi"
         android:layout_width="160dp"
         android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/shape_button_hasil"
         android:backgroundTint="@color/white"
         android:text="Hitung"
-        android:textSize="12dp"
-        android:layout_marginTop="10dp"
         android:textColor="?attr/color"
-        android:layout_marginRight="20dp"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 

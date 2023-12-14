@@ -26,7 +26,6 @@ import java.util.*
 class ZakatPerikananFragment : Fragment() {
     private var _zakatPerikananBinding : FragmentZakatPerikananBinding? = null
     private val zakatPerikananBinding get() = _zakatPerikananBinding!!
-    private lateinit var adapterViewPager : ViewPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

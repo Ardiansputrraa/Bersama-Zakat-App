@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.core.view.marginTop
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
@@ -24,8 +25,8 @@ import java.util.*
 class ZakatProfesiFragment : Fragment() {
     private var _zakatProfesiBinding : FragmentZakatProfesiBinding? = null
     private val zakatProfesiBinding get() = _zakatProfesiBinding!!
-    private lateinit var adapterViewPager : ViewPagerAdapter
-    private var jenisZakatProfesi : String = "Baznas"
+    private var jenisZakatProfesi : String = "MUI"
+    private  var hasilZakatProfesi : Double = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,11 +44,15 @@ class ZakatProfesiFragment : Fragment() {
 
         zakatProfesiBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             if (checkedId == R.id.radioButtonMUI) {
-                zakatProfesiBinding.textInputLayoutPengeluaran.hint = "Harga Emas (gram)"
-                jenisZakatProfesi = zakatProfesiBinding.radioButtonMUI.text.toString()
+                jenisZakatProfesi = "MUI"
+                zakatProfesiBinding.textInputLayoutPengeluaran.visibility = View.VISIBLE
+                zakatProfesiBinding.textInputPengeluaran.text?.clear()
+                zakatProfesiBinding.textInputHargaEmas.text?.clear()
             } else if (checkedId == R.id.radioButtonBaznas) {
-                zakatProfesiBinding.textInputLayoutPengeluaran.hint = "Pengeluaran"
-                jenisZakatProfesi = zakatProfesiBinding.radioButtonBaznas.text.toString()
+                jenisZakatProfesi = "Baznas"
+                zakatProfesiBinding.textInputLayoutPengeluaran.visibility = View.GONE
+                zakatProfesiBinding.textInputPengeluaran.text?.clear()
+                zakatProfesiBinding.textInputHargaEmas.text?.clear()
             }
         }
 
@@ -58,6 +63,7 @@ class ZakatProfesiFragment : Fragment() {
 
             var pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
             var pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()
+            var hargaEmas = zakatProfesiBinding.textInputHargaEmas.text.toString()
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -69,30 +75,39 @@ class ZakatProfesiFragment : Fragment() {
             textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_profesi_perbulan)
             textViewDetailPerhitunganZakatB?.text = context?.getString(R.string.perhitungan_zakat_profesi_pertahun)
 
-            if (pemasukanBulanan.isEmpty() && pengeluaranBulanan.isEmpty()) {
+
+            if (pemasukanBulanan.isEmpty() && pengeluaranBulanan.isEmpty() && hargaEmas.isEmpty()) {
                 zakatProfesiBinding.textInputPenghasilan.error = "Silahkan masukan pemasukan bulanan!"
                 zakatProfesiBinding.textInputPenghasilan.requestFocus();
                 zakatProfesiBinding.textInputPengeluaran.error = "Silahkan masukan pengeluaran bulanan!"
                 zakatProfesiBinding.textInputPengeluaran.requestFocus();
+                zakatProfesiBinding.textInputHargaEmas.error = "Silahkan masukan harga emas!"
+                zakatProfesiBinding.textInputHargaEmas.requestFocus();
                 return@setOnClickListener
             } else if (pemasukanBulanan.isEmpty()) {
                 zakatProfesiBinding.textInputPenghasilan.error = "Silahkan masukan pemasukan bulanan!"
                 zakatProfesiBinding.textInputPenghasilan.requestFocus();
                 return@setOnClickListener
-            } else if (pengeluaranBulanan.isEmpty()) {
+            } else if (pengeluaranBulanan.isEmpty() && zakatProfesiBinding.textInputLayoutPengeluaran.visibility == View.VISIBLE) {
                 zakatProfesiBinding.textInputPengeluaran.error = "Silahkan masukan pengeluaran bulanan!"
                 zakatProfesiBinding.textInputPengeluaran.requestFocus();
                 return@setOnClickListener
+            } else if (hargaEmas.isEmpty()) {
+                zakatProfesiBinding.textInputHargaEmas.error = "Silahkan masukan harga emas!"
+                zakatProfesiBinding.textInputHargaEmas.requestFocus();
+                return@setOnClickListener
             } else {
                 dialog.show()
-                // hasil perhitungan zakat profesi
-                val hasilZakatProfesi = kalkulatorZakatProfesi(pemasukanBulanan.toDouble(), pengeluaranBulanan.toDouble(), jenisZakatProfesi)
                 if (jenisZakatProfesi == "MUI") {
                     textViewJenisZakat?.text = context?.getString(R.string.zakat_profesi_mui)
                     textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_profesi_mui)
+                    // hasil perhitungan zakat profesi MUI
+                    hasilZakatProfesi = kalkulatorZakatProfesiMUI(pemasukanBulanan.toDouble(), pengeluaranBulanan.toDouble(), hargaEmas.toDouble())
                 } else if (jenisZakatProfesi == "Baznas") {
                     textViewJenisZakat?.text = context?.getString(R.string.zakat_profesi_baznas)
                     textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_profesi_baznas)
+                    // hasil perhitungan zakat profesi Baznas
+                    hasilZakatProfesi = kalkulatorZakatProfesiBaznas(pemasukanBulanan.toDouble(), hargaEmas.toDouble())
                 }
                 if (hasilZakatProfesi > 0) {
                     textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
@@ -126,18 +141,21 @@ class ZakatProfesiFragment : Fragment() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
     }
-    fun kalkulatorZakatProfesi(pemasukanBulanan: Double, pengeluaranBulanan: Double, jenisZakatProfesi: String): Double {
+    fun kalkulatorZakatProfesiMUI(pemasukanBulanan: Double, pengeluaranBulanan: Double, hargaEmas: Double): Double {
         val besaranZakat = 0.025
         val nisabZakatProfesi = 85
         var hasilZakatProfesi = 0.0
-        if (jenisZakatProfesi.equals("MUI")) {
-            if ((pemasukanBulanan * 12) > (pengeluaranBulanan * nisabZakatProfesi)) {
-                hasilZakatProfesi = pemasukanBulanan * besaranZakat
-            }
-        } else if (jenisZakatProfesi.equals("Baznas")) {
-            if ((pemasukanBulanan - pengeluaranBulanan) > 6_828_806) {
-                hasilZakatProfesi = (pemasukanBulanan - pengeluaranBulanan) * besaranZakat
-            }
+        if (((pemasukanBulanan - pengeluaranBulanan) * 12) > (hargaEmas * nisabZakatProfesi)) {
+            hasilZakatProfesi = (pemasukanBulanan - pengeluaranBulanan) * besaranZakat
+        }
+        return hasilZakatProfesi
+    }
+    fun kalkulatorZakatProfesiBaznas(pemasukanBulanan: Double, hargaEmas: Double): Double {
+        val besaranZakat = 0.025
+        val nisabZakatProfesi = 85
+        var hasilZakatProfesi = 0.0
+        if ((pemasukanBulanan * 12) > (hargaEmas * nisabZakatProfesi)) {
+            hasilZakatProfesi = pemasukanBulanan * besaranZakat
         }
         return hasilZakatProfesi
     }
