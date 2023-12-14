@@ -393,4 +393,9 @@
         \n\n\n
     </string>
 
+    <string name="text_fiture_mode">Aktifitas diatas adalah tombol untuk memungkinkan pengguna untuk mengubah skema warna aplikasi menjadi terang atau gelap, sesuai dengan preferensi atau kondisi lingkungan mereka. Fitur ini dapat meningkatkan kenyamanan, keterbacaan, dan aksesibilitas pengguna.</string>
+    <string name="text_home_page">Aktifitas diatas jika di scrol ke kanan dan ke kiri untuk memilih halaman zakat lainnya, jika ingin memilih salah satu maka klik bagian zakat yang ingin dituju agar dapat melakukan perhitungan dan juga mengetahui sepertia pengertian, syarat, tata cara, dan referensi sudut pandang.</string>
+    <string name="text_perhitungan">Halam diatas adalah bagian dari perhitungan zakat yang telah dipilih dari halaman home, silahkan masukan nilai yang sesuai sehingga menghasilkan perhitungan yang akurat sesuai dengan perintah zakat yang sudah diperintahkan. Klik tombol hitung agar mengeluarkan hasil berapa nominal zakat yang harus dikeluarkan. Klik tombol panah kiri agar kembali kehalaman home.</string>
+    <string name="text_konten">Aktifitas diatas adalah konten berisikan zakat yang telah dipilih, pada tab tersebut terdapat pengertian, syarat, tata cara, referensi pandanga, yang dapat disesuaikan oleh kebutuhan pengguna
+    \n\n\n\n\n\n\n</string>
 </resources>
