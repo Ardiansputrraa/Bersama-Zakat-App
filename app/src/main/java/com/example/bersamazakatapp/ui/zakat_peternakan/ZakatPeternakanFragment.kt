@@ -26,9 +26,7 @@ class ZakatPeternakanFragment : Fragment() {
 
     private var _zakatPeternakanBinding : FragmentZakatPeternakanBinding? = null
     private val zakatPeternakanBinding get() = _zakatPeternakanBinding!!
-    private lateinit var adapterViewPager : ViewPagerAdapter
     private  var indexPositionItems : Int? = null
-    private val detailPerhitunganZakat : String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,8 +46,8 @@ class ZakatPeternakanFragment : Fragment() {
         autoComplete.setAdapter(adapter)
         autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
-            val itemSelected = adapterView.getItemAtPosition(i)
             indexPositionItems = i
+            zakatPeternakanBinding.textInputBanyakHewan.text?.clear()
         }
 
         _zakatPeternakanBinding = FragmentZakatPeternakanBinding.bind(view)

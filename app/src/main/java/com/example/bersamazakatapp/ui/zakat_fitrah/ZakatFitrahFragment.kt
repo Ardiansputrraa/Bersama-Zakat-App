@@ -27,7 +27,6 @@ class ZakatFitrahFragment : Fragment() {
 
     private var _zakatFitrahBinding : FragmentZakatFitrahBinding? = null
     private val zakatFitrahBinding get() = _zakatFitrahBinding!!
-    private lateinit var adapterViewPager : ViewPagerAdapter
     private var tipePembayaranRadioButton : String = "liter"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,13 +45,15 @@ class ZakatFitrahFragment : Fragment() {
         zakatFitrahBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             if (checkedId == R.id.radioButtonLiter) {
                 zakatFitrahBinding.textInputLayoutHargaBeras.apply {
-                    hint = "Harga Beras per liter (Rp)"
+                    hint = "Harga Beras Per Liter (Rp)"
                 }
-                tipePembayaranRadioButton = "liter"
+                zakatFitrahBinding.textInputHargaBeras.text?.clear()
+                tipePembayaranRadioButton = "Liter"
             } else if (checkedId == R.id.radioButtonKilogram) {
                 zakatFitrahBinding.textInputLayoutHargaBeras.apply {
-                    hint = "Harga Beras per kilogram (Rp)"
+                    hint = "Harga Beras Per Kilogram (Rp)"
                 }
+                zakatFitrahBinding.textInputHargaBeras.text?.clear()
                 tipePembayaranRadioButton = "kilogram"
             }
         }

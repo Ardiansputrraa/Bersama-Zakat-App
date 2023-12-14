@@ -20,8 +20,6 @@ class ZakatPertanianFragment : Fragment() {
 
     private var _zakatPertanianBinding : FragmentZakatPertanianBinding? = null
     private val zakatPertanianBinding get() = _zakatPertanianBinding!!
-    private lateinit var adapterViewPager : ViewPagerAdapter
-    private lateinit var jenisPertanian : String
     private lateinit var tipePengairan : String
 
     override fun onCreateView(
@@ -36,17 +34,17 @@ class ZakatPertanianFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
-        val items = listOf("Beras Putih", "Padi Gabah", "Kacang Hijau")
+        val items = listOf("Beras Putih", "Padi Gabah Kering", "Kacang Hijau")
         val autoComplete : AutoCompleteTextView = view.findViewById(R.id.textInputHasilPanen)
         val adapter = ArrayAdapter(this.requireContext(),R.layout.list_item_hasil_panen, items)
         autoComplete.setAdapter(adapter)
         autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
             val itemSelected = adapterView.getItemAtPosition(i)
-            jenisPertanian = itemSelected.toString()
             zakatPertanianBinding.textInputLayoutKuantitas.apply {
-                hint = "Hasil Panen ${jenisPertanian} (Kg)"
+                hint = "Hasil Panen ${itemSelected} (Kg)"
             }
+            zakatPertanianBinding.textInputKuantitas.text?.clear()
         }
 
         zakatPertanianBinding.pilih.setOnCheckedChangeListener { group, checkedId ->
@@ -110,8 +108,8 @@ class ZakatPertanianFragment : Fragment() {
                         textViewHasilPerhitunganZakatB?.visibility = View.GONE
                         textViewHasilPerhitunganZakatC?.visibility = View.VISIBLE
                     }
-                } else if (jenisHasilPanen.equals("Padi Gabah")) {
-                    val hasilZakatPadiGabah = kalkulatorZakaktPertanianPadiGabah(beratHasilPanen.toDouble(), tipePengairan)
+                } else if (jenisHasilPanen.equals("Padi Gabah Kering")) {
+                    val hasilZakatPadiGabah = kalkulatorZakaktPertanianPadiGabahKering(beratHasilPanen.toDouble(), tipePengairan)
                     textViewHasilPerhitunganZakatA?.text = hasilZakatPadiGabah.toString() + " kg\n\n"
                     if (hasilZakatPadiGabah > 0) {
                         textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
@@ -168,7 +166,7 @@ class ZakatPertanianFragment : Fragment() {
             return 0.0
         }
     }
-    fun kalkulatorZakaktPertanianPadiGabah(beratHasilPanen: Double, tipePengairan: String): Double {
+    fun kalkulatorZakaktPertanianPadiGabahKering(beratHasilPanen: Double, tipePengairan: String): Double {
         val nisabPadiGabah = 1631.516
         val kadar = if (tipePengairan.equals("Berbayar")) 5 else 10
         if (beratHasilPanen > nisabPadiGabah) {
