@@ -34,5 +34,8 @@ class PanduanAplikasiFragment : Fragment() {
         Glide.with(this).load(R.drawable.video_home_page).into(panduanAplikasiBinding.giftHomePage)
         Glide.with(this).load(R.drawable.video_perhitungan).into(panduanAplikasiBinding.giftPerhitungan)
         Glide.with(this).load(R.drawable.video_konten).into(panduanAplikasiBinding.giftKonten)
+        Glide.with(this).load(R.drawable.video_hasil_perhitungan).into(panduanAplikasiBinding.giftHasilPerhitungan)
+        Glide.with(this).load(R.drawable.video_bottom_navigation).into(panduanAplikasiBinding.giftBottomNavigation)
+        Glide.with(this).load(R.drawable.video_about).into(panduanAplikasiBinding.giftAbout)
     }
 }
