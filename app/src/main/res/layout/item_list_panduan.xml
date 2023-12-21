@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/ScreenBackground"
+    app:cardCornerRadius="30dp"
+    android:outlineSpotShadowColor="@color/black"
+    app:cardElevation="8dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient_splash"
+        android:paddingTop="25dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/tvJudulPanduan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="heading"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivKontenPanduan"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/video_about"
+            app:layout_constraintEnd_toEndOf="@+id/tvJudulPanduan"
+            app:layout_constraintStart_toStartOf="@+id/tvJudulPanduan"
+            app:layout_constraintTop_toBottomOf="@+id/tvJudulPanduan" />
+
+        <TextView
+            android:id="@+id/tvPanduan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="TextView"
+            android:fontFamily="@font/dmserifdisplayregular"
+            app:layout_constraintEnd_toEndOf="@+id/tvJudulPanduan"
+            app:layout_constraintStart_toStartOf="@+id/tvJudulPanduan"
+            app:layout_constraintTop_toBottomOf="@+id/ivKontenPanduan" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

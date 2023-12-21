@@ -31,146 +31,19 @@
             app:layout_constraintTop_toBottomOf="@+id/heading" />
 
 
-        <ImageView
-            android:id="@+id/giftMode"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPanduan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvPanduanMode"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/subtitle" />
 
-        <TextView
-            android:id="@+id/tvPanduanMode"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_fiture_mode"
-            android:textSize="16dp"
-            android:layout_marginTop="-90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftMode"/>
 
-        <ImageView
-            android:id="@+id/giftHomePage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvPanduanMode"/>
-
-        <TextView
-            android:id="@+id/tvHomePage"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_home_page"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftHomePage"/>
-
-        <ImageView
-            android:id="@+id/giftPerhitungan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvHomePage"/>
-
-        <TextView
-            android:id="@+id/tvPerhitungan"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_perhitungan"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftPerhitungan"/>
-
-        <ImageView
-            android:id="@+id/giftKonten"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvPerhitungan"/>
-
-        <TextView
-            android:id="@+id/tvKonten"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_konten"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftKonten"/>
-
-        <ImageView
-            android:id="@+id/giftHasilPerhitungan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvKonten"/>
-
-        <TextView
-            android:id="@+id/tvHasilPerhitungan"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_hasil_perhitungan"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftHasilPerhitungan"/>
-
-        <ImageView
-            android:id="@+id/giftBottomNavigation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvHasilPerhitungan"/>
-
-        <TextView
-            android:id="@+id/tvBottomNavigation"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_bottom_navigation"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftBottomNavigation"/>
-
-        <ImageView
-            android:id="@+id/giftAbout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvBottomNavigation"/>
-
-        <TextView
-            android:id="@+id/tvAbout"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmserifdisplayregular"
-            android:text="@string/text_about"
-            android:textSize="16dp"
-            android:layout_marginTop="-80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giftAbout"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 </androidx.core.widget.NestedScrollView>
