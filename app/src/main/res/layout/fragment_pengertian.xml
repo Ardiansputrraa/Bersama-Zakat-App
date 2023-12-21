@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:text="Pengertian"
             android:textColor="?attr/color"
-            android:textSize="18dp"
+            android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"/>

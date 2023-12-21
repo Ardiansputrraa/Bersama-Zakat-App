@@ -73,7 +73,6 @@ class ZakatPertanianFragment : Fragment() {
             val textViewHasilPerhitunganZakatC = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatC)
 
             textViewJenisZakat?.text = context?.getString(R.string.zakat_pertanian)
-            textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_pertanian)
 
             if(jenisHasilPanen.isEmpty() && beratHasilPanen.isEmpty()){
                 zakatPertanianBinding.textInputHasilPanen.error = "Silahkan pilih jenis panen!"
@@ -95,6 +94,7 @@ class ZakatPertanianFragment : Fragment() {
                 if (jenisHasilPanen.equals("Beras Putih")) {
                     val hasilZakatBerasPutih = kalkulatorZakaktPertanianBerasPutih(beratHasilPanen.toDouble(), tipePengairan)
                     textViewHasilPerhitunganZakatA?.text = hasilZakatBerasPutih.toString() + " kg\n\n"
+                    textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_pertanian_beras_putih)
                     if (hasilZakatBerasPutih > 0) {
                         textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                         textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
@@ -111,6 +111,7 @@ class ZakatPertanianFragment : Fragment() {
                 } else if (jenisHasilPanen.equals("Padi Gabah Kering")) {
                     val hasilZakatPadiGabah = kalkulatorZakaktPertanianPadiGabahKering(beratHasilPanen.toDouble(), tipePengairan)
                     textViewHasilPerhitunganZakatA?.text = hasilZakatPadiGabah.toString() + " kg\n\n"
+                    textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_pertanian_padi_gabah_kering)
                     if (hasilZakatPadiGabah > 0) {
                         textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                         textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE
@@ -127,6 +128,7 @@ class ZakatPertanianFragment : Fragment() {
                 } else if (jenisHasilPanen.equals("Kacang Hijau")) {
                     val hasilZakatKacangHijau = kalkulatorZakaktPertanianKacangHijau(beratHasilPanen.toDouble(), tipePengairan)
                     textViewHasilPerhitunganZakatA?.text = hasilZakatKacangHijau.toString() + " kg\n\n"
+                    textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_pertanian_kacang_hijau)
                     if (hasilZakatKacangHijau > 0) {
                         textViewDetailPerhitunganZakatA?.visibility = View.VISIBLE
                         textViewHasilPerhitunganZakatA?.visibility = View.VISIBLE

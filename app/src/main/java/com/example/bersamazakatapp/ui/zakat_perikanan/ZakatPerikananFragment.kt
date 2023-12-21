@@ -57,7 +57,6 @@ class ZakatPerikananFragment : Fragment() {
             val textViewHasilPerhitunganZakatC = dialog.findViewById<TextView>(R.id.textViewHasilPerhitunganZakatC)
 
 
-
             textViewJenisZakat?.text = context?.getString(R.string.zakat_perikanan)
             textViewDetailPerhitunganZakatA?.text = context?.getString(R.string.perhitungan_zakat_perikanan)
             textViewHasilPerhitunganZakatC?.text = context?.getString(R.string.tidak_wajib_zakat_perikanan)

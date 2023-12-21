@@ -178,10 +178,10 @@ class ZakatPeternakanFragment : Fragment() {
                     } else if (banyakHewanTernak % 50 == 0) {
                         "${(banyakHewanTernak / 50)} unta berumur 2 tahun"
                     } else {
-                        "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
+                        "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
                     }
                 }
-                else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
+                else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
             }
         }
         return "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n"
@@ -197,14 +197,14 @@ class ZakatPeternakanFragment : Fragment() {
             banyakHewanTernak in 100..109 -> "3 ekor sapi, 1 ekor umur 1 tahun memasuki tahun ke-2 dan 2 ekor umur 2 tahun memasuki tahun ke-3."
             banyakHewanTernak in 110..120 -> "3 ekor sapi, 2 ekor umur 2 tahun memasuki tahun ke-3 dan 1 ekor umur 1 tahun memasuki tahun ke-2."
             banyakHewanTernak > 120 -> "3 ekor anak sapi betina atau 3 ekor anak sampi jantan. Setiap 30 ekor: 1 tabi' atau tabi'ah, setiap 40 ekor: 1 musinnah."
-            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
+            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
         }
     }
     fun kalkulatorZakatHewanKambing(banyakHewanTernak: Int):Any {
         return when {
             banyakHewanTernak in 40..120 -> "1 kambing dari jenis domba yang berumur 1 tahun atau 1 kambing dari jenis ma\'iz yang berumur 2 tahun."
             banyakHewanTernak > 120 -> "${(banyakHewanTernak / 100)} ekor kambing."
-            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban pajak\nTerimakasih.\n\n\n"
+            else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
         }
     }
 }

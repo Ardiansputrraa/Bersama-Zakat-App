@@ -89,9 +89,9 @@ class ZakatEmasFragment : Fragment() {
                     textViewHasilPerhitunganZakatC?.visibility = View.GONE
                     // hasil perhitungan zakat dengan uang
                     val zakatEmasDenganUang = kalkulatorZakatEmasDenganUang(hargaEmas.toDouble(), beratEmas.toDouble())
-                    textViewHasilPerhitunganZakatA?.text = zakatEmasDenganUang.formatRupiah().toString()
+                    textViewHasilPerhitunganZakatB?.text = zakatEmasDenganUang.formatRupiah().toString() + "\n\n"
                     // hasil perhitungan zakat dengan emas
-                    textViewHasilPerhitunganZakatB?.text = kalkulatorZakatEmasDenganEmas(beratEmas.toDouble()).toString() + " gram\n\n"
+                    textViewHasilPerhitunganZakatA?.text = kalkulatorZakatEmasDenganEmas(beratEmas.toDouble()).toString() + " gram"
                 } else if (beratEmas.toInt() < 85) {
                     textViewDetailPerhitunganZakatA?.visibility = View.GONE
                     textViewHasilPerhitunganZakatA?.visibility = View.GONE

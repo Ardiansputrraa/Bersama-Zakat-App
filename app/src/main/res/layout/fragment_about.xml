@@ -46,9 +46,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
             android:textSize="20dp"
             android:text="Berkat “Bersama Zakat” adalah aplikasi android yang mengajarkan Anda tentang zakat, cara menghitungnya, dan manfaatnya. Aplikasi ini juga membantu Anda membayar zakat sesuai dengan syariat Islam. Anda dapat mempelajari berbagai jenis zakat, seperti zakat emas, fitrah, profesi, pertanian, peternakan, dan perikanan. Aplikasi ini juga menyediakan informasi tentang hukum zakat dari beberapa sudut pandang."
-            app:layout_constraintEnd_toEndOf="@+id/switchMode"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -111,16 +112,6 @@
             android:text="@string/link_konten"
             app:layout_constraintStart_toStartOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:thumb="@drawable/thumb"
-            app:track="@drawable/track"
-            app:layout_constraintStart_toEndOf="@+id/subtitle"
-            app:layout_constraintTop_toTopOf="@+id/heading" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

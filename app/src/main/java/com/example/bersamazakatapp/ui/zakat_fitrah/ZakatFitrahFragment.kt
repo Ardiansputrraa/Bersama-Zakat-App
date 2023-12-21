@@ -27,7 +27,7 @@ class ZakatFitrahFragment : Fragment() {
 
     private var _zakatFitrahBinding : FragmentZakatFitrahBinding? = null
     private val zakatFitrahBinding get() = _zakatFitrahBinding!!
-    private var tipePembayaranRadioButton : String = "liter"
+    private var tipePembayaranRadioButton : String = "Liter"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +54,7 @@ class ZakatFitrahFragment : Fragment() {
                     hint = "Harga Beras Per Kilogram (Rp)"
                 }
                 zakatFitrahBinding.textInputHargaBeras.text?.clear()
-                tipePembayaranRadioButton = "kilogram"
+                tipePembayaranRadioButton = "Kilogram"
             }
         }
         zakatFitrahBinding.buttonHitungZakatFitrah.setOnClickListener{
@@ -102,7 +102,7 @@ class ZakatFitrahFragment : Fragment() {
                     val zakatFitrahDenganUang = kalkulatorzakatFitrahDenganUang(jumlahOrang.toInt(), hargaBeras.toDouble())
                     textViewHasilPerhitunganZakatA?.text = zakatFitrahDenganUang.formatRupiah()
                     // hasil perhitungan zakat dengan beras
-                    textViewHasilPerhitunganZakatB?.text = "${kalkulatorzakatFitrahDenganBeras(jumlahOrang.toInt()).toString()} $tipePembayaranRadioButton\n\n"
+                    textViewHasilPerhitunganZakatB?.text = "${kalkulatorzakatFitrahDenganBeras(jumlahOrang.toInt())} $tipePembayaranRadioButton\n\n"
                 } else {
                     textViewDetailPerhitunganZakatA?.visibility = View.GONE
                     textViewHasilPerhitunganZakatA?.visibility = View.GONE
@@ -133,18 +133,18 @@ class ZakatFitrahFragment : Fragment() {
     }
     fun kalkulatorzakatFitrahDenganUang(jumlahOrang: Int, hargaBeras: Double): Double {
         var besaranZakatFitrah: Double = 0.0
-        if (tipePembayaranRadioButton == "liter") {
+        if (tipePembayaranRadioButton == "Liter") {
             besaranZakatFitrah = besaranZakatFitrahLiter()
-        } else if (tipePembayaranRadioButton == "kilogram") {
+        } else if (tipePembayaranRadioButton == "Kilogram") {
             besaranZakatFitrah = besaranZakatFitrahKilogram()
         }
         return jumlahOrang * besaranZakatFitrah * hargaBeras
     }
     fun kalkulatorzakatFitrahDenganBeras(jumlahOrang: Int): Double {
         var besaranZakatFitrah: Double = 0.0
-        if (tipePembayaranRadioButton == "liter") {
+        if (tipePembayaranRadioButton == "Liter") {
             besaranZakatFitrah = besaranZakatFitrahLiter()
-        } else if (tipePembayaranRadioButton == "kilogram") {
+        } else if (tipePembayaranRadioButton == "Kilogram") {
             besaranZakatFitrah = besaranZakatFitrahKilogram()
         }
         return jumlahOrang * besaranZakatFitrah
