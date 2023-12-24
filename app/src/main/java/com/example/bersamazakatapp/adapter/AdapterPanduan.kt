@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.data.RecyclePanduan
 
@@ -25,8 +26,11 @@ class AdapterPanduan (private val panduanList : ArrayList<RecyclePanduan>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = panduanList[position]
         holder.tvJudulPanduan.text = currentItem.tvJudulPanduan
-        holder.ivKontenPanduan.setImageResource(currentItem.ivKontenPanduan)
         holder.tvPanduan.text = currentItem.tvPanduan
+        Glide.with(holder.itemView.context)
+            .asGif()
+            .load(currentItem.ivKontenPanduan)
+            .into(holder.ivKontenPanduan)
     }
 
 

@@ -1,12 +1,16 @@
 package com.example.bersamazakatapp.ui.zakat_emas
 
 import android.icu.text.DecimalFormat
+import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.StringRes
@@ -41,6 +45,8 @@ class ZakatFitrahFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
         _zakatFitrahBinding = FragmentZakatFitrahBinding.bind(view)
+
+        //editTextDecimal(zakatFitrahBinding.textInputHargaBeras)
 
         zakatFitrahBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             if (checkedId == R.id.radioButtonLiter) {
@@ -165,5 +171,33 @@ class ZakatFitrahFragment : Fragment() {
             R.string.tata_cara,
             R.string.refrensi_pandangan
         )
+    }
+
+    fun editTextDecimal(editText: EditText) {
+        var current: String = ""
+        editText.addTextChangedListener(object: TextWatcher {
+
+            override fun afterTextChanged (s: Editable?) {
+            }
+
+            override fun beforeTextChanged (s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged (s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s.toString() != current) {
+                    editText.removeTextChangedListener(this)
+                    val locale: Locale = Locale("in", "ID")
+                    val currency = Currency.getInstance(locale)
+                    val cleanString =
+                        s.toString().replace("""[${currency.symbol},.]""".toRegex(), "")
+                    val parsed = cleanString.toDouble()
+                    val formatted = NumberFormat.getCurrencyInstance(locale).format(parsed / 100)
+                    current = formatted
+                    editText.setText(formatted)
+                    editText.setSelection(formatted.length)
+                    editText.addTextChangedListener(this)
+                }
+            }
+        })
     }
 }

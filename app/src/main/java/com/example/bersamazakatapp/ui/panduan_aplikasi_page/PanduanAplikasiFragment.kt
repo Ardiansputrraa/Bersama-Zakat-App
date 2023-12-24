@@ -60,7 +60,7 @@ class PanduanAplikasiFragment : Fragment() {
             R.drawable.video_hasil_perhitungan,
             R.drawable.video_konten,
             R.drawable.video_about,
-            R.drawable.video_about
+            R.drawable.video_bottom_navigation
         )
 
         tvJudulPanduan = arrayOf(
