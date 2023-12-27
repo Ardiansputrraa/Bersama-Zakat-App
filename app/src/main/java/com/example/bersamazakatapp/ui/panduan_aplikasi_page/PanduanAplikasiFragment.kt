@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.AdapterPanduan
-import com.example.bersamazakatapp.data.ProfilPengembang
 import com.example.bersamazakatapp.data.RecyclePanduan
 import com.example.bersamazakatapp.databinding.FragmentPanduanAplikasiBinding
 

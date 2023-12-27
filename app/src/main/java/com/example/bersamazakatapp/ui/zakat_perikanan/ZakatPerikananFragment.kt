@@ -1,23 +1,22 @@
 package com.example.bersamazakatapp.ui.zakat_perikanan
 
 import android.icu.text.DecimalFormat
+import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
-import com.example.bersamazakatapp.databinding.FragmentZakatFitrahBinding
 import com.example.bersamazakatapp.databinding.FragmentZakatPerikananBinding
-import com.example.bersamazakatapp.konten.PengertianFragment
-import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
-import com.example.bersamazakatapp.konten.SyaratFragment
-import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.*
@@ -37,17 +36,19 @@ class ZakatPerikananFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
         _zakatPerikananBinding = FragmentZakatPerikananBinding.bind(view)
 
+        zakatPerikananBinding.textInputHasilPanen.addTextChangedListener(onTextChangedListener(zakatPerikananBinding.textInputHasilPanen))
+        zakatPerikananBinding.textInputHargaEmas.addTextChangedListener(onTextChangedListener(zakatPerikananBinding.textInputHargaEmas))
+
         zakatPerikananBinding.buttonHitungZakatPerikanan.setOnClickListener{
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
-            val dialog = BottomSheetDialog(requireContext())
+            val dialog = BottomSheetDialog(requireContext(),R.style.BottomSheetDialogTheme)
             dialog.setContentView(viewDialog)
 
-            var hasilPanen = zakatPerikananBinding.textInputHasilPanen.text.toString()
-            var hargaEmas = zakatPerikananBinding.textInputHargaEmas.text.toString()
+            var hasilPanen = zakatPerikananBinding.textInputHasilPanen.text.toString().replace(",", "")
+            var hargaEmas = zakatPerikananBinding.textInputHargaEmas.text.toString().replace(",", "")
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -134,5 +135,31 @@ class ZakatPerikananFragment : Fragment() {
             R.string.tata_cara,
             R.string.refrensi_pandangan
         )
+    }
+    private fun onTextChangedListener(editText: EditText): TextWatcher? {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                editText.removeTextChangedListener(this)
+                try {
+                    var originalString = s.toString()
+                    val longval: Long
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replace(",".toRegex(), "")
+                    }
+                    longval = originalString.toLong()
+                    val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
+                    formatter.applyPattern("#,###,###,###")
+                    val formattedString = formatter.format(longval)
+
+                    editText.setText(formattedString)
+                    editText.setSelection(editText.getText().length)
+                } catch (nfe: NumberFormatException) {
+                    nfe.printStackTrace()
+                }
+                editText.addTextChangedListener(this)
+            }
+        }
     }
 }

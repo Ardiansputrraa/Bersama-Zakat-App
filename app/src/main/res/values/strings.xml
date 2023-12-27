@@ -354,7 +354,7 @@
     <string name="perhitungan_zakat_fitrah_dengan_beras">Bila zakat fitrah dibayarkan dengan beras maka dibayarkan sebanyak:</string>
 
     <string name="zakat_pertanian">Zakat Pertanian</string>
-    <string name="perhitungan_zakat_pertanian">Wajib membayar hasil zakat hasil pertanian sebesar: </string>
+    <string name="perhitungan_zakat_pertanian">Wajib membayar hasil zakat pertanian sebesar: </string>
     <string name="tidak_wajib_zakat_pertanian_beras_putih">Nisab zakat pertanian setara dengan 815.758 kg hasil panen beras putih.\n\nKarena hasil panen yang dimasukan belum memenuhi nisab, maka anda belum wajib membayar zakat pertanian.
         \n\nTerimakasih.\n\n
     </string>
@@ -398,18 +398,11 @@
         \n\n\n
     </string>
 
-    <string name="text_fitur_mode">Aktifitas diatas adalah tombol jika di klik pengguna dapat mengubah skema warna aplikasi menjadi terang atau gelap, sesuai dengan preferensi atau kondisi lingkungan mereka. Fitur ini dapat meningkatkan kenyamanan, keterbacaan, dan aksesibilitas pengguna.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_home_page">Aktifitas diatas jika di scrol ke kanan dan ke kiri untuk memilih halaman zakat lainnya, jika ingin memilih salah satu maka klik bagian zakat yang ingin dituju agar dapat melakukan perhitungan dan juga mengetahui seperti pengertian, syarat, tata cara, dan referensi sudut pandang.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_perhitungan">Halaman diatas adalah bagian dari perhitungan zakat yang telah dipilih dari halaman home, silahkan masukan nilai yang sesuai sehingga menghasilkan perhitungan yang akurat sesuai dengan perintah zakat yang sudah diperintahkan. Klik tombol hitung agar mengeluarkan hasil berapa nominal zakat yang harus dikeluarkan. Klik tombol panah kiri agar kembali kehalaman home.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_konten">Aktifitas diatas adalah konten berisikan zakat yang telah dipilih, pada tab tersebut terdapat pengertian, syarat, tata cara, referensi pandangan, yang dapat disesuaikan oleh kebutuhan pengguna dan untuk dapat melihat lebih detailnya, maka pengguna dapat mengscroll halaman tersebut.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_hasil_perhitungan">Aktifitas diatas jika anda menekan tombol hitung maka akan muncul tampilang tersebut yang akan memberikan informasi berapa banyak zakat yang harus pengguna keluarkan. Lalu ada tombol X yang berfungsi jika di klik maka akan menutup tampilan hasil dari perhitungan zakat.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_bottom_navigation">Aktifitas diatas bagian dari tombol untuk mengarahkan kehalaman yang lain, jika pengguna mengklik tombol di bagian home maka pengguna akan mengarah ke halaman utama, jika pengguna mengklik panduan aplikasi maka pengguna akan mengarahkan ke halaman saat ini, jika pengguna mengklik about maka pengguna akan mengarahkan kehalaman about
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
-    <string name="text_about">Aktifitas diatas adalah bagian dari halaman about atau tentang aplikasi yang dapat di scroll, pada halaman ini pengguna dapat mengetahui tentang aplikasi, tim yang terlibat dalam pengembangan aplikasi ini, ditambah juga dengan refrensi link dari beberapa informasi konten.
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
+    <string name="text_fitur_mode">Klik tombol untuk mengubah tema tampilan warna aplikasi dari terang menjadi gelap, atau sebaliknya.</string>
+    <string name="text_home_page">Geser ke kanan atau ke kiri berbagai ikon di beranda dan klik salah satu ikon untuk melakukan perhitungan serta melihat materi terkait zakat yang dipilih.</string>
+    <string name="text_perhitungan">Setelah memilih salah satu ikon zakat di beranda, Anda dapat melakukan perhitungan zakat tersebut dengan memasukkan input sesuai yang diminta dan mengklik tombol Hitung.\n\nAnda dapat mengklik tombol panah arah kiri untuk kembali ke Beranda.</string>
+    <string name="text_konten">Setelah Anda menekan tombol Hitung pada perhitungan zakat, Anda dapat melihat zakat yang harus dibayarkan.\n\nAnda dapat mengklik X untuk menutup hasil perhitungan zakat.</string>
+    <string name="text_hasil_perhitungan">Setelah memilih salah satu ikon zakat di beranda, Anda dapat membaca berbagai materi terkait zakat tersebut dengan menggeser ke kanan atau ke kiri, atau mengklik pada bagian atas.</string>
+    <string name="text_bottom_navigation">Anda dapat melihat 3 buah ikon di bagian bawah aplikasi:\n1. Ikon Home\nAnda dapat mengklik ikon Home untuk menuju Beranda\n2. Panduan Aplikasi\nAnda dapat mengklik ikon Panduan Aplikasi untuk melihat panduan\n3. Ikon About\nAnda dapat mengklik ikon About untuk melihat deskripsi aplikasi, tim pengembang, pihak terkait lainnya, serta sumber aset dan konten.</string>
+    <string name="text_about">Di halaman ini, Anda dapat melihat deskripsi aplikasi, tim pengembang, pihak terkait lainnya, serta sumber aset dan konten.</string>
 </resources>

@@ -1,7 +1,10 @@
 package com.example.bersamazakatapp.ui.zakat_emas
 
 import android.icu.text.DecimalFormat
+import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +37,9 @@ class ZakatPertanianFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _zakatPertanianBinding = FragmentZakatPertanianBinding.bind(view)
+
+        zakatPertanianBinding.textInputKuantitas.addTextChangedListener(onTextChangedListener(zakatPertanianBinding.textInputKuantitas))
+
         val items = listOf("Beras Putih", "Padi Gabah Kering", "Kacang Hijau")
         val autoComplete : AutoCompleteTextView = view.findViewById(R.id.textInputHasilPanen)
         val adapter = ArrayAdapter(this.requireContext(),R.layout.list_item_hasil_panen, items)
@@ -48,7 +54,6 @@ class ZakatPertanianFragment : Fragment() {
         }
 
         zakatPertanianBinding.pilih.setOnCheckedChangeListener { group, checkedId ->
-
             if (checkedId == R.id.radioBtnBerbayar){
                 tipePengairan = "Berbayar"
             } else if (checkedId == R.id.radioBtnTadahHujan){
@@ -58,12 +63,12 @@ class ZakatPertanianFragment : Fragment() {
 
         zakatPertanianBinding.buttonHitungZakatPertanian.setOnClickListener{
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
-            val dialog = BottomSheetDialog(requireContext())
+            val dialog = BottomSheetDialog(requireContext(),R.style.BottomSheetDialogTheme)
             dialog.setContentView(viewDialog)
             dialog.show()
 
             var jenisHasilPanen = zakatPertanianBinding.textInputHasilPanen.text.toString()
-            var beratHasilPanen = zakatPertanianBinding.textInputKuantitas.text.toString()
+            var beratHasilPanen = zakatPertanianBinding.textInputKuantitas.text.toString().replace(",", "")
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -195,5 +200,31 @@ class ZakatPertanianFragment : Fragment() {
             R.string.tata_cara,
             R.string.refrensi_pandangan
         )
+    }
+    private fun onTextChangedListener(editText: EditText): TextWatcher? {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                editText.removeTextChangedListener(this)
+                try {
+                    var originalString = s.toString()
+                    val longval: Long
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replace(",".toRegex(), "")
+                    }
+                    longval = originalString.toLong()
+                    val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
+                    formatter.applyPattern("#,###,###,###")
+                    val formattedString = formatter.format(longval)
+
+                    editText.setText(formattedString)
+                    editText.setSelection(editText.getText().length)
+                } catch (nfe: NumberFormatException) {
+                    nfe.printStackTrace()
+                }
+                editText.addTextChangedListener(this)
+            }
+        }
     }
 }

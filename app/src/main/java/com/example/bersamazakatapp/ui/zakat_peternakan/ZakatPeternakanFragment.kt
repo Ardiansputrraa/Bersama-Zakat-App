@@ -1,26 +1,22 @@
 package com.example.bersamazakatapp.ui.zakat_peternakan
+import android.icu.text.DecimalFormat
+import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.StringRes
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
 import com.example.bersamazakatapp.databinding.FragmentZakatPeternakanBinding
-import com.example.bersamazakatapp.konten.PengertianFragment
-import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
-import com.example.bersamazakatapp.konten.SyaratFragment
-import com.example.bersamazakatapp.konten.TataCaraFragment
-import com.example.bersamazakatapp.ui.zakat_emas.ZakatEmasFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
+import java.util.*
 
 class ZakatPeternakanFragment : Fragment() {
 
@@ -39,6 +35,9 @@ class ZakatPeternakanFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _zakatPeternakanBinding = FragmentZakatPeternakanBinding.bind(view)
+
+        zakatPeternakanBinding.textInputBanyakHewan.addTextChangedListener(onTextChangedListener(zakatPeternakanBinding.textInputBanyakHewan))
 
         val items = listOf("Unta", "Sapi/Kerbau/Kuda", "Kambing/Domba")
         val autoComplete : AutoCompleteTextView = view.findViewById(R.id.textInputJenisHewan)
@@ -50,15 +49,13 @@ class ZakatPeternakanFragment : Fragment() {
             zakatPeternakanBinding.textInputBanyakHewan.text?.clear()
         }
 
-        _zakatPeternakanBinding = FragmentZakatPeternakanBinding.bind(view)
-
         zakatPeternakanBinding.buttonHitungZakatPeternakan.setOnClickListener {
             val viewDialog: View = layoutInflater.inflate(R.layout.bottom_sheet_dialog, null)
-            val dialog = BottomSheetDialog(this.requireContext())
+            val dialog = BottomSheetDialog(requireContext(),R.style.BottomSheetDialogTheme)
             dialog.setContentView(viewDialog)
 
             var jenisHewanTernak = zakatPeternakanBinding.textInputJenisHewan.text.toString()
-            var banyakHewanTernak = zakatPeternakanBinding.textInputBanyakHewan.text.toString()
+            var banyakHewanTernak = zakatPeternakanBinding.textInputBanyakHewan.text.toString().replace(",", "")
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -172,15 +169,8 @@ class ZakatPeternakanFragment : Fragment() {
                 banyakHewanTernak in 91..120 -> "2 unta berumur 3 tahun."
                 banyakHewanTernak in 121..129 -> "3 unta berumur 2 tahun."
                 banyakHewanTernak in 130..139 -> "1 unta berumur 3 tahun dan 2 ekor unta berumur 2 tahun."
-                banyakHewanTernak > 139 -> {
-                    if (banyakHewanTernak % 40 == 0) {
-                        "${(banyakHewanTernak / 40)} unta berumur 2 tahun"
-                    } else if (banyakHewanTernak % 50 == 0) {
-                        "${(banyakHewanTernak / 50)} unta berumur 2 tahun"
-                    } else {
-                        "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
-                    }
-                }
+                banyakHewanTernak > 139 -> "140 ekor ke atas, setiap kelipatan 40 = 1 bintu labun dan setiap kelipatan 50 = 1 hiqqoh." +
+                        "\n\nBINTU LABUN: unta betina berumur 2 tahun\nHIQQOH: unta betina berumur 3 tahun"
                 else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
             }
         }
@@ -205,6 +195,32 @@ class ZakatPeternakanFragment : Fragment() {
             banyakHewanTernak in 40..120 -> "1 kambing dari jenis domba yang berumur 1 tahun atau 1 kambing dari jenis ma\'iz yang berumur 2 tahun."
             banyakHewanTernak > 120 -> "${(banyakHewanTernak / 100)} ekor kambing."
             else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
+        }
+    }
+    private fun onTextChangedListener(editText: EditText): TextWatcher? {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                editText.removeTextChangedListener(this)
+                try {
+                    var originalString = s.toString()
+                    val longval: Long
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replace(",".toRegex(), "")
+                    }
+                    longval = originalString.toLong()
+                    val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
+                    formatter.applyPattern("#,###,###,###")
+                    val formattedString = formatter.format(longval)
+
+                    editText.setText(formattedString)
+                    editText.setSelection(editText.getText().length)
+                } catch (nfe: NumberFormatException) {
+                    nfe.printStackTrace()
+                }
+                editText.addTextChangedListener(this)
+            }
         }
     }
 }

@@ -1,23 +1,22 @@
 package com.example.bersamazakatapp.ui.zakat_profesi
 
 import android.icu.text.DecimalFormat
+import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.StringRes
-import androidx.core.view.marginTop
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
 import com.example.bersamazakatapp.databinding.FragmentZakatProfesiBinding
-import com.example.bersamazakatapp.konten.PengertianFragment
-import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
-import com.example.bersamazakatapp.konten.SyaratFragment
-import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.*
@@ -38,9 +37,12 @@ class ZakatProfesiFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
         _zakatProfesiBinding = FragmentZakatProfesiBinding.bind(view)
+
+        zakatProfesiBinding.textInputPenghasilan.addTextChangedListener(onTextChangedListener(zakatProfesiBinding.textInputPenghasilan))
+        zakatProfesiBinding.textInputPengeluaran.addTextChangedListener(onTextChangedListener(zakatProfesiBinding.textInputPengeluaran))
+        zakatProfesiBinding.textInputHargaEmas.addTextChangedListener(onTextChangedListener(zakatProfesiBinding.textInputHargaEmas))
 
         zakatProfesiBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             if (checkedId == R.id.radioButtonMUI) {
@@ -57,13 +59,13 @@ class ZakatProfesiFragment : Fragment() {
         }
 
         zakatProfesiBinding.buttonHitungZakatProfesi.setOnClickListener{
-            val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
-            val dialog = BottomSheetDialog(this.requireContext())
+            val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog, null)
+            val dialog = BottomSheetDialog(requireContext(),R.style.BottomSheetDialogTheme)
             dialog.setContentView(viewDialog)
 
-            var pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString()
-            var pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString()
-            var hargaEmas = zakatProfesiBinding.textInputHargaEmas.text.toString()
+            var pemasukanBulanan = zakatProfesiBinding.textInputPenghasilan.text.toString().replace(",", "")
+            var pengeluaranBulanan = zakatProfesiBinding.textInputPengeluaran.text.toString().replace(",", "")
+            var hargaEmas = zakatProfesiBinding.textInputHargaEmas.text.toString().replace(",", "")
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -175,5 +177,31 @@ class ZakatProfesiFragment : Fragment() {
             R.string.tata_cara,
             R.string.refrensi_pandangan
         )
+    }
+    private fun onTextChangedListener(editText: EditText): TextWatcher? {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                editText.removeTextChangedListener(this)
+                try {
+                    var originalString = s.toString()
+                    val longval: Long
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replace(",".toRegex(), "")
+                    }
+                    longval = originalString.toLong()
+                    val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
+                    formatter.applyPattern("#,###,###,###")
+                    val formattedString = formatter.format(longval)
+
+                    editText.setText(formattedString)
+                    editText.setSelection(editText.getText().length)
+                } catch (nfe: NumberFormatException) {
+                    nfe.printStackTrace()
+                }
+                editText.addTextChangedListener(this)
+            }
+        }
     }
 }

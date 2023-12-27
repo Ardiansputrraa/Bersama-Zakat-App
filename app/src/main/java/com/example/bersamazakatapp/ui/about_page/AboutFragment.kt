@@ -1,26 +1,17 @@
 package com.example.bersamazakatapp.ui.about_page
 
-import android.content.Context
-import android.content.Intent
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bersamazakatapp.R
-import com.example.bersamazakatapp.R.layout.list_pengembang_aplikasi
 import com.example.bersamazakatapp.adapter.AdapterAbout
-import com.example.bersamazakatapp.adapter.RecyclerAdapter
 import com.example.bersamazakatapp.data.ProfilPengembang
 import com.example.bersamazakatapp.databinding.FragmentAboutBinding
-import com.example.bersamazakatapp.databinding.FragmentHomeBinding
-import com.example.bersamazakatapp.databinding.FragmentZakatFitrahBinding
-import java.text.ParsePosition
 
 
 class AboutFragment : Fragment() {

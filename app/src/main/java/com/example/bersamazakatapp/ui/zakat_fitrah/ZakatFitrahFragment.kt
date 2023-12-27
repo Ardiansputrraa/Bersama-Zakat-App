@@ -5,24 +5,18 @@ import android.icu.text.NumberFormat
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.bersamazakatapp.R
 import com.example.bersamazakatapp.adapter.ViewPagerAdapter
-import com.example.bersamazakatapp.databinding.FragmentZakatEmasBinding
 import com.example.bersamazakatapp.databinding.FragmentZakatFitrahBinding
-import com.example.bersamazakatapp.konten.PengertianFragment
-import com.example.bersamazakatapp.konten.RefrensiPandanganFragment
-import com.example.bersamazakatapp.konten.SyaratFragment
-import com.example.bersamazakatapp.konten.TataCaraFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.*
@@ -42,11 +36,11 @@ class ZakatFitrahFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
         _zakatFitrahBinding = FragmentZakatFitrahBinding.bind(view)
 
-        //editTextDecimal(zakatFitrahBinding.textInputHargaBeras)
+        zakatFitrahBinding.textInputJumlahOrang.addTextChangedListener(onTextChangedListener(zakatFitrahBinding.textInputJumlahOrang))
+        zakatFitrahBinding.textInputHargaBeras.addTextChangedListener(onTextChangedListener(zakatFitrahBinding.textInputHargaBeras))
 
         zakatFitrahBinding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             if (checkedId == R.id.radioButtonLiter) {
@@ -65,11 +59,11 @@ class ZakatFitrahFragment : Fragment() {
         }
         zakatFitrahBinding.buttonHitungZakatFitrah.setOnClickListener{
             val viewDialog : View = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
-            val dialog = BottomSheetDialog(requireContext())
+            val dialog = BottomSheetDialog(requireContext(),R.style.BottomSheetDialogTheme)
             dialog.setContentView(viewDialog)
 
-            var jumlahOrang = zakatFitrahBinding.textInputJumlahOrang.text.toString()
-            var hargaBeras = zakatFitrahBinding.textInputHargaBeras.text.toString()
+            var jumlahOrang = zakatFitrahBinding.textInputJumlahOrang.text.toString().replace(",", "")
+            var hargaBeras = zakatFitrahBinding.textInputHargaBeras.text.toString().replace(",", "")
             val textViewJenisZakat = dialog.findViewById<TextView>(R.id.textViewJenisZakat)
             val imageButtonCloseBottomSheetDialog = dialog.findViewById<ImageButton>(R.id.imageButtonCloseBottomSheetDialog)
             val textViewDetailPerhitunganZakatA = dialog.findViewById<TextView>(R.id.textViewDetailPerhitunganZakatA)
@@ -104,10 +98,8 @@ class ZakatFitrahFragment : Fragment() {
                     textViewDetailPerhitunganZakatB?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatB?.visibility = View.VISIBLE
                     textViewHasilPerhitunganZakatC?.visibility = View.GONE
-                    // hasil perhitungan zakat dengan uang
                     val zakatFitrahDenganUang = kalkulatorzakatFitrahDenganUang(jumlahOrang.toInt(), hargaBeras.toDouble())
                     textViewHasilPerhitunganZakatA?.text = zakatFitrahDenganUang.formatRupiah()
-                    // hasil perhitungan zakat dengan beras
                     textViewHasilPerhitunganZakatB?.text = "${kalkulatorzakatFitrahDenganBeras(jumlahOrang.toInt())} $tipePembayaranRadioButton\n\n"
                 } else {
                     textViewDetailPerhitunganZakatA?.visibility = View.GONE
@@ -172,32 +164,30 @@ class ZakatFitrahFragment : Fragment() {
             R.string.refrensi_pandangan
         )
     }
+    private fun onTextChangedListener(editText: EditText): TextWatcher? {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                editText.removeTextChangedListener(this)
+                try {
+                    var originalString = s.toString()
+                    val longval: Long
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replace(",".toRegex(), "")
+                    }
+                    longval = originalString.toLong()
+                    val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
+                    formatter.applyPattern("#,###,###,###")
+                    val formattedString = formatter.format(longval)
 
-    fun editTextDecimal(editText: EditText) {
-        var current: String = ""
-        editText.addTextChangedListener(object: TextWatcher {
-
-            override fun afterTextChanged (s: Editable?) {
-            }
-
-            override fun beforeTextChanged (s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged (s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s.toString() != current) {
-                    editText.removeTextChangedListener(this)
-                    val locale: Locale = Locale("in", "ID")
-                    val currency = Currency.getInstance(locale)
-                    val cleanString =
-                        s.toString().replace("""[${currency.symbol},.]""".toRegex(), "")
-                    val parsed = cleanString.toDouble()
-                    val formatted = NumberFormat.getCurrencyInstance(locale).format(parsed / 100)
-                    current = formatted
-                    editText.setText(formatted)
-                    editText.setSelection(formatted.length)
-                    editText.addTextChangedListener(this)
+                    editText.setText(formattedString)
+                    editText.setSelection(editText.getText().length)
+                } catch (nfe: NumberFormatException) {
+                    nfe.printStackTrace()
                 }
+                editText.addTextChangedListener(this)
             }
-        })
+        }
     }
 }
