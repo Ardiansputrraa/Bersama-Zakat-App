@@ -179,7 +179,7 @@ class ZakatPeternakanFragment : Fragment() {
     fun kalkulatorZakatHewanSapi(banyakHewanTernak: Int):Any {
         return when {
             banyakHewanTernak in 30..39 -> "1 ekor sapi jantan/betina umur 1 tahun memasuki tahun ke-2."
-            banyakHewanTernak in 40..59 -> "1 ekor sapi betina sapi berumur 2 tahun memasuki tahun ke-3."
+            banyakHewanTernak in 40..59 -> "1 ekor sapi betina berumur 2 tahun memasuki tahun ke-3."
             banyakHewanTernak in 60..69 -> "2 ekor sapi jantan/betina umur 1 tahun memasuki tahun ke-2."
             banyakHewanTernak in 70..79 -> "2 ekor sapi, 1 ekor umur 1 tahun memasuki tahun ke-2 dan 1 ekor umur 2 tahun memasuki tahun ke-3."
             banyakHewanTernak in 80..89 -> "2 ekor sapi umur 2 tahun memasuki tahun ke-3."
@@ -193,7 +193,9 @@ class ZakatPeternakanFragment : Fragment() {
     fun kalkulatorZakatHewanKambing(banyakHewanTernak: Int):Any {
         return when {
             banyakHewanTernak in 40..120 -> "1 kambing dari jenis domba yang berumur 1 tahun atau 1 kambing dari jenis ma\'iz yang berumur 2 tahun."
-            banyakHewanTernak > 120 -> "${(banyakHewanTernak / 100)} ekor kambing."
+            banyakHewanTernak in 121..200 -> "2 ekor kambing."
+            banyakHewanTernak in 201..399 -> "3 ekor kambing."
+            banyakHewanTernak >= 400 -> "${banyakHewanTernak / 100} ekor kambing."
             else -> "Hasil ternak belum mencapai nisab. Tidak dikenakan kewajiban zakat peternakan\nTerimakasih.\n\n\n"
         }
     }
